@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CareLoop · Redirecting</title>
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      var isRepo = /^\/careloop(\/|$)/i.test(path);
+      var base = isRepo ? '/CareLoop/' : '/';
+      var segment = isRepo ? path.replace(/^\/careloop\/?/i, '') : path.replace(/^\//, '');
+      var target = window.location.origin + base + '#/' + segment + window.location.search + window.location.hash;
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body style="font-family: system-ui, -apple-system, sans-serif; text-align: center; padding: 60px 20px; color: #0F5C5A; background: #F8FAF9;">
+  <div style="max-width: 400px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 16px; border: 1px solid #E2E8F0; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <h2 style="margin: 0 0 10px 0;">CareLoop Security Redirect</h2>
+    <p style="color: #64748B; font-size: 0.95rem;">Opening Caregiver Read-Only Pass...</p>
+  </div>
+</body>
+</html>
