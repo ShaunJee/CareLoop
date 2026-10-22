@@ -54,12 +54,17 @@ const domMock = {
     textContent: id.startsWith('data-') ? JSON.stringify(getJson(id)) : '',
     value: '',
     checked: false,
+    dataset: {},
     addEventListener: () => {},
     classList: { add: ()=>{}, remove: ()=>{}, toggle: ()=>{} },
     setAttribute: ()=>{},
     removeAttribute: ()=>{},
-    style: {}
+    style: {},
+    querySelector: () => null,
+    querySelectorAll: () => [],
+    parentElement: null
   }),
+  querySelector: () => null,
   querySelectorAll: () => [],
   addEventListener: () => {},
   readyState: 'complete'
@@ -74,10 +79,15 @@ const sandbox = {
     localStorage: { getItem: () => null, setItem: () => {} }
   },
   document: domMock,
+  location: { hash: '#/today', search: '?test=1' },
   localStorage: { getItem: () => null, setItem: () => {} },
   console: customConsole,
   setTimeout: () => {},
   setInterval: () => {},
+  requestAnimationFrame: (cb) => cb(0),
+  performance: { now: () => 0 },
+  matchMedia: () => ({ matches: false }),
+  addEventListener: () => {},
   URLSearchParams: require('url').URLSearchParams
 };
 // Persona switching & state integrity verification
