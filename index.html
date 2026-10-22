@@ -4211,24 +4211,29 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
               <h3 class="card-title" style="margin: 0; font-size: 1.15rem;">${t('today_tasks')}</h3>
               <p style="font-size: 0.85rem; color: var(--text-muted); margin: 2px 0 0 0;">Check off each dose as you take it. Medication adherence is computed directly into your clinician brief.</p>
             </div>
-            <span class="badge badge-neutral">${parsedPlan.medications.length} Prescribed Meds</span>
+            <span class="badge badge-neutral">${totalDosesCount} Scheduled Doses (${parsedPlan.medications.length} Prescribed Meds)</span>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 10px;">
-            ${parsedPlan.medications.map(med => {
-              const medTime = (med.times && med.times[0]) || '08:00';
-              const doseKey = `d${state.demoDay}|${med.name}|${medTime}`;
-              const isTaken = !!state.dosesTaken[doseKey];
+            ${allScheduledDoses.map(doseItem => {
+              const med = doseItem.med;
+              const medTime = doseItem.time;
+              const doseKey = doseItem.doseKey;
+              const isTaken = doseItem.isTaken;
               const purposeText = getLocalizedMedPurpose(med, state.lang, state.readingLevel);
+              const timeSlotLabel = medTime <= '11:00' ? 'Morning dose' : medTime <= '16:00' ? 'Afternoon dose' : medTime <= '20:30' ? 'Evening dose' : 'Bedtime dose';
+              const freqSub = (med.times && med.times.length > 1)
+                ? `(${escapeHtml(med.frequency)} · ${timeSlotLabel})`
+                : `(${escapeHtml(med.frequency)})`;
 
               return `
                 <div class="med-row" style="background: ${isTaken ? 'var(--status-green-bg)' : 'var(--bg-card)'}; border: 1px solid ${isTaken ? 'var(--status-green-border)' : 'var(--border)'};">
                   <div class="med-info">
                     <span class="badge ${isTaken ? 'badge-green' : 'badge-neutral'}" style="font-size: 0.8rem; font-weight: 700; min-width: 58px; text-align: center;">${medTime}</span>
                     <div class="med-text">
-                      <div style="display: flex; align-items: center; gap: 8px;">
+                      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                         <strong style="font-size: 0.98rem; color: var(--text-main); ${isTaken ? 'text-decoration: line-through; opacity: 0.8;' : ''}">${escapeHtml(med.name.toUpperCase())} ${escapeHtml(med.dose)}</strong>
-                        <span style="font-size: 0.78rem; color: var(--text-muted);">(${escapeHtml(med.frequency)})</span>
+                        <span style="font-size: 0.78rem; color: var(--text-muted);">${freqSub}</span>
                       </div>
                       <p style="font-size: 0.84rem; color: var(--text-muted); margin: 2px 0 0 0; line-height: 1.45; word-break: break-word;">
                         ${escapeHtml(purposeText)} · <em>${escapeHtml(med.foodNote || 'with water')}</em>
@@ -4890,13 +4895,17 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         const missedDoses = (currentCheckin.missedCriticalDoses != null ? currentCheckin.missedCriticalDoses : (dayScript && dayScript.missedCriticalDoses)) || 0;
         
         let takenToday = 0;
+        let totalTodayDoses = 0;
         activeMeds.forEach(m => {
-          const t0 = (m.times && m.times[0]) || '08:00';
-          if (state.dosesTaken[`d${state.demoDay}|${m.name}|${t0}`]) takenToday++;
+          const times = (m.times && m.times.length > 0) ? m.times : ['08:00'];
+          times.forEach(t => {
+            totalTodayDoses++;
+            if (state.dosesTaken[`d${state.demoDay}|${m.name}|${t}`]) takenToday++;
+          });
         });
 
         if (state.demoDay === 0) {
-          adherenceDisplay = takenToday > 0 ? `${Math.round((takenToday / activeMeds.length) * 100)}% (Day 0)` : '100% (Day 0 Baseline)';
+          adherenceDisplay = takenToday > 0 ? `${Math.round((takenToday / (totalTodayDoses || 1)) * 100)}% (Day 0)` : '100% (Day 0 Baseline)';
         } else {
           const effectivePct = Math.max(50, Math.round(((activeMeds.length - missedDoses) / activeMeds.length) * 100));
           adherenceDisplay = `${effectivePct}% (${missedDoses > 0 ? missedDoses + ' missed dose in 48h' : 'optimal streak'})`;
@@ -5435,12 +5444,16 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       // Compute adherence %
       const activeMeds = parsedPlan.medications || [];
       let takenCount = 0;
+      let totalDoseCount = 0;
       activeMeds.forEach(m => {
-        const t0 = (m.times && m.times[0]) || '08:00';
-        if (state.dosesTaken[`d${state.demoDay}|${m.name}|${t0}`]) takenCount++;
+        const times = (m.times && m.times.length > 0) ? m.times : ['08:00'];
+        times.forEach(t => {
+          totalDoseCount++;
+          if (state.dosesTaken[`d${state.demoDay}|${m.name}|${t}`]) takenCount++;
+        });
       });
-      const adherencePct = activeMeds.length > 0
-        ? Math.round((takenCount / activeMeds.length) * 100)
+      const adherencePct = totalDoseCount > 0
+        ? Math.round((takenCount / totalDoseCount) * 100)
         : 100;
 
       return `
@@ -5603,25 +5616,42 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
               </div>
 
               <div style="display: flex; flex-direction: column; gap: 8px;">
-                ${parsedPlan.medications.map(med => {
-                  const medTime = (med.times && med.times[0]) || '08:00';
-                  const isTaken = !!state.dosesTaken[`d${state.demoDay}|${med.name}|${medTime}`];
-                  const medDetails = getMedicationCardDetails(med, 'simple', state.lang);
-                  return `
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: ${isTaken ? 'var(--status-green-bg)' : 'var(--bg-subtle)'}; border: 1px solid ${isTaken ? 'var(--status-green-border)' : 'var(--border)'}; border-radius: var(--radius-sm); gap: 10px;">
-                      <div style="display: flex; align-items: center; gap: 8px;">
-                        <span style="font-size: 1.1rem;">${medDetails.icon}</span>
-                        <div>
-                          <strong style="font-size: 0.92rem; color: var(--text-main);">${escapeHtml(med.name.toUpperCase())} ${escapeHtml(med.dose)}</strong>
-                          <div style="font-size: 0.78rem; color: var(--text-muted);">${escapeHtml(medDetails.category)} · ${medTime}</div>
+                ${(() => {
+                  const allPassDoses = [];
+                  activeMeds.forEach(med => {
+                    const times = (med.times && med.times.length > 0) ? med.times : ['08:00'];
+                    times.forEach(t => {
+                      const doseKey = `d${state.demoDay}|${med.name}|${t}`;
+                      const isTaken = !!state.dosesTaken[doseKey];
+                      allPassDoses.push({ med, time: t, doseKey, isTaken });
+                    });
+                  });
+                  allPassDoses.sort((a, b) => a.time.localeCompare(b.time));
+                  return allPassDoses.map(doseItem => {
+                    const med = doseItem.med;
+                    const medTime = doseItem.time;
+                    const isTaken = doseItem.isTaken;
+                    const medDetails = getMedicationCardDetails(med, 'simple', state.lang);
+                    const timeSlotLabel = medTime <= '11:00' ? 'Morning' : medTime <= '16:00' ? 'Afternoon' : medTime <= '20:30' ? 'Evening' : 'Bedtime';
+                    const freqSub = (med.times && med.times.length > 1)
+                      ? `${escapeHtml(medDetails.category)} · ${medTime} (${escapeHtml(med.frequency)} · ${timeSlotLabel})`
+                      : `${escapeHtml(medDetails.category)} · ${medTime} (${escapeHtml(med.frequency)})`;
+                    return `
+                      <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: ${isTaken ? 'var(--status-green-bg)' : 'var(--bg-subtle)'}; border: 1px solid ${isTaken ? 'var(--status-green-border)' : 'var(--border)'}; border-radius: var(--radius-sm); gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                          <span style="font-size: 1.1rem;">${medDetails.icon}</span>
+                          <div>
+                            <strong style="font-size: 0.92rem; color: var(--text-main);">${escapeHtml(med.name.toUpperCase())} ${escapeHtml(med.dose)}</strong>
+                            <div style="font-size: 0.78rem; color: var(--text-muted);">${freqSub}</div>
+                          </div>
                         </div>
+                        <span class="badge ${isTaken ? 'badge-green' : 'badge-neutral'}" style="font-size: 0.75rem;">
+                          ${isTaken ? 'Taken ✓' : 'Scheduled ⏳'}
+                        </span>
                       </div>
-                      <span class="badge ${isTaken ? 'badge-green' : 'badge-neutral'}" style="font-size: 0.75rem;">
-                        ${isTaken ? 'Taken ✓' : 'Scheduled ⏳'}
-                      </span>
-                    </div>
-                  `;
-                }).join('')}
+                    `;
+                  }).join('');
+                })()}
               </div>
 
               <div style="margin-top: 14px; padding: 10px; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px dashed var(--border); font-size: 0.8rem; color: var(--text-muted); text-align: center;">
