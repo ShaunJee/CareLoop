@@ -381,12 +381,12 @@
 
       <!-- RIGHT COLUMN -->
       <div class="column-stack">
-        <!-- 4. System Architecture: Safety-First Hybrid Model -->
+        <!-- 4. System Architecture: Safety-First Deterministic Model -->
         <div class="arch-strip">
-          <div style="font-weight: 700; font-size: 8.8pt; color: #0C6B68; margin-bottom: 2.5px;">Safety-First Hybrid Architecture</div>
+          <div style="font-weight: 700; font-size: 8.8pt; color: #0C6B68; margin-bottom: 2.5px;">Safety-First Deterministic Architecture</div>
           <div style="font-size: 7.5pt; color: #1D2A29; line-height: 1.33;">
-            <strong>Symbolic NLP & Pluggable BYOK LLM:</strong> Multilingual decoding with optional live BYOK layer (OpenAI, Gemini, Groq, Ollama) for text extraction.<br>
-            <strong>Deterministic Rules Engine:</strong> 100% of risk scoring, drug interaction checks, and emergency alerts run in auditable deterministic code (FDA SaMD Class II aligned).
+            <strong>Deterministic Symbolic NLP:</strong> &lt;5ms entity extraction, medication dose locking, and multilingual decoding with 100% verbatim source provenance.<br>
+            <strong>Deterministic CDS Engine:</strong> 100% of risk scoring, 30-rule drug interaction checks, and emergency alerts run in auditable code (FDA SaMD Class II aligned).
           </div>
         </div>
 
@@ -408,7 +408,7 @@
           <div class="sec-title"><span class="sec-num">4</span> Key Technical Differentiators</div>
           <ul class="clean-list">
             <li><strong>Live Note Sandbox & Presets:</strong> Test clinical NLP live on arbitrary pasted notes or 5 quick presets (Post-MI DAPT, COPD, HFrEF, Ortho, Diabetes).</li>
-            <li><strong>Zero-Dependency & Zero Egress:</strong> Runs 100% client-side. Pluggable BYOK LLM layer strictly isolated by a deterministic safety firewall.</li>
+            <li><strong>Zero-Dependency & Zero Cloud Egress:</strong> Operates 100% offline client-side with zero external API keys, zero network requests, and zero PHI leakage.</li>
             <li><strong>100% Provenance Traceability:</strong> Every care plan recommendation links to verbatim character spans in the original hospital discharge summary.</li>
             <li><strong>Live Verification Engine:</strong> Live streaming benchmark harness: 20 clinical discharge cases (100.0% F1) + 30 deterministic safety rule scenarios.</li>
           </ul>
@@ -418,7 +418,7 @@
         <div class="section-card card-roadmap">
           <div class="sec-title"><span class="sec-num">5</span> Pilot Roadmap & Clinical Impact</div>
           <p style="font-size: 7.4pt; color: #2C3E42; line-height: 1.33; margin-bottom: 3px;">
-            <strong>Phase 1 (Complete):</strong> Zero-dep app with 68 drugs, 30 interactions, 6 languages, live sandbox, clinical presets, BYOK LLM, QR pass, Time Machine, SBAR.
+            <strong>Phase 1 (Complete):</strong> Zero-dep app with 68 drugs, 30 interactions, 6 languages, live sandbox, clinical presets, QR caregiver pass, Time Machine, SBAR.
           </p>
           <p style="font-size: 7.4pt; color: #2C3E42; line-height: 1.33; margin-bottom: 3px;">
             <strong>Phase 2 (Hospital EHR Pilot):</strong> SMART-on-FHIR connector to ingest discharge summaries directly from Epic and Cerner EHR platforms.

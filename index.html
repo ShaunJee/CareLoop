@@ -1412,55 +1412,18 @@
         </button>
       </div>
 
-      <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 12px; border-radius: var(--radius-md); margin-bottom: 16px;">
+      <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 14px; border-radius: var(--radius-md); margin-bottom: 16px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-          <span style="font-weight: 600; font-size: 0.9rem;">Engine Architecture</span>
-          <span id="engine-mode-badge" class="badge badge-green" style="font-size: 0.75rem;">Deterministic Only</span>
+          <span style="font-weight: 600; font-size: 0.9rem;">Clinical Engine Architecture</span>
+          <span id="engine-mode-badge" class="badge badge-green" style="font-size: 0.75rem;">Symbolic CDS Active</span>
         </div>
-        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; cursor: pointer; color: var(--text-main);">
-          <input type="checkbox" id="toggle-llm-mode">
-          Optional LLM Hybrid Mode (Language Layer)
-        </label>
-        <p style="font-size: 0.75rem; color: var(--text-muted); margin: 6px 0 0 0;">
-          Safety Firewall: 100% of risk scoring, drug interaction checks, and emergency alerts always run in deterministic code.
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 10px 0; line-height: 1.45;">
+          <strong>Air-Gapped Privacy:</strong> Operates 100% client-side with zero external API keys required, zero server dependencies, and zero network data egress.
         </p>
-
-        <!-- BYOK Live LLM Settings Panel -->
-        <div id="llm-byok-panel" style="display: none; margin-top: 12px; padding: 12px; background: var(--bg-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border);">
-          <div style="font-weight: 700; font-size: 0.82rem; color: var(--primary); margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
-            <span>🔑</span> Bring-Your-Own-Key (BYOK) Live LLM Layer
-          </div>
-          <div style="margin-bottom: 8px;">
-            <label for="llm-provider-select" style="display: block; font-size: 0.72rem; color: var(--text-muted); margin-bottom: 3px; font-weight: 600;">LLM Provider / Protocol</label>
-            <select id="llm-provider-select" style="width: 100%; padding: 6px 8px; font-size: 0.8rem; border-radius: 4px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main);">
-              <option value="openai">OpenAI (api.openai.com/v1)</option>
-              <option value="gemini">Google AI Studio (Gemini 1.5 Flash)</option>
-              <option value="groq">Groq Cloud (api.groq.com/openai/v1)</option>
-              <option value="ollama">Local Ollama (localhost:11434/v1)</option>
-              <option value="custom">Custom Endpoint</option>
-            </select>
-          </div>
-          <div style="margin-bottom: 8px;">
-            <label for="llm-key-input" style="display: block; font-size: 0.72rem; color: var(--text-muted); margin-bottom: 3px; font-weight: 600;">API Key (Never leaves client browser)</label>
-            <input type="password" id="llm-key-input" placeholder="sk-... / AIzaSy..." style="width: 100%; padding: 6px 8px; font-size: 0.8rem; border-radius: 4px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main);">
-          </div>
-          <div style="margin-bottom: 8px;">
-            <label for="llm-endpoint-input" style="display: block; font-size: 0.72rem; color: var(--text-muted); margin-bottom: 3px; font-weight: 600;">Endpoint URL</label>
-            <input type="text" id="llm-endpoint-input" value="https://api.openai.com/v1/chat/completions" style="width: 100%; padding: 6px 8px; font-size: 0.76rem; border-radius: 4px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main); font-family: monospace;">
-          </div>
-          <div style="margin-bottom: 10px;">
-            <label for="llm-model-input" style="display: block; font-size: 0.72rem; color: var(--text-muted); margin-bottom: 3px; font-weight: 600;">Model Identifier</label>
-            <input type="text" id="llm-model-input" value="gpt-4o-mini" style="width: 100%; padding: 6px 8px; font-size: 0.8rem; border-radius: 4px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main); font-family: monospace;">
-          </div>
-          <div style="display: flex; gap: 8px; align-items: center; justify-content: space-between;">
-            <button type="button" id="save-llm-settings-btn" class="btn btn-primary btn-sm" style="font-size: 0.75rem; padding: 4px 10px;">
-              💾 Save Config
-            </button>
-            <button type="button" id="test-llm-btn" class="btn btn-secondary btn-sm" style="font-size: 0.75rem; padding: 4px 8px;">
-              ⚡ Test Live Ping
-            </button>
-          </div>
-          <div id="llm-test-result" style="font-size: 0.72rem; margin-top: 8px; padding: 6px; border-radius: 4px; display: none;"></div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <span class="badge badge-neutral" style="font-size: 0.72rem;">⚡ &lt;5ms Regex &amp; N-Gram NLP</span>
+          <span class="badge badge-neutral" style="font-size: 0.72rem;">🔒 Zero Cloud Egress</span>
+          <span class="badge badge-neutral" style="font-size: 0.72rem;">🛡️ 30-Rule Safety Matrix</span>
         </div>
       </div>
 
@@ -1649,12 +1612,7 @@
       dosesTaken: {}, // key: "YYYY-MM-DD|drugName|time"
       customCheckins: {}, // key: day -> checkin payload
       notifiedCaregiver: false,
-      settings: {
-        useLlm: false,
-        llmKey: '',
-        llmEndpoint: 'https://api.openai.com/v1/chat/completions',
-        llmModel: 'gpt-4o-mini'
-      }
+      settings: {}
     };
 
     function loadState() {
@@ -4032,7 +3990,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           </div>
 
           <div style="background: var(--bg-subtle); padding: 14px 16px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 16px; font-size: 0.88rem; line-height: 1.55; color: var(--text-main);">
-            <strong style="color: var(--primary);">Clinical Framing for Regulators &amp; Health Systems:</strong> CareLoop implements a <em>Safety-First Hybrid AI Architecture</em> combining Deterministic Clinical Natural Language Processing (Symbolic AI) with an auditable Clinical Decision Support Rules Engine. In acute post-discharge cardiology and nephrology, non-deterministic language models that probabilistically hallucinate dosages or omit drug-drug contraindications are disqualifying safety hazards. Generative AI is strictly isolated to peripheral language translation, while 100% of triage calculations, interaction matrices, and emergency escalations execute in mathematically provable deterministic code.
+            <strong style="color: var(--primary);">Clinical Framing for Regulators &amp; Health Systems:</strong> CareLoop implements a <em>Safety-First Deterministic AI Architecture</em> combining Symbolic Clinical Natural Language Processing with an auditable Clinical Decision Support Rules Engine. In acute post-discharge cardiology and nephrology, non-deterministic cloud language models that probabilistically hallucinate dosages or omit drug-drug contraindications are disqualifying safety hazards. CareLoop runs 100% air-gapped on-device with zero external API keys, zero network egress, and mathematically provable deterministic safety checks.
           </div>
 
           <!-- Comparison Table: Symbolic CDS vs Generative LLMs -->
@@ -4082,9 +4040,9 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
             <div style="padding: 16px; background: var(--bg-subtle); border-radius: var(--radius-md); border: 1px solid var(--border);">
               <div style="font-size: 1.2rem; margin-bottom: 6px;">🛡️</div>
-              <strong style="display: block; margin-bottom: 4px; color: var(--text-main);">1. AI / Rules Boundary</strong>
+              <strong style="display: block; margin-bottom: 4px; color: var(--text-main);">1. Deterministic CDS Architecture</strong>
               <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.45;">
-                The LLM parses and translates language. Deterministic algorithms compute 100% of triage scores and drug-drug interactions. An LLM can NEVER override or suppress an alert.
+                Deterministic symbolic algorithms compute 100% of triage scores, drug-drug contraindications, and entity parsing. Zero external API keys or cloud network requests are required.
               </p>
             </div>
             <div style="padding: 16px; background: var(--bg-subtle); border-radius: var(--radius-md); border: 1px solid var(--border);">
@@ -5208,94 +5166,6 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         if (tmTrack) tmTrack.innerHTML = script.map((d, i) => `<span class="tm-dot ${d.expectedLevel || 'green'} ${i < dayIdx ? 'past' : ''} ${i === dayIdx ? 'now' : ''}" title="${escapeHtml(d.label)}"></span>`).join('<i></i>');
         document.getElementById('tm-day-display').className = `badge ${dayInfo.expectedLevel === 'red' ? 'badge-red' : dayInfo.expectedLevel === 'amber' ? 'badge-amber' : 'badge-green'}`;
         document.getElementById('tm-script-desc').textContent = dayInfo.desc;
-
-        const llmToggle = document.getElementById('toggle-llm-mode');
-        const engineBadge = document.getElementById('engine-mode-badge');
-        const byokPanel = document.getElementById('llm-byok-panel');
-        if (llmToggle && state.settings) {
-          llmToggle.checked = !!state.settings.useLlm;
-          if (byokPanel) byokPanel.style.display = llmToggle.checked ? 'block' : 'none';
-          if (engineBadge) {
-            engineBadge.textContent = llmToggle.checked ? 'LLM Hybrid Active' : 'Deterministic Only';
-            engineBadge.className = 'badge ' + (llmToggle.checked ? 'badge-amber' : 'badge-green');
-          }
-        }
-      }
-
-      const llmToggle = document.getElementById('toggle-llm-mode');
-      const byokPanel = document.getElementById('llm-byok-panel');
-      const providerSelect = document.getElementById('llm-provider-select');
-      const endpointInput = document.getElementById('llm-endpoint-input');
-      const modelInput = document.getElementById('llm-model-input');
-      const keyInput = document.getElementById('llm-key-input');
-      const saveLlmBtn = document.getElementById('save-llm-settings-btn');
-      const testLlmBtn = document.getElementById('test-llm-btn');
-      const testResultEl = document.getElementById('llm-test-result');
-
-      const PROVIDER_DEFAULTS = {
-        openai: { endpoint: 'https://api.openai.com/v1/chat/completions', model: 'gpt-4o-mini' },
-        gemini: { endpoint: 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions', model: 'gemini-1.5-flash' },
-        groq: { endpoint: 'https://api.groq.com/openai/v1/chat/completions', model: 'llama-3.3-70b-versatile' },
-        ollama: { endpoint: 'http://localhost:11434/v1/chat/completions', model: 'llama3' },
-        custom: { endpoint: 'https://api.openai.com/v1/chat/completions', model: 'gpt-4o-mini' }
-      };
-
-      if (providerSelect && endpointInput && modelInput) {
-        providerSelect.addEventListener('change', () => {
-          const cfg = PROVIDER_DEFAULTS[providerSelect.value] || PROVIDER_DEFAULTS.openai;
-          endpointInput.value = cfg.endpoint;
-          modelInput.value = cfg.model;
-        });
-      }
-
-      if (saveLlmBtn) {
-        saveLlmBtn.addEventListener('click', () => {
-          const settings = {
-            ...state.settings,
-            llmProvider: providerSelect ? providerSelect.value : 'openai',
-            llmKey: keyInput ? keyInput.value.trim() : '',
-            llmEndpoint: endpointInput ? endpointInput.value.trim() : '',
-            llmModel: modelInput ? modelInput.value.trim() : ''
-          };
-          updateState({ settings });
-          showToast('LLM BYOK settings saved to client storage!', '💾');
-        });
-      }
-
-      if (testLlmBtn && testResultEl) {
-        testLlmBtn.addEventListener('click', () => {
-          testResultEl.style.display = 'block';
-          testResultEl.style.background = 'var(--bg-card)';
-          testResultEl.style.color = 'var(--text-muted)';
-          testResultEl.style.border = '1px solid var(--border)';
-          testResultEl.innerHTML = 'Connecting to endpoint with system prompt: <em>"Extract medications/diagnoses in JSON. Never alter risk scores."</em>...';
-
-          const model = modelInput ? modelInput.value.trim() : 'gpt-4o-mini';
-
-          // Client-side simulated ping verification
-          setTimeout(() => {
-            testResultEl.style.background = 'var(--status-green-bg)';
-            testResultEl.style.color = 'var(--status-green)';
-            testResultEl.style.border = '1px solid var(--status-green-border)';
-            testResultEl.innerHTML = `<strong>✓ Live Ping Successful!</strong><br><span style="font-size:0.7rem; color:var(--text-main);">Model <code>${escapeHtml(model)}</code> verified. Deterministic rules engine enforces 100% safety guardrails.</span>`;
-            showToast('Live LLM connection verified (Deterministic CDS active)', '⚡');
-          }, 350);
-        });
-      }
-
-      if (llmToggle) {
-        llmToggle.addEventListener('change', () => {
-          const isEnabled = llmToggle.checked;
-          updateState({ settings: { ...state.settings, useLlm: isEnabled } });
-          if (byokPanel) byokPanel.style.display = isEnabled ? 'block' : 'none';
-          const engineBadge = document.getElementById('engine-mode-badge');
-          if (engineBadge) {
-            engineBadge.textContent = isEnabled ? 'LLM Hybrid Active' : 'Deterministic Only';
-            engineBadge.className = 'badge ' + (isEnabled ? 'badge-amber' : 'badge-green');
-          }
-          showToast(isEnabled ? 'LLM Hybrid mode enabled (Language Layer)' : 'Deterministic Safety Mode Active', '⚙️');
-          renderApp();
-        });
       }
 
       if (tmBtn && tmDrawer) {
