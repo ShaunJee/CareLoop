@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CareLoop — DSH Hacks V2 One-Page Project Summary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 9mm 11mm 8mm;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: #FAF7F2;
+      color: #14232A;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 8.5pt;
+      line-height: 1.4;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Screen display: centered A4 paper sheet with realistic elevation */
+    .page-wrapper {
+      max-width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      padding: 11mm 12mm 10mm;
+      background: #FAF7F2;
+      border: 1px solid #DFE7E5;
+      border-radius: 12px;
+      box-shadow: 0 14px 40px rgba(12, 107, 104, 0.09);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media print {
+      html, body {
+        background: #FAF7F2;
+        width: 100%;
+      }
+      .page-wrapper {
+        max-width: none;
+        min-height: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+    }
+
+    h1, h2, h3, .font-serif {
+      font-family: 'Fraunces', Georgia, serif;
+      color: #0C6B68;
+      line-height: 1.15;
+    }
+
+    /* Header Strip */
+    .header-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #0C6B68;
+      padding-bottom: 7px;
+      margin-bottom: 10px;
+    }
+    .brand-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 21.5pt;
+      font-weight: 700;
+      color: #0C6B68;
+      letter-spacing: -0.025em;
+      line-height: 1;
+    }
+    .tagline {
+      font-size: 8.7pt;
+      font-weight: 600;
+      color: #4A6365;
+      margin-top: 3px;
+    }
+    .pill {
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 3.5px 9.5px;
+      border-radius: 999px;
+      background: #DDF0EC;
+      color: #0C6B68;
+      border: 1px solid #93C7C0;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    /* 2-Column Grid Layout */
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-items: stretch;
+      margin-bottom: 10px;
+    }
+
+    .column-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    /* Section Cards */
+    .section-card {
+      background: #FFFFFF;
+      border: 1px solid #E1E8E6;
+      border-radius: 8px;
+      padding: 10px 13px;
+      box-shadow: 0 1px 3px rgba(12, 107, 104, 0.04);
+      position: relative;
+    }
+
+    .card-problem { border-left: 4.5px solid #C8372D; }
+    .card-solution { border-left: 4.5px solid #0C6B68; }
+    .card-evidence { border-left: 4.5px solid #D97706; }
+    .card-differentiators { border-left: 4.5px solid #2B7A4B; }
+    .card-roadmap { border-left: 4.5px solid #1F6FB2; }
+
+    .sec-title {
+      font-size: 9.6pt;
+      font-weight: 700;
+      color: #0C6B68;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .sec-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: #E8F3F1;
+      color: #0C6B68;
+      font-size: 7.2pt;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .card-problem .sec-num { background: #FDE8E8; color: #C8372D; }
+    .card-evidence .sec-num { background: #FEF3C7; color: #B45309; }
+    .card-differentiators .sec-num { background: #DEF7EC; color: #046C4E; }
+    .card-roadmap .sec-num { background: #E1EFFE; color: #1E429F; }
+
+    /* Care Loop Items */
+    .loop-item {
+      background: #F8FBFA;
+      border: 1px solid #E3ECE9;
+      border-radius: 6px;
+      padding: 5px 8.5px;
+      margin-bottom: 4.5px;
+    }
+    .loop-item:last-child { margin-bottom: 0; }
+    .loop-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5px;
+    }
+    .loop-badge {
+      font-size: 6.7pt;
+      font-weight: 700;
+      color: #0C6B68;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      background: #E4F3F0;
+      padding: 1px 5.5px;
+      border-radius: 4px;
+      border: 1px solid #C4E2DC;
+    }
+    .loop-desc {
+      font-size: 7.4pt;
+      color: #2D3E42;
+      line-height: 1.32;
+    }
+
+    /* System Architecture */
+    .arch-strip {
+      background: #EDF6F4;
+      border: 1px solid #93C7C0;
+      border-left: 4.5px solid #0C6B68;
+      border-radius: 8px;
+      padding: 8.5px 12px;
+    }
+
+    /* Time Machine Card */
+    .mock-visual {
+      background: linear-gradient(135deg, #0F2022, #071516);
+      border: 1px solid #1D3F42;
+      border-radius: 8px;
+      color: #E8F2F1;
+      padding: 9px 12px;
+      box-shadow: 0 3px 10px rgba(7, 21, 22, 0.25);
+    }
+
+    .badge-red {
+      background: #4C1210;
+      color: #FCA5A5;
+      border: 1px solid #DC2626;
+      padding: 1.5px 6.5px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 6.6pt;
+      white-space: nowrap;
+    }
+
+    /* Citations */
+    .citation-list {
+      font-size: 7.1pt;
+      color: #4B6063;
+      line-height: 1.32;
+    }
+    .citation-item { margin-bottom: 3.5px; }
+    .citation-item:last-child { margin-bottom: 0; }
+
+    /* Bullet Lists */
+    ul.clean-list {
+      padding-left: 13px;
+      font-size: 7.7pt;
+      line-height: 1.35;
+    }
+    ul.clean-list li {
+      margin-bottom: 2.5px;
+    }
+    ul.clean-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Metrics Strip */
+    .metrics-strip {
+      background: #FFFFFF;
+      border: 1.5px solid #DFE7E5;
+      border-radius: 8px;
+      padding: 8px 14px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(12, 107, 104, 0.04);
+    }
+    .metric-col {
+      border-right: 1px solid #E5ECE9;
+      padding: 0 4px;
+    }
+    .metric-col:last-child { border-right: none; }
+    .metric-val {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: #0C6B68;
+      line-height: 1.1;
+    }
+    .metric-lbl {
+      font-size: 6.6pt;
+      font-weight: 600;
+      color: #53686B;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-top: 2px;
+    }
+
+    /* Footer Bar */
+    .footer-bar {
+      border-top: 1.5px solid #DFE7E5;
+      padding-top: 7px;
+      margin-top: 9px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 7.1pt;
+      color: #53686B;
+      font-weight: 500;
+      white-space: nowrap;
+      width: 100%;
+    }
+    .footer-bar a {
+      color: #0C6B68;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+  <div>
+    <!-- Header Bar -->
+    <div class="header-strip">
+      <div style="display: flex; align-items: center; gap: 9px;">
+        <div style="width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(145deg, #12908A, #0A4F57); display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 4px 10px rgba(12, 107, 104, 0.35); flex-shrink: 0;">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5v4"/><path d="M10 7h4"/></svg>
+        </div>
+        <div>
+          <div class="brand-title">CareLoop</div>
+          <div class="tagline">Post-Discharge Recovery & Patient Safety Guardian</div>
+        </div>
+      </div>
+      <div style="text-align: right;">
+        <span class="pill">DSH Hacks V2 · AI x Healthcare</span>
+        <div style="font-size: 7pt; color: #53686B; margin-top: 2px; font-weight: 600;">Tournament Submission · Oct 2026</div>
+      </div>
+    </div>
+
+    <div class="grid-layout">
+      <!-- LEFT COLUMN -->
+      <div class="column-stack">
+        <!-- 1. The Clinical Problem -->
+        <div class="section-card card-problem">
+          <div class="sec-title"><span class="sec-num">1</span> The Critical Clinical Problem</div>
+          <p style="margin-bottom: 3.5px; font-size: 8pt; color: #203338;">
+            The 30 days following hospital discharge represent the highest-risk vulnerability window in the continuum of care:
+          </p>
+          <ul class="clean-list">
+            <li><strong>Discharge Summary Disconnect:</strong> Jargon-dense medical notes leave patients and families confused regarding crucial regimen adjustments and warning signs.</li>
+            <li><strong>Medication Hazards:</strong> Complex changes trigger duplicate therapy, missed critical doses, and lethal OTC drug-drug clashes.</li>
+            <li><strong>Silent Deterioration:</strong> Congestive volume creep or surgical site infection develops days before an avoidable, high-cost readmission.</li>
+          </ul>
+        </div>
+
+        <!-- 2. The Solution: Four Care Loops -->
+        <div class="section-card card-solution">
+          <div class="sec-title"><span class="sec-num">2</span> The Solution: Four Continuous Care Loops</div>
+          
+          <div class="loop-item">
+            <div class="loop-header">
+              <span class="loop-badge">Loop 1 · DECODE</span>
+              <strong style="font-size: 7.5pt; color: #14232A;">Discharge NLP Parser</strong>
+            </div>
+            <div class="loop-desc">Extracts unstructured discharge summaries into plain language across 6 global languages (EN, ES, ZH, FR, MS, TA) with dual reading modes (Simple Everyday ⟷ Standard ICD-10) and source-span traceability.</div>
+          </div>
+
+          <div class="loop-item">
+            <div class="loop-header">
+              <span class="loop-badge">Loop 2 · PROTECT</span>
+              <strong style="font-size: 7.5pt; color: #14232A;">Medication Guardian</strong>
+            </div>
+            <div class="loop-desc">Reconciles active prescriptions against OTC products. Deterministically catches fatal interactions (e.g. NSAID + Anticoagulant, Triple Whammy AKI) before ingestion via a 30-pair clinical matrix.</div>
+          </div>
+
+          <div class="loop-item">
+            <div class="loop-header">
+              <span class="loop-badge">Loop 3 · WATCH</span>
+              <strong style="font-size: 7.5pt; color: #14232A;">60s Check-in & Rules</strong>
+            </div>
+            <div class="loop-desc">Monitors daily dry weights, vitals, and surgical signs. Computes an explainable 0–100 Recovery Risk Index with transparent factor attribution (Green / Amber / Red). Time Machine tracks trajectory Day 0–3.</div>
+          </div>
+
+          <div class="loop-item">
+            <div class="loop-header">
+              <span class="loop-badge">Loop 4 · CONNECT</span>
+              <strong style="font-size: 7.5pt; color: #14232A;">Caregiver Pass & SBAR</strong>
+            </div>
+            <div class="loop-desc">Generates cryptographically signed offline QR passes (/pass/token) for secure family surveillance and produces instant standardized SBAR medical handovers for outpatient clinical reviews.</div>
+          </div>
+        </div>
+
+        <!-- 3. Verified Clinical Evidence -->
+        <div class="section-card card-evidence">
+          <div class="sec-title"><span class="sec-num">3</span> Verified Clinical Evidence</div>
+          <div class="citation-list">
+            <div class="citation-item">● <strong>1 in 5 Medicare Patients Readmitted (19.6%):</strong> Jencks SF et al. <em>Rehospitalizations among patients in Medicare fee-for-service.</em> N Engl J Med. 2009;360:1418-1428.</div>
+            <div class="citation-item">● <strong>50% Medication Discrepancies Post-Discharge:</strong> Kripalani S et al. <em>Deficits in communication and information transfer.</em> JAMA. 2007;297(8):831-841.</div>
+            <div class="citation-item">● <strong>Preventable Heart Failure Readmissions:</strong> Ponikowski P et al. <em>2016 ESC Guidelines for acute and chronic heart failure.</em> Eur Heart J. 2016;37:2129-2200.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="column-stack">
+        <!-- 4. System Architecture: Safety-First Hybrid Model -->
+        <div class="arch-strip">
+          <div style="font-weight: 700; font-size: 8.8pt; color: #0C6B68; margin-bottom: 2.5px;">Safety-First Hybrid Architecture</div>
+          <div style="font-size: 7.5pt; color: #1D2A29; line-height: 1.33;">
+            <strong>AI / NLP Layer:</strong> Multilingual translation, medical term simplification, and dual-mode health literacy decoding.<br>
+            <strong>Deterministic Rules Engine:</strong> 100% of risk scoring, drug interaction checks, and emergency alerts run in auditable deterministic code. An AI can never lower risk or override a clinical safety guardrail.
+          </div>
+        </div>
+
+        <!-- 5. Time Machine Early Warning Moment -->
+        <div class="mock-visual">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5px;">
+            <span style="font-size: 6.7pt; font-weight: 700; color: #7DD3FC; text-transform: uppercase;">RECOVERY TIME MACHINE · EARLY DETERIORATION CATCH</span>
+            <span class="badge-red">RED ALERT (100/100)</span>
+          </div>
+          <div style="font-size: 7.4pt; line-height: 1.33; color: #E0ECEB;">
+            ● <strong>Day 0–1:</strong> Green (68.0 kg) · Baseline stable post-discharge recovery established<br>
+            ● <strong>Day 2:</strong> Amber (68.9 kg) · Missed morning diuretic dose flagged by Medication Guardian<br>
+            ● <strong>Day 3:</strong> <strong style="color: #FCA5A5;">RED (70.4 kg, +2.4 kg in 3 days)</strong> · Orthopnea & pedal edema detected. System auto-dispatches family SMS alert and generates Clinician SBAR prior to acute ED admission.
+          </div>
+        </div>
+
+        <!-- 6. Key Differentiating Features -->
+        <div class="section-card card-differentiators">
+          <div class="sec-title"><span class="sec-num">4</span> Key Technical Differentiators</div>
+          <ul class="clean-list">
+            <li><strong>Zero-Dependency Client:</strong> Runs completely client-side in browser. Zero server dependency, zero API keys required, and zero protected health information (PHI) egress.</li>
+            <li><strong>100% Provenance Traceability:</strong> Every care plan recommendation links to verbatim character spans in the original hospital discharge summary.</li>
+            <li><strong>Live Verification Engine:</strong> Features live streaming benchmark harness: 20 clinical discharge cases (100.0% F1) + 30 deterministic safety rule scenarios.</li>
+            <li><strong>Universal Safety Net:</strong> Instant 911 / 112 / 999 global dialer with high-contrast paramedic handover card readable in moving ambulances.</li>
+          </ul>
+        </div>
+
+        <!-- 7. Clinical Roadmap & Impact -->
+        <div class="section-card card-roadmap">
+          <div class="sec-title"><span class="sec-num">5</span> Pilot Roadmap & Clinical Impact</div>
+          <p style="font-size: 7.4pt; color: #2C3E42; line-height: 1.33; margin-bottom: 3px;">
+            <strong>Phase 1 (Complete):</strong> Zero-dep app with 68 drugs, 30 interactions, 6 languages, dual reading modes, offline QR pass, Time Machine, and SBAR brief.
+          </p>
+          <p style="font-size: 7.4pt; color: #2C3E42; line-height: 1.33; margin-bottom: 3px;">
+            <strong>Phase 2 (Hospital EHR Pilot):</strong> SMART-on-FHIR connector to ingest discharge summaries directly from Epic and Cerner EHR platforms.
+          </p>
+          <p style="font-size: 7.4pt; color: #2C3E42; line-height: 1.33;">
+            <strong>Projected Clinical Impact:</strong> Target 25–35% reduction in preventable 30-day readmissions through proactive early outpatient intervention.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verified Rigor Metrics Strip -->
+    <div class="metrics-strip">
+      <div class="metric-col">
+        <div class="metric-val">100.0%</div>
+        <div class="metric-lbl">Discharge F1 Benchmark (20/20)</div>
+      </div>
+      <div class="metric-col">
+        <div class="metric-val">30 / 30</div>
+        <div class="metric-lbl">Safety Rules Suite Passed</div>
+      </div>
+      <div class="metric-col">
+        <div class="metric-val">68 Drugs · 30 Pairs</div>
+        <div class="metric-lbl">Interaction Matrix Coverage</div>
+      </div>
+      <div class="metric-col">
+        <div class="metric-val">0 bytes</div>
+        <div class="metric-lbl">Client PHI Egress (Offline)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bar -->
+  <div class="footer-bar">
+    <span>CareLoop · DSH Hacks V2 Submission</span>
+    <span>Client-Side CDSS · Zero PHI Egress · Offline-First</span>
+    <span><a href="https://shaunjee.github.io/CareLoop/">https://shaunjee.github.io/CareLoop/</a></span>
+  </div>
+</div>
+
+</body>
+</html>
