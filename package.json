@@ -1,0 +1,15 @@
+{
+  "name": "careloop",
+  "version": "1.0.0",
+  "description": "CareLoop · Deterministic Post-Discharge Recovery & Safety Guardian",
+  "scripts": {
+    "test": "node test_runner.js",
+    "record": "node helpers/automate_demo.js",
+    "record:fast": "node helpers/automate_demo.js --speed 3 --headless",
+    "record:full": "node helpers/automate_demo.js --scenes all",
+    "record:headless": "node helpers/automate_demo.js --headless"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
+}

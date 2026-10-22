@@ -1014,8 +1014,7 @@
       "name": "Robert Miller",
       "age": 71,
       "gender": "M",
-      "location": "Boston, MA, USA",
-      "language": "en",
+      "location": "Beacon Hill · Boston, MA (USA)",
       "caregiver": "Sarah Miller (Daughter)",
       "caregiverPhone": "+1 (617) 555-0142",
       "clinicPhone": "+1 (617) 555-0199",
@@ -1037,13 +1036,38 @@
         "warningSigns": 7
       }
     },
+    "vance": {
+      "id": "vance",
+      "name": "Johnathan Vance",
+      "age": 64,
+      "gender": "M",
+      "location": "Lincoln Park · Chicago, IL (USA)",
+      "caregiver": "Claire Vance (Spouse)",
+      "caregiverPhone": "+1 (312) 555-0188",
+      "clinicPhone": "+1 (312) 555-0199",
+      "conditionProfiles": ["post_mi", "hypertension", "general"],
+      "baselineWeight": 82.0,
+      "dischargeText": "DISCHARGE SUMMARY\nName: Johnathan Vance   Age: 64M   Ward: Cardiac 4A   LOS: 4 days\nPrincipal Dx: Acute Inferior ST-Elevation Myocardial Infarction (STEMI), s/p Primary PCI to RCA\nSecondary Dx: Essential Hypertension, Dyslipidemia\n\nDISCHARGE MEDICATIONS:\n1. Aspirin 100mg daily (Antiplatelet) - CONTINUED\n2. Ticagrelor 90mg BD (Dual Antiplatelet Therapy) - NEW\n3. Atorvastatin 80mg ON (High-Intensity Statin) - NEW\n4. Ramipril 5mg daily (ACE Inhibitor) - NEW\n5. Bisoprolol 5mg daily (Beta-Blocker) - NEW\nSTOPPED: Ibuprofen 400mg TDS\n\nFOLLOW-UP & ADVICE:\nFollow-up: Cardiac Rehabilitation Clinic in 14 days with repeat ECG.\nWARNING SIGNS: Recurrent chest tightness, diaphoresis, radiating jaw pain, unexplained bruising, hematuria.\nRESTRICTIONS: Strict no heavy lifting > 5kg for 2 weeks. Low sodium heart-healthy diet.",
+      "groundTruth": {
+        "diagnoses": ["Acute Inferior ST-Elevation Myocardial Infarction (STEMI), s/p Primary PCI to RCA", "Essential Hypertension", "Dyslipidemia"],
+        "medications": [
+          {"name": "aspirin", "dose": "100mg", "freq": "daily", "status": "continued"},
+          {"name": "ticagrelor", "dose": "90mg", "freq": "BD", "status": "new"},
+          {"name": "atorvastatin", "dose": "80mg", "freq": "ON", "status": "new"},
+          {"name": "ramipril", "dose": "5mg", "freq": "daily", "status": "new"},
+          {"name": "bisoprolol", "dose": "5mg", "freq": "daily", "status": "new"}
+        ],
+        "stopped": ["ibuprofen"],
+        "appointments": 1,
+        "warningSigns": 5
+      }
+    },
     "ahmad": {
       "id": "ahmad",
       "name": "Ahmad bin Hassan",
       "age": 72,
       "gender": "M",
-      "location": "Kuala Lumpur, Malaysia",
-      "language": "ms",
+      "location": "Kampung Bharu · Kuala Lumpur (Malaysia)",
       "caregiver": "Aisyah (Daughter)",
       "caregiverPhone": "+60 12-345 6789",
       "clinicPhone": "+60 3-2615 5555",
@@ -1070,8 +1094,7 @@
       "name": "Tan Mei Ling",
       "age": 68,
       "gender": "F",
-      "location": "Penang, Malaysia",
-      "language": "zh",
+      "location": "Gurney Drive · George Town, Penang (Malaysia)",
       "caregiver": "Kelvin Tan (Son)",
       "caregiverPhone": "+60 17-889 1234",
       "clinicPhone": "+60 4-222 5555",
@@ -1098,8 +1121,7 @@
       "name": "Priya a/p Govindasamy",
       "age": 54,
       "gender": "F",
-      "location": "Johor Bahru, Malaysia",
-      "language": "ta",
+      "location": "Danga Bay · Johor Bahru, Johor (Malaysia)",
       "caregiver": "Suresh (Husband)",
       "caregiverPhone": "+60 19-456 7890",
       "clinicPhone": "+60 7-225 7000",
@@ -1275,39 +1297,776 @@
   </script>
 
     <script id="data-i18n" type="application/json">
-  {
-    "greet_morning": {"en": "Good morning,", "es": "Buenos días,", "zh": "早上好，", "fr": "Bonjour,", "ms": "Selamat pagi,", "ta": "காலை வணக்கம்,"},
-    "greet_afternoon": {"en": "Good afternoon,", "es": "Buenas tardes,", "zh": "下午好，", "fr": "Bon après-midi,", "ms": "Selamat petang,", "ta": "மதிய வணக்கம்,"},
-    "greet_evening": {"en": "Good evening,", "es": "Buenas noches,", "zh": "晚上好，", "fr": "Bonsoir,", "ms": "Selamat malam,", "ta": "மாலை வணக்கம்,"},
-    "hero_day": {"en": "Day {n} after discharge", "es": "Día {n} tras el alta", "zh": "出院第 {n} 天", "fr": "Jour {n} après la sortie", "ms": "Hari {n} selepas discaj", "ta": "வெளியேறிய {n}-ஆம் நாள்"},
-    "hero_green": {"en": "Vitals and medication adherence are in a safe range. Keep up your routine.", "es": "Tus signos vitales y la toma de medicamentos están en rango seguro. Sigue con tu rutina.", "zh": "生命体征和用药依从性均在安全范围内，请保持当前作息。", "fr": "Vos constantes et la prise de vos médicaments sont dans la zone de sécurité. Poursuivez votre routine.", "ms": "Tanda vital dan pematuhan ubat berada dalam julat selamat. Teruskan rutin anda.", "ta": "உங்கள் உடல் அளவீடுகளும் மருந்து உட்கொள்ளலும் பாதுகாப்பான வரம்பில் உள்ளன. வழக்கத்தைத் தொடருங்கள்."},
-    "hero_amber": {"en": "Your readings have shifted. Please contact your clinic or care coordinator today.", "es": "Tus mediciones han cambiado. Contacta hoy a tu clínica o coordinador de cuidados.", "zh": "您的指标出现变化，请今天联系诊所或护理协调员。", "fr": "Vos mesures ont changé. Contactez votre clinique ou coordinateur de soins aujourd’hui.", "ms": "Bacaan anda telah berubah. Sila hubungi klinik atau penyelaras penjagaan anda hari ini.", "ta": "உங்கள் அளவீடுகள் மாறியுள்ளன. இன்றே உங்கள் மருத்துவமனை அல்லது பராமரிப்பு ஒருங்கிணைப்பாளரைத் தொடர்பு கொள்ளுங்கள்."},
-    "hero_red": {"en": "Urgent safety alert. Several high-risk signs were detected. Seek medical review now.", "es": "Alerta urgente de seguridad. Se detectaron varios signos de alto riesgo. Busca atención médica ahora.", "zh": "紧急安全警报：检测到多项高风险迹象，请立即就医。", "fr": "Alerte de sécurité urgente. Plusieurs signes à haut risque ont été détectés. Consultez un médecin maintenant.", "ms": "Amaran keselamatan segera. Beberapa tanda berisiko tinggi dikesan. Dapatkan rawatan perubatan sekarang.", "ta": "அவசர பாதுகாப்பு எச்சரிக்கை. பல அதிக ஆபத்து அறிகுறிகள் கண்டறியப்பட்டன. உடனடியாக மருத்துவ உதவியை நாடுங்கள்."},
-    "risk_index": {"en": "Risk index", "es": "Índice de riesgo", "zh": "风险指数", "fr": "Indice de risque", "ms": "Indeks risiko", "ta": "ஆபத்து குறியீடு"},
-    "tm_label": {"en": "Time Machine", "es": "Máquina del tiempo", "zh": "时光机", "fr": "Machine à remonter le temps", "ms": "Mesin Masa", "ta": "காலப் பயணம்"},
-    "peek_title": {"en": "From the discharge summary", "es": "Del resumen de alta", "zh": "出院小结原文", "fr": "Extrait du compte rendu de sortie", "ms": "Daripada ringkasan discaj", "ta": "வெளியேற்ற சுருக்கத்திலிருந்து"},
-    "app_title": {"en": "CareLoop", "es": "CareLoop", "zh": "CareLoop", "fr": "CareLoop", "ms": "CareLoop", "ta": "CareLoop"},
-    "tagline": {"en": "Safe Post-Discharge Recovery", "es": "Recuperación Post-Hospitalaria Segura", "zh": "安全的出院康复监护", "fr": "Rétablissement Post-Hospitalisation Sécurisé", "ms": "Pemulihan Selamat Selepas Discaj", "ta": "பாதுகாப்பான மீட்பு பராமரிப்பு"},
-    "nav_today": {"en": "Today", "es": "Hoy", "zh": "今日概况", "fr": "Aujourd'hui", "ms": "Hari Ini", "ta": "இன்று"},
-    "nav_plan": {"en": "Care Plan", "es": "Plan de Cuidados", "zh": "康复方案", "fr": "Plan de Soins", "ms": "Pelan Rawatan", "ta": "சிகிச்சை திட்டம்"},
-    "nav_checkin": {"en": "Check-in", "es": "Registro Diario", "zh": "每日打卡", "fr": "Bilan Quotidien", "ms": "Pemeriksaan", "ta": "பரிசோதனை"},
-    "nav_circle": {"en": "Care Circle", "es": "Círculo Familiar", "zh": "亲友守护", "fr": "Cercle de Proches", "ms": "Keluarga", "ta": "குடும்ப வட்டம்"},
-    "nav_clinician": {"en": "Clinician Brief", "es": "Informe Clínico", "zh": "临床简报", "fr": "Fiche Clinique", "ms": "Ringkasan Doktor", "ta": "மருத்துவ அறிக்கை"},
-    "nav_trust": {"en": "Trust & Safety", "es": "Seguridad y Confianza", "zh": "安全与可信度", "fr": "Sécurité & Transparence", "ms": "Ketelusan & Keselamatan", "ta": "பாதுகாப்பு & நம்பிக்கை"},
-    "unwell_button": {"en": "I Feel Unwell", "es": "No Me Siento Bien", "zh": "我感觉不舒服", "fr": "Je Ne Me Sens Pas Bien", "ms": "Saya Rasa Tak Sihat", "ta": "உடல்நிலை சரியில்லை"},
-    "level_green": {"en": "On Track", "es": "En Buen Camino", "zh": "恢复良好", "fr": "En Bonne Voie", "ms": "Dalam Kawalan", "ta": "நலமாக உள்ளது"},
-    "level_amber": {"en": "Call Clinic Today", "es": "Llamar a la Clínica Hoy", "zh": "建议今日联系诊所", "fr": "Appeler la Clinique Aujourd'hui", "ms": "Hubungi Klinik Hari Ini", "ta": "இன்றே மருத்துவரை அழைக்கவும்"},
-    "level_red": {"en": "Get Help Now", "es": "Obtener Ayuda Urgente", "zh": "请立即寻求急救", "fr": "Urgence Médicale Immédiate", "ms": "Dapatkan Bantuan Segera", "ta": "உடனடி உதவி தேவை"},
-    "all_doses_taken": {"en": "All Doses Taken Today", "es": "Todas las dosis tomadas hoy", "zh": "今日药物已全部服用完毕", "fr": "Toutes les doses sont prises aujourd'hui", "ms": "Semua dos ubat hari ini telah diambil", "ta": "இன்றைய மருந்துகள் எடுக்கப்பட்டன"},
-    "all_doses_msg": {"en": "All {n} prescribed doses completed. Adherence logged to your doctor's brief.", "es": "Se completaron las {n} dosis recetadas. Registro de adherencia enviado al informe médico.", "zh": "已完成全部 {n} 剂处方药物，依从性记录已同步至临床简报。", "fr": "Les {n} doses prescrites sont prises. Observance enregistrée sur la fiche médicale.", "ms": "Semua {n} dos yang dipreskripsikan selesai. Pematuhan direkodkan ke ringkasan doktor.", "ta": "பரிந்துரைக்கப்பட்ட {n} மருந்துகளும் முடிக்கப்பட்டன."},
-    "next_dose": {"en": "Next Medication", "es": "Próximo Medicamento", "zh": "下一剂药物", "fr": "Prochain Médicament", "ms": "Ubat Seterusnya", "ta": "அடுத்த மருந்து"},
-    "mark_taken": {"en": "Mark as Taken", "es": "Marcar como Tomado", "zh": "标记已服用", "fr": "Marquer comme Pris", "ms": "Telah Diambil", "ta": "எடுத்துக்கொண்டேன்"},
-    "dose_taken": {"en": "Taken", "es": "Tomado", "zh": "已服用", "fr": "Pris", "ms": "Selesai", "ta": "முடிந்தது"},
-    "today_tasks": {"en": "Today's Recovery Routine", "es": "Rutina de Recuperación", "zh": "今日康复事项", "fr": "Programme du Jour", "ms": "Rutin Pemulihan Hari Ini", "ta": "இன்றைய பணிகள்"},
-    "checkin_prompt": {"en": "60-Second Daily Check-in", "es": "Chequeo Diario de 60 Segundos", "zh": "60秒日常身体检查", "fr": "Bilan de 60 Secondes", "ms": "Pemeriksaan Harian 60-Saat", "ta": "60 வினாடி பரிசோதனை"},
-    "reading_simple": {"en": "Simple (Everyday)", "es": "Sencillo (Cotidiano)", "zh": "通俗易懂 (患者语言)", "fr": "Simple (Quotidien)", "ms": "Mudah (Harian)", "ta": "எளிமையான"},
-    "reading_standard": {"en": "Standard (Clinical)", "es": "Estándar (Clínico)", "zh": "标准医学 (专业术语)", "fr": "Standard (Clinique)", "ms": "Standard (Klinikal)", "ta": "நிலையான"}
+{
+  "greet_morning": {
+    "en": "Good morning,",
+    "es": "Buenos días,",
+    "zh": "早上好，",
+    "fr": "Bonjour,",
+    "ms": "Selamat pagi,",
+    "ta": "காலை வணக்கம்,"
+  },
+  "greet_afternoon": {
+    "en": "Good afternoon,",
+    "es": "Buenas tardes,",
+    "zh": "下午好，",
+    "fr": "Bon après-midi,",
+    "ms": "Selamat petang,",
+    "ta": "மதிய வணக்கம்,"
+  },
+  "greet_evening": {
+    "en": "Good evening,",
+    "es": "Buenas noches,",
+    "zh": "晚上好，",
+    "fr": "Bonsoir,",
+    "ms": "Selamat malam,",
+    "ta": "மாலை வணக்கம்,"
+  },
+  "hero_day": {
+    "en": "Day {n} after discharge",
+    "es": "Día {n} tras el alta",
+    "zh": "出院第 {n} 天",
+    "fr": "Jour {n} après la sortie",
+    "ms": "Hari {n} selepas discaj",
+    "ta": "வெளியேறிய {n}-ஆம் நாள்"
+  },
+  "hero_green": {
+    "en": "Vitals and medication adherence are in a safe range. Keep up your routine.",
+    "es": "Tus signos vitales y la toma de medicamentos están en rango seguro. Sigue con tu rutina.",
+    "zh": "生命体征和用药依从性均在安全范围内，请保持当前作息。",
+    "fr": "Vos constantes et la prise de vos médicaments sont dans la zone de sécurité. Poursuivez votre routine.",
+    "ms": "Tanda vital dan pematuhan ubat berada dalam julat selamat. Teruskan rutin anda.",
+    "ta": "உங்கள் உடல் அளவீடுகளும் மருந்து உட்கொள்ளலும் பாதுகாப்பான வரம்பில் உள்ளன. வழக்கத்தைத் தொடருங்கள்."
+  },
+  "hero_amber": {
+    "en": "Your readings have shifted. Please contact your clinic or care coordinator today.",
+    "es": "Tus mediciones han cambiado. Contacta hoy a tu clínica o coordinador de cuidados.",
+    "zh": "您的指标出现变化，请今天联系诊所或护理协调员。",
+    "fr": "Vos mesures ont changé. Contactez votre clinique ou coordinateur de soins aujourd’hui.",
+    "ms": "Bacaan anda telah berubah. Sila hubungi klinik atau penyelaras penjagaan anda hari ini.",
+    "ta": "உங்கள் அளவீடுகள் மாறியுள்ளன. இன்றே உங்கள் மருத்துவமனை அல்லது பராமரிப்பு ஒருங்கிணைப்பாளரைத் தொடர்பு கொள்ளுங்கள்."
+  },
+  "hero_red": {
+    "en": "Urgent safety alert. Several high-risk signs were detected. Seek medical review now.",
+    "es": "Alerta urgente de seguridad. Se detectaron varios signos de alto riesgo. Busca atención médica ahora.",
+    "zh": "紧急安全警报：检测到多项高风险迹象，请立即就医。",
+    "fr": "Alerte de sécurité urgente. Plusieurs signes à haut risque ont été détectés. Consultez un médecin maintenant.",
+    "ms": "Amaran keselamatan segera. Beberapa tanda berisiko tinggi dikesan. Dapatkan rawatan perubatan sekarang.",
+    "ta": "அவசர பாதுகாப்பு எச்சரிக்கை. பல அதிக ஆபத்து அறிகுறிகள் கண்டறியப்பட்டன. உடனடியாக மருத்துவ உதவியை நாடுங்கள்."
+  },
+  "risk_index": {
+    "en": "Risk index",
+    "es": "Índice de riesgo",
+    "zh": "风险指数",
+    "fr": "Indice de risque",
+    "ms": "Indeks risiko",
+    "ta": "ஆபத்து குறியீடு"
+  },
+  "tm_label": {
+    "en": "Time Machine",
+    "es": "Máquina del tiempo",
+    "zh": "时光机",
+    "fr": "Machine à remonter le temps",
+    "ms": "Mesin Masa",
+    "ta": "காலப் பயணம்"
+  },
+  "peek_title": {
+    "en": "From the discharge summary",
+    "es": "Del resumen de alta",
+    "zh": "出院小结原文",
+    "fr": "Extrait du compte rendu de sortie",
+    "ms": "Daripada ringkasan discaj",
+    "ta": "வெளியேற்ற சுருக்கத்திலிருந்து"
+  },
+  "app_title": {
+    "en": "CareLoop",
+    "es": "CareLoop",
+    "zh": "CareLoop",
+    "fr": "CareLoop",
+    "ms": "CareLoop",
+    "ta": "CareLoop"
+  },
+  "tagline": {
+    "en": "Safe Post-Discharge Recovery",
+    "es": "Recuperación Post-Hospitalaria Segura",
+    "zh": "安全的出院康复监护",
+    "fr": "Rétablissement Post-Hospitalisation Sécurisé",
+    "ms": "Pemulihan Selamat Selepas Discaj",
+    "ta": "பாதுகாப்பான மீட்பு பராமரிப்பு"
+  },
+  "nav_today": {
+    "en": "Today",
+    "es": "Hoy",
+    "zh": "今日概况",
+    "fr": "Aujourd'hui",
+    "ms": "Hari Ini",
+    "ta": "இன்று"
+  },
+  "nav_plan": {
+    "en": "Care Plan",
+    "es": "Plan de Cuidados",
+    "zh": "康复方案",
+    "fr": "Plan de Soins",
+    "ms": "Pelan Rawatan",
+    "ta": "சிகிச்சை திட்டம்"
+  },
+  "nav_checkin": {
+    "en": "Check-in",
+    "es": "Registro Diario",
+    "zh": "每日打卡",
+    "fr": "Bilan Quotidien",
+    "ms": "Pemeriksaan",
+    "ta": "பரிசோதனை"
+  },
+  "nav_circle": {
+    "en": "Care Circle",
+    "es": "Círculo Familiar",
+    "zh": "亲友守护",
+    "fr": "Cercle de Proches",
+    "ms": "Keluarga",
+    "ta": "குடும்ப வட்டம்"
+  },
+  "nav_clinician": {
+    "en": "Clinician Brief",
+    "es": "Informe Clínico",
+    "zh": "临床简报",
+    "fr": "Fiche Clinique",
+    "ms": "Ringkasan Doktor",
+    "ta": "மருத்துவ அறிக்கை"
+  },
+  "nav_trust": {
+    "en": "Trust & Safety",
+    "es": "Seguridad y Confianza",
+    "zh": "安全与可信度",
+    "fr": "Sécurité & Transparence",
+    "ms": "Ketelusan & Keselamatan",
+    "ta": "பாதுகாப்பு & நம்பிக்கை"
+  },
+  "unwell_button": {
+    "en": "I Feel Unwell",
+    "es": "No Me Siento Bien",
+    "zh": "我感觉不舒服",
+    "fr": "Je Ne Me Sens Pas Bien",
+    "ms": "Saya Rasa Tak Sihat",
+    "ta": "உடல்நிலை சரியில்லை"
+  },
+  "level_green": {
+    "en": "On Track",
+    "es": "En Buen Camino",
+    "zh": "恢复良好",
+    "fr": "En Bonne Voie",
+    "ms": "Dalam Kawalan",
+    "ta": "நலமாக உள்ளது"
+  },
+  "level_amber": {
+    "en": "Call Clinic Today",
+    "es": "Llamar a la Clínica Hoy",
+    "zh": "建议今日联系诊所",
+    "fr": "Appeler la Clinique Aujourd'hui",
+    "ms": "Hubungi Klinik Hari Ini",
+    "ta": "இன்றே மருத்துவரை அழைக்கவும்"
+  },
+  "level_red": {
+    "en": "Get Help Now",
+    "es": "Obtener Ayuda Urgente",
+    "zh": "请立即寻求急救",
+    "fr": "Urgence Médicale Immédiate",
+    "ms": "Dapatkan Bantuan Segera",
+    "ta": "உடனடி உதவி தேவை"
+  },
+  "all_doses_taken": {
+    "en": "All Doses Taken Today",
+    "es": "Todas las dosis tomadas hoy",
+    "zh": "今日药物已全部服用完毕",
+    "fr": "Toutes les doses sont prises aujourd'hui",
+    "ms": "Semua dos ubat hari ini telah diambil",
+    "ta": "இன்றைய மருந்துகள் எடுக்கப்பட்டன"
+  },
+  "all_doses_msg": {
+    "en": "All {n} prescribed doses completed. Adherence logged to your doctor's brief.",
+    "es": "Se completaron las {n} dosis recetadas. Registro de adherencia enviado al informe médico.",
+    "zh": "已完成全部 {n} 剂处方药物，依从性记录已同步至临床简报。",
+    "fr": "Les {n} doses prescrites sont prises. Observance enregistrée sur la fiche médicale.",
+    "ms": "Semua {n} dos yang dipreskripsikan selesai. Pematuhan direkodkan ke ringkasan doktor.",
+    "ta": "பரிந்துரைக்கப்பட்ட {n} மருந்துகளும் முடிக்கப்பட்டன."
+  },
+  "next_dose": {
+    "en": "Next Medication",
+    "es": "Próximo Medicamento",
+    "zh": "下一剂药物",
+    "fr": "Prochain Médicament",
+    "ms": "Ubat Seterusnya",
+    "ta": "அடுத்த மருந்து"
+  },
+  "mark_taken": {
+    "en": "Mark as Taken",
+    "es": "Marcar como Tomado",
+    "zh": "标记已服用",
+    "fr": "Marquer comme Pris",
+    "ms": "Telah Diambil",
+    "ta": "எடுத்துக்கொண்டேன்"
+  },
+  "dose_taken": {
+    "en": "Taken",
+    "es": "Tomado",
+    "zh": "已服用",
+    "fr": "Pris",
+    "ms": "Selesai",
+    "ta": "முடிந்தது"
+  },
+  "today_tasks": {
+    "en": "Today's Recovery Routine",
+    "es": "Rutina de Recuperación",
+    "zh": "今日康复事项",
+    "fr": "Programme du Jour",
+    "ms": "Rutin Pemulihan Hari Ini",
+    "ta": "இன்றைய பணிகள்"
+  },
+  "checkin_prompt": {
+    "en": "60-Second Daily Check-in",
+    "es": "Chequeo Diario de 60 Segundos",
+    "zh": "60秒日常身体检查",
+    "fr": "Bilan de 60 Secondes",
+    "ms": "Pemeriksaan Harian 60-Saat",
+    "ta": "60 வினாடி பரிசோதனை"
+  },
+  "reading_simple": {
+    "en": "Simple (Everyday)",
+    "es": "Sencillo (Cotidiano)",
+    "zh": "通俗易懂 (患者语言)",
+    "fr": "Simple (Quotidien)",
+    "ms": "Mudah (Harian)",
+    "ta": "எளிமையான"
+  },
+  "reading_standard": {
+    "en": "Standard (Clinical)",
+    "es": "Estándar (Clínico)",
+    "zh": "标准医学 (专业术语)",
+    "fr": "Standard (Clinique)",
+    "ms": "Standard (Klinikal)",
+    "ta": "நிலையான"
+  },
+  "plan_title": {
+    "en": "Decoded Care Plan",
+    "zh": "出院康复解析方案",
+    "ms": "Pelan Pemulihan Dinyahkod",
+    "es": "Plan de Cuidados Decodificado",
+    "fr": "Plan de Soins Décodé",
+    "ta": "புரிந்துகொள்ளப்பட்ட சிகிச்சை திட்டம்"
+  },
+  "plan_subtitle": {
+    "en": "Structured plain-language instructions extracted with source-span traceability.",
+    "zh": "结构化通俗语言说明，具备100%原文溯源。",
+    "ms": "Arahan bahasa mudah berstruktur diekstrak dengan kebolehkesanan teks asal.",
+    "es": "Instrucciones estructuradas en lenguaje claro con trazabilidad.",
+    "fr": "Instructions claires et structurées avec traçabilité vers le document source.",
+    "ta": "மூல ஆவணத்துடன் இணைக்கப்பட்ட எளிய மொழி வழிமுறைகள்."
+  },
+  "add_med_btn": {
+    "en": "${t('add_med_btn')}",
+    "zh": "添加非处方药 / 冲突检测",
+    "ms": "Tambah Ubat / Semakan Konflik",
+    "es": "Añadir Medicamento / Ver Interacción",
+    "fr": "Ajouter Médicament / Vérifier Interactions",
+    "ta": "மருந்து சேர்க்க / சோதனை"
+  },
+  "mode_simple_title": {
+    "en": "${t('mode_simple_title')}",
+    "zh": "阅读模式：通俗易懂（确定性符号NLP · 患者语言转换）",
+    "ms": "Mod Bacaan: Mudah (NLP Simbolik · Terjemahan Pesakit)",
+    "es": "Modo de Lectura: Sencillo (NLP Determinista · Traducción al Paciente)",
+    "fr": "Mode de Lecture: Simple (NLP Symbolique Déterministe · Vulgarisation Patient)",
+    "ta": "படிக்கும் முறை: எளிய முறை (நோயாளி விளக்கம்)"
+  },
+  "mode_simple_desc": {
+    "en": "${t('mode_simple_desc')}",
+    "zh": "出院医嘱转化为小学高年级易懂语言，提供清晰的日常服药作息与自我护理指引，具备100%病历原文溯源。",
+    "ms": "Arahan discaj hospital dinyahkodkan kepada bahasa mudah yang jelas untuk pesakit dan keluarga dengan kebolehkesanan penuh.",
+    "es": "Instrucciones de alta traducidas a lenguaje sencillo y rutinas diarias claras para pacientes y familias con trazabilidad total.",
+    "fr": "Instructions de sortie traduites en langage clair et conseils quotidiens d'autosoins pour le patient et sa famille.",
+    "ta": "மருத்துவமனை வெளியேற்ற குறிப்புகள் எளிதாகப் புரியும் மொழியில் விளக்கப்பட்டுள்ளன."
+  },
+  "mode_standard_title": {
+    "en": "${t('mode_standard_title')}",
+    "zh": "阅读模式：标准医学（符号临床专家系统 · ICD-10与指南规范）",
+    "ms": "Mod Bacaan: Standard (Sistem Pakar Klinikal · ICD-10 & GDMT)",
+    "es": "Modo de Lectura: Estándar (Sistema Experto Clínico · CIE-10 y GDMT)",
+    "fr": "Mode de Lecture: Standard (Système Expert Clinique · CIM-10 & GDMT)",
+    "ta": "படிக்கும் முறை: நிலையான மருத்துவ முறை"
+  },
+  "mode_standard_desc": {
+    "en": "${t('mode_standard_desc')}",
+    "zh": "确定性临床决策支持系统（CDSS），展示标准ICD-10诊断术语、药理分类、作用机制、指南靶向剂量及生化复查指标。",
+    "ms": "Sistem Sokongan Keputusan Klinikal (CDSS) memaparkan tatanama diagnostik ICD-10, kelas farmakologi, mekanisma tindakan, dan sasaran GDMT.",
+    "es": "Sistema de Apoyo a Decisiones Clínicas (CDSS) que muestra nomenclatura CIE-10, clases farmacológicas y objetivos GDMT.",
+    "fr": "Système d'Aide à la Décision Clinique (SADC) affichant la nomenclature CIM-10, classes pharmacologiques et cibles GDMT.",
+    "ta": "மருத்துவ வழிகாட்டுதல்கள் மற்றும் மருந்தியல் விளக்கங்கள்."
+  },
+  "badge_patient_view": {
+    "en": "${t('badge_patient_view')}",
+    "zh": "生效中 · 患者与家属视图",
+    "ms": "Aktif · Pandangan Pesakit & Keluarga",
+    "es": "Activo · Vista de Paciente y Familia",
+    "fr": "Actif · Vue Patient & Famille",
+    "ta": "நோயாளி மற்றும் குடும்ப பார்வை"
+  },
+  "badge_clinician_view": {
+    "en": "${t('badge_clinician_view')}",
+    "zh": "生效中 · 临床医生与专科视图",
+    "ms": "Aktif · Pandangan Doktor & Pakar",
+    "es": "Activo · Vista de Médico y Especialista",
+    "fr": "Actif · Vue Clinicien & Spécialiste",
+    "ta": "மருத்துவர் பார்வை"
+  },
+  "med_guardian_title": {
+    "en": "Medication Guardian Alerts",
+    "zh": "用药安全守护警报",
+    "ms": "Amaran Keselamatan Ubat",
+    "es": "Alertas del Guardián de Medicación",
+    "fr": "Alertes de Sécurité Médicamenteuse",
+    "ta": "மருந்து எச்சரிக்கைகள்"
+  },
+  "clinical_hazard": {
+    "en": "Clinical Hazard:",
+    "zh": "临床风险：",
+    "ms": "Bahaya Klinikal:",
+    "es": "Riesgo Clínico:",
+    "fr": "Risque Clinique:",
+    "ta": "மருத்துவ ஆபத்து:"
+  },
+  "action_required": {
+    "en": "Action Required:",
+    "zh": "处置建议：",
+    "ms": "Tindakan Diperlukan:",
+    "es": "Acción Requerida:",
+    "fr": "Action Requise:",
+    "ta": "தேவையான நடவடிக்கை:"
+  },
+  "hospital_doc_title": {
+    "en": "Hospital Discharge Document",
+    "zh": "出院小结原文",
+    "ms": "Dokumen Discaj Hospital",
+    "es": "Documento de Alta Hospitalaria",
+    "fr": "Compte Rendu d'Hospitalisation",
+    "ta": "மருத்துவமனை வெளியேற்ற ஆவணம்"
+  },
+  "hospital_doc_hint": {
+    "en": "Hover on any card on the right to trace verbatim spans, or click \"Edit / Paste\" to type arbitrary medications and test our live Clinical NLP engine.",
+    "zh": "悬停右侧任意卡片可高亮溯源原文对应句段，或点击“编辑/粘贴”输入任意医嘱测试临床NLP引擎。",
+    "ms": "Layarkan kursor pada kad di sebelah kanan untuk menjejak teks asal, atau klik \"Edit/Tampal\" untuk menguji enjin NLP klinikal.",
+    "es": "Pase el cursor sobre cualquier tarjeta para rastrear el texto original, o haga clic en \"Editar/Pegar\" para probar el motor NLP.",
+    "fr": "Survolez une carte pour surligner le texte source, ou cliquez sur \"Modifier/Coller\" pour tester le moteur NLP.",
+    "ta": "வலதுபுற அட்டைகளை சுட்டி மூல ஆவணத்தின் வரிகளைப் பார்க்கலாம்."
+  },
+  "edit_custom_note": {
+    "en": "Edit / Paste Custom Note",
+    "zh": "编辑 / 粘贴自定义病历",
+    "ms": "Edit / Tampal Nota Tersuai",
+    "es": "Editar / Pegar Nota Personalizada",
+    "fr": "Modifier / Coller Note Personnalisée",
+    "ta": "குறிப்பை திருத்த / ஒட்ட"
+  },
+  "reparse_doc": {
+    "en": "Re-Parse Live",
+    "zh": "实时重新解析",
+    "ms": "Hurai Semula Langsung",
+    "es": "Volver a Analizar en Vivo",
+    "fr": "Ré-analyser en Direct",
+    "ta": "மீண்டும் பகுப்பாய்வு செய்"
+  },
+  "reset_doc": {
+    "en": "Reset Original",
+    "zh": "恢复原文",
+    "ms": "Tetapkan Semula Asal",
+    "es": "Restablecer Original",
+    "fr": "Réinitialiser l'Original",
+    "ta": "மீட்டமை"
+  },
+  "quick_scenarios": {
+    "en": "${t('quick_scenarios')}",
+    "zh": "快速临床场景预设：",
+    "ms": "Senario Klinikal Pantas:",
+    "es": "Escenarios Clínicos Rápidos:",
+    "fr": "Scénarios Cliniques Rapides:",
+    "ta": "விரைவு மருத்துவ காட்சிகள்:"
+  },
+  "conditions_simple_title": {
+    "en": "Medical Conditions (Plain Language)",
+    "zh": "健康状况与诊断（通俗易懂）",
+    "ms": "Keadaan Kesihatan (Bahasa Mudah)",
+    "es": "Condiciones Médicas (Lenguaje Claro)",
+    "fr": "Problèmes Médicaux (Langage Clair)",
+    "ta": "மருத்துவ நிலைமைகள் (எளிய மொழி)"
+  },
+  "conditions_standard_title": {
+    "en": "ICD-10 Diagnostic Evaluation & Pathophysiology",
+    "zh": "ICD-10 诊断评估与病理生理",
+    "ms": "Penilaian Diagnostik ICD-10 & Patofisiologi",
+    "es": "Evaluación Diagnóstica CIE-10 y Fisiopatología",
+    "fr": "Évaluation Diagnostique CIM-10 & Physiopathologie",
+    "ta": "நோய் கண்டறிதல் மற்றும் நோயியல்"
+  },
+  "patient_decoded": {
+    "en": "Patient Decoded",
+    "zh": "患者语言已解析",
+    "ms": "Dinyahkod Pesakit",
+    "es": "Decodificado para el Paciente",
+    "fr": "Vulgarisé pour le Patient",
+    "ta": "நோயாளிக்கு விளக்கப்பட்டது"
+  },
+  "clinical_classification": {
+    "en": "Clinical Classification",
+    "zh": "临床分类",
+    "ms": "Klasifikasi Klinikal",
+    "es": "Clasificación Clínica",
+    "fr": "Classification Clinique",
+    "ta": "மருத்துவ வகைப்பாடு"
+  },
+  "daily_self_care": {
+    "en": "Daily Self-Care:",
+    "zh": "日常自我护理：",
+    "ms": "Penjagaan Diri Harian:",
+    "es": "Autocuidado Diario:",
+    "fr": "Autosoins Quotidiens:",
+    "ta": "தினசரி சுய பராமரிப்பு:"
+  },
+  "clinical_protocol_targets": {
+    "en": "Clinical Protocol & Targets:",
+    "zh": "临床方案与靶向指标：",
+    "ms": "Protokol Klinikal & Sasaran:",
+    "es": "Protocolo Clínico y Metas:",
+    "fr": "Protocole Clinique & Objectifs:",
+    "ta": "மருத்துவ வழிகாட்டுதல்கள்:"
+  },
+  "source_ref": {
+    "en": "Source",
+    "zh": "原文出处",
+    "ms": "Sumber Teks",
+    "es": "Fuente",
+    "fr": "Source",
+    "ta": "மூலம்"
+  },
+  "meds_simple_title": {
+    "en": "Prescribed Medicines (Everyday Guide)",
+    "zh": "出院处方药物（日常用药指南）",
+    "ms": "Ubat Dipreskripsi (Panduan Harian)",
+    "es": "Medicamentos Recetados (Guía Diaria)",
+    "fr": "Médicaments Prescrits (Guide Quotidien)",
+    "ta": "பரிந்துரைக்கப்பட்ட மருந்துகள் (தினசரி வழிகாட்டி)"
+  },
+  "meds_standard_title": {
+    "en": "Pharmacotherapy & GDMT Regimen",
+    "zh": "药物治疗方案与指南规范",
+    "ms": "Rejimen Farmakoterapi & GDMT",
+    "es": "Régimen de Farmacoterapia y GDMT",
+    "fr": "Régime Pharmacologique & GDMT",
+    "ta": "மருந்தியல் சிகிச்சை திட்டம்"
+  },
+  "everyday_actions": {
+    "en": "Everyday Actions",
+    "zh": "日常服用指南",
+    "ms": "Tindakan Harian",
+    "es": "Acciones Diarias",
+    "fr": "Actions Quotidiennes",
+    "ta": "தினசரி செயல்கள்"
+  },
+  "pharmacology_moa": {
+    "en": "Pharmacology & MoA",
+    "zh": "药理机制与靶点",
+    "ms": "Farmakologi & MoA",
+    "es": "Farmacología y Mecanismo",
+    "fr": "Pharmacologie & Mécanisme",
+    "ta": "மருந்தியல் விளக்கம்"
+  },
+  "what_it_does": {
+    "en": "What it does:",
+    "zh": "主要作用：",
+    "ms": "Fungsi ubat:",
+    "es": "Qué hace:",
+    "fr": "À quoi ça sert:",
+    "ta": "இதன் பயன்:"
+  },
+  "how_to_take": {
+    "en": "How to take:",
+    "zh": "服用方法：",
+    "ms": "Cara pengambilan:",
+    "es": "Cómo tomarlo:",
+    "fr": "Comment le prendre:",
+    "ta": "எடுத்துக்கொள்ளும் முறை:"
+  },
+  "watch_for": {
+    "en": "Watch for:",
+    "zh": "注意观察：",
+    "ms": "Kesan sampingan:",
+    "es": "Atento a:",
+    "fr": "À surveiller:",
+    "ta": "கவனிக்க வேண்டியவை:"
+  },
+  "stopped_meds_title": {
+    "en": "STOPPED / DISCONTINUED MEDICATIONS",
+    "zh": "已停用 / 禁止继续服用的药物",
+    "ms": "UBAT YANG DIHENTIKAN",
+    "es": "MEDICAMENTOS SUSPENDIDOS / DETENIDOS",
+    "fr": "MÉDICAMENTS ARRÊTÉS / INTERROMPUS",
+    "ta": "நிறுத்தப்பட்ட மருந்துகள்"
+  },
+  "stopped_meds_sub": {
+    "en": "Do NOT resume these medicines after discharge:",
+    "zh": "出院后切勿恢复服用以下药物：",
+    "ms": "JANGAN sambung ubat-ubat ini selepas discaj:",
+    "es": "NO reanude estos medicamentos después del alta:",
+    "fr": "Ne reprenez PAS ces médicaments après votre sortie:",
+    "ta": "வெளியேறிய பிறகு இந்த மருந்துகளை மீண்டும் எடுக்க வேண்டாம்:"
+  },
+  "stopped_reason": {
+    "en": "${t('stopped_reason')}",
+    "zh": "（因存在临床禁忌已停用）",
+    "ms": "(Dihentikan kerana konflik klinikal)",
+    "es": "(Suspendido por conflicto clínico)",
+    "fr": "(Arrêté en raison d'un conflit clinique)",
+    "ta": "(மருத்துவ முரண்பாடு காரணமாக நிறுத்தப்பட்டது)"
+  },
+  "discharge_instructions_title": {
+    "en": "Discharge Instructions & Recovery Directives",
+    "zh": "出院医嘱与康复指引",
+    "ms": "Arahan Discaj & Panduan Pemulihan",
+    "es": "Instrucciones de Alta y Pautas de Recuperación",
+    "fr": "Directives de Sortie & Récupération",
+    "ta": "வெளியேற்ற வழிமுறைகள்"
+  },
+  "warning_signs_title": {
+    "en": "Clinical Warning Signs & Emergency Action Protocol",
+    "zh": "临床危险警示征象与应急处置",
+    "ms": "Tanda Amaran Klinikal & Tindakan Kecemasan",
+    "es": "Signos de Alarma y Protocolo de Emergencia",
+    "fr": "Signes d'Alerte Cliniques & Protocole d'Urgence",
+    "ta": "எச்சரிக்கை அறிகுறிகள் மற்றும் அவசர நெறிமுறை"
+  },
+  "followup_title": {
+    "en": "Scheduled Follow-up Consultations & Lab Monitoring",
+    "zh": "后续门诊复查与化验复查安排",
+    "ms": "Temujanji Susulan & Pemantauan Makmal",
+    "es": "Consultas de Seguimiento y Pruebas Programadas",
+    "fr": "Consultations de Suivi & Bilans Biologiques",
+    "ta": "தொடர் மருத்துவ ஆலோசனைகள்"
+  },
+  "recovery_trend_title": {
+    "en": "14-Day Recovery Trend",
+    "zh": "14天康复趋势图",
+    "ms": "Trend Pemulihan 14-Hari",
+    "es": "Tendencia de Recuperación a 14 Días",
+    "fr": "Tendance de Récupération sur 14 Jours",
+    "ta": "14-நாள் மீட்பு போக்கு"
+  },
+  "tab_risk_score": {
+    "en": "Risk Score",
+    "zh": "风险评分",
+    "ms": "Skor Risiko",
+    "es": "Puntuación de Riesgo",
+    "fr": "Score de Risque",
+    "ta": "ஆபத்து மதிப்பெண்"
+  },
+  "tab_weight": {
+    "en": "Weight (kg)",
+    "zh": "体重 (kg)",
+    "ms": "Berat (kg)",
+    "es": "Peso (kg)",
+    "fr": "Poids (kg)",
+    "ta": "எடை (கிலோ)"
+  },
+  "tab_glucose": {
+    "en": "Glucose",
+    "zh": "血糖",
+    "ms": "Glukosa",
+    "es": "Glucosa",
+    "fr": "Glycémie",
+    "ta": "குளுக்கோஸ்"
+  },
+  "tab_temp": {
+    "en": "Temperature",
+    "zh": "体温",
+    "ms": "Suhu",
+    "es": "Temperatura",
+    "fr": "Température",
+    "ta": "வெப்பநிலை"
+  },
+  "zone_green": {
+    "en": "Green: On Track (0-29)",
+    "zh": "绿色：恢复良好 (0-29)",
+    "ms": "Hijau: Dalam Kawalan (0-29)",
+    "es": "Verde: En Buen Camino (0-29)",
+    "fr": "Vert: En Bonne Voie (0-29)",
+    "ta": "பச்சை: நலமாக உள்ளது (0-29)"
+  },
+  "zone_amber": {
+    "en": "Amber: Clinic Review (30-59)",
+    "zh": "黄色：建议复查 (30-59)",
+    "ms": "Kuning: Semakan Klinik (30-59)",
+    "es": "Ámbar: Revisión en Clínica (30-59)",
+    "fr": "Ambre: Avis Médical Recommandé (30-59)",
+    "ta": "மஞ்சள்: மறுபரிசீலனை தேவை (30-59)"
+  },
+  "zone_red": {
+    "en": "Red: Emergency (60-100)",
+    "zh": "红色：紧急就医 (60-100)",
+    "ms": "Merah: Kecemasan (60-100)",
+    "es": "Rojo: Emergencia (60-100)",
+    "fr": "Rouge: Urgence Médicale (60-100)",
+    "ta": "சிவப்பு: அவசர உதவி (60-100)"
+  },
+  "btn_print_summary": {
+    "en": "${t('btn_print_summary')}",
+    "zh": "打印紧急就诊小结",
+    "ms": "Cetak Ringkasan Kecemasan",
+    "es": "Imprimir Resumen de Emergencia",
+    "fr": "Imprimer Résumé d'Urgence",
+    "ta": "அவசர சுருக்கத்தை அச்சிடுக"
+  },
+  "btn_share_pass": {
+    "en": "${t('btn_share_pass')}",
+    "zh": "分享亲友守护通行证",
+    "ms": "Kongsi Pas Penjaga",
+    "es": "Compartir Pase de Cuidador",
+    "fr": "Partager le Pass Proche",
+    "ta": "பராமரிப்பாளர் பாஸைப் பகிரவும்"
+  },
+  "checkin_title": {
+    "en": "Daily Health Report",
+    "zh": "每日健康打卡报告",
+    "ms": "Laporan Kesihatan Harian",
+    "es": "Informe Diario de Salud",
+    "fr": "Bilan de Santé Quotidien",
+    "ta": "தினசரி சுகாதார அறிக்கை"
+  },
+  "checkin_subtitle": {
+    "en": "${t('checkin_subtitle')}",
+    "zh": "专属患者：",
+    "ms": "Dikhaskan untuk:",
+    "es": "Personalizado para:",
+    "fr": "Personnalisé pour:",
+    "ta": "தனிப்பயனாக்கப்பட்டது:"
+  },
+  "body_weight": {
+    "en": "${t('body_weight')}",
+    "zh": "体重 (kg)",
+    "ms": "Berat Badan (kg)",
+    "es": "Peso Corporal (kg)",
+    "fr": "Poids Corporel (kg)",
+    "ta": "உடல் எடை (கிலோ)"
+  },
+  "weight_hint": {
+    "en": "${t('weight_hint')}",
+    "zh": "（早晨排尿后空腹测量）",
+    "ms": "(Timbang waktu pagi selepas buang air kecil)",
+    "es": "(Pésese por la mañana tras orinar)",
+    "fr": "(À mesurer le matin après avoir uriné)",
+    "ta": "(காலையில் சிறுநீர் கழித்த பின் அளவிடவும்)"
+  },
+  "systolic_bp": {
+    "en": "${t('systolic_bp')}",
+    "zh": "收缩压 / 高压 (mmHg)",
+    "ms": "Tekanan Darah Sistolik (mmHg)",
+    "es": "Presión Sistólica (mmHg)",
+    "fr": "Pression Systolique (mmHg)",
+    "ta": "சிஸ்டாலிக் இரத்த அழுத்தம் (mmHg)"
+  },
+  "diastolic_bp": {
+    "en": "${t('diastolic_bp')}",
+    "zh": "舒张压 / 低压 (mmHg)",
+    "ms": "Tekanan Darah Diastolik (mmHg)",
+    "es": "Presión Diastólica (mmHg)",
+    "fr": "Pression Diastolique (mmHg)",
+    "ta": "டயஸ்டாலிக் இரத்த அழுத்தம் (mmHg)"
+  },
+  "hf_checks": {
+    "en": "${t('hf_checks')}",
+    "zh": "心力衰竭症状排查：",
+    "ms": "Pemeriksaan Gejala Kegagalan Jantung:",
+    "es": "Control de Síntomas de Insuficiencia Cardíaca:",
+    "fr": "Surveillance des Symptômes d'Insuffisance Cardiaque:",
+    "ta": "இதய செயலிழப்பு அறிகுறிகள் சோதனை:"
+  },
+  "symp_orthopnoea": {
+    "en": "Breathless lying flat",
+    "zh": "平躺时感到憋气/呼吸困难",
+    "ms": "Sesak nafas apabila berbaring",
+    "es": "Dificultad para respirar al acostarse",
+    "fr": "Essoufflement en position allongée",
+    "ta": "படுக்கும்போது மூச்சுத்திணறல்"
+  },
+  "symp_leg_swelling": {
+    "en": "Swollen ankles / legs",
+    "zh": "下肢或脚踝新发肿胀",
+    "ms": "Bengkak pada buku lali / kaki",
+    "es": "Tobillos o piernas hinchadas",
+    "fr": "Chevilles ou jambes gonflées",
+    "ta": "கால் / கணுக்கால் வீக்கம்"
+  },
+  "symp_sob_exertion": {
+    "en": "New or worsening breathlessness on stairs/walking",
+    "zh": "走平路或爬楼梯时气短加重",
+    "ms": "Sesak nafas bertambah teruk semasa berjalan",
+    "es": "Falta de aire al caminar o subir escaleras",
+    "fr": "Essoufflement à l'effort ou dans les escaliers",
+    "ta": "நடக்கும்போது மூச்சுத்திணறல்"
+  },
+  "btn_submit_checkin": {
+    "en": "${t('btn_submit_checkin')}",
+    "zh": "提交今日打卡",
+    "ms": "Hantar Pemeriksaan Harian",
+    "es": "Enviar Chequeo Diario",
+    "fr": "Valider le Bilan Quotidien",
+    "ta": "பரிசோதனையை சமர்ப்பிக்கவும்"
+  },
+  "circle_title": {
+    "en": "Caregiver Pass & Family Circle",
+    "zh": "亲友守护通行证与家庭护理圈",
+    "ms": "Pas Penjaga & Lingkaran Keluarga",
+    "es": "Pase de Cuidador y Círculo Familiar",
+    "fr": "Pass Proche & Cercle Familial",
+    "ta": "பராமரிப்பாளர் பாஸ் & குடும்ப வட்டம்"
+  },
+  "circle_subtitle": {
+    "en": "Secure read-only companion access for family caregivers.",
+    "zh": "为家庭照护亲友提供安全只读随行查看权限。",
+    "ms": "Akses rakan penjaga selamat untuk keluarga.",
+    "es": "Acceso seguro de solo lectura para cuidadores familiares.",
+    "fr": "Accès sécurisé en lecture seule pour les proches aidants.",
+    "ta": "குடும்ப பராமரிப்பாளர்களுக்கான பாதுகாப்பான அணுகல்."
+  },
+  "clinician_title": {
+    "en": "Clinician Handover & Recovery Brief",
+    "zh": "临床医生交接与康复随访简报",
+    "ms": "Ringkasan Klinikal Doktor & Pemulihan",
+    "es": "Informe Clínico de Traspaso y Recuperación",
+    "fr": "Fiche de Transmission & Suivi Clinique",
+    "ta": "மருத்துவ அறிக்கை & மீட்பு சுருக்கம்"
+  },
+  "clinician_subtitle": {
+    "en": "Physician-ready post-discharge clinical telemetry.",
+    "zh": "面向接诊医生的出院后临床体征与依从性监测简报。",
+    "ms": "Telemetri klinikal pasca-discaj sedia untuk doktor.",
+    "es": "Telemetría clínica post-alta lista para el médico.",
+    "fr": "Télémétrie clinique post-hospitalisation prête pour le médecin.",
+    "ta": "மருத்துவருக்கான பிந்தைய வெளியேற்ற அறிக்கை."
+  },
+  "trust_title": {
+    "en": "Clinical Safety & Traceability Guardian",
+    "zh": "临床安全规范与原文可信溯源保障",
+    "ms": "Keselamatan Klinikal & Kebolehkesanan Asal",
+    "es": "Seguridad Clínica y Trazabilidad Garantizada",
+    "fr": "Sécurité Clinique & Garantie de Traçabilité",
+    "ta": "மருத்துவ பாதுகாப்பு & நம்பகத்தன்மை"
+  },
+  "prescribed_schedule_sub": {
+    "en": "${t('prescribed_schedule_sub')}",
+    "zh": "每次服药后勾选确认。用药依从性数据将自动同步至临床简报。",
+    "ms": "Tandakan setiap dos selepas diambil. Pematuhan ubat direkodkan terus ke ringkasan doktor.",
+    "es": "Marque cada dosis al tomarla. La adherencia se registra en el informe clínico.",
+    "fr": "Cochez chaque prise. L'observance est directement intégrée à la fiche clinique.",
+    "ta": "மருந்து எடுத்ததும் குறிக்கவும். இது மருத்துவ அறிக்கையில் பதியப்படும்."
   }
+}
   </script>
 
   <!-- App Shell -->
@@ -1323,20 +2082,11 @@
       <div class="header-actions">
         <!-- Persona Switcher -->
         <select id="persona-select" class="select-pill" aria-label="Select Patient Profile">
-          <option value="robert">Robert Miller (Heart Failure · English)</option>
-          <option value="ahmad">Pak Ahmad (COPD / PPOK · BM)</option>
-          <option value="tan">Mdm Tan (Hip Surgery · 中文)</option>
-          <option value="priya">Priya (Diabetes & CKD · தமிழ்)</option>
-        </select>
-
-        <!-- Language Selector -->
-        <select id="lang-select" class="select-pill" aria-label="Select Interface Language">
-          <option value="en">English (US / Global)</option>
-          <option value="es">Español (Spanish)</option>
-          <option value="zh">中文 (Chinese)</option>
-          <option value="fr">Français (French)</option>
-          <option value="ms">Bahasa Melayu</option>
-          <option value="ta">தமிழ் (Tamil)</option>
+          <option value="robert">Robert Miller (Heart Failure)</option>
+          <option value="vance">Johnathan Vance (Post-MI STEMI)</option>
+          <option value="ahmad">Pak Ahmad (COPD / PPOK)</option>
+          <option value="tan">Mdm Tan (Hip Surgery)</option>
+          <option value="priya">Priya (Diabetes & CKD)</option>
         </select>
 
         <!-- Dark / Light Theme Toggle -->
@@ -1444,7 +2194,7 @@
       <div style="background: var(--bg-subtle); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px; text-align: left; margin-bottom: 20px;">
         <h4 style="font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">Read to the Paramedic:</h4>
         <p style="margin-bottom: 6px;"><strong>Patient:</strong> <span id="em-patient-name">Robert Miller</span>, 71M</p>
-        <p style="margin-bottom: 6px;"><strong>Location:</strong> <span id="em-patient-loc">Boston, MA, USA</span></p>
+        <p style="margin-bottom: 6px;"><strong>Location:</strong> <span id="em-patient-loc">Beacon Hill · Boston, MA (USA)</span></p>
         <p style="margin-bottom: 6px;"><strong>Diagnoses:</strong> <span id="em-patient-dx">Acute decompensated heart failure (HFrEF LVEF 35%), Essential Hypertension</span></p>
         <p style="font-size: 0.88rem; color: var(--text-muted);"><strong>Key Medicines:</strong> <span id="em-patient-meds">Furosemide, Carvedilol, Lisinopril, Spironolactone</span></p>
       </div>
@@ -1632,6 +2382,7 @@
     /* Store immutable baseline discharge notes for instant reset */
     const ORIGINAL_DISCHARGE_TEXTS = {
       robert: PERSONAS.robert.dischargeText,
+      vance: PERSONAS.vance.dischargeText,
       ahmad: PERSONAS.ahmad.dischargeText,
       tan: PERSONAS.tan.dischargeText,
       priya: PERSONAS.priya.dischargeText
@@ -1644,7 +2395,8 @@
         label: 'Post-MI (DAPT)',
         icon: '🫀',
         name: 'Johnathan Vance',
-        text: `DISCHARGE SUMMARY\nName: Johnathan Vance   Age: 64M   Ward: Cardiac 4A   LOS: 4 days\nPrincipal Dx: Acute Inferior ST-Elevation Myocardial Infarction (STEMI), s/p Primary PCI to RCA\nSecondary Dx: Essential Hypertension, Dyslipidemia\n\nDISCHARGE MEDICATIONS:\n1. Aspirin 100mg daily (Antiplatelet) - CONTINUED\n2. Ticagrelor 90mg BD (Dual Antiplatelet Therapy) - NEW\n3. Atorvastatin 80mg ON (High-Intensity Statin) - NEW\n4. Ramipril 5mg daily (ACE Inhibitor) - NEW\n5. Bisoprolol 5mg daily (Beta-Blocker) - NEW\nSTOPPED: Ibuprofen 400mg TDS\n\nFOLLOW-UP & ADVICE:\nFollow-up: Cardiac Rehabilitation Clinic in 14 days with repeat ECG.\nWARNING SIGNS: Recurrent chest tightness, diaphoresis, radiating jaw pain, unexplained bruising, hematuria.\nRESTRICTIONS: Strict no heavy lifting > 5kg for 2 weeks. Low sodium heart-healthy diet.`
+        personaId: 'vance',
+        text: ORIGINAL_DISCHARGE_TEXTS.vance
       },
       copd: {
         id: 'copd',
@@ -1700,13 +2452,13 @@
         if (raw) {
           const parsed = JSON.parse(raw);
           if (parsed && parsed.personaId && PERSONAS[parsed.personaId]) {
-            return { ...defaultState, ...parsed };
+            return { ...defaultState, ...parsed, lang: 'en' };
           }
         }
       } catch (e) {
         console.warn('Could not read localStorage:', e);
       }
-      return { ...defaultState };
+      return { ...defaultState, lang: 'en' };
     }
 
     let state = loadState();
@@ -1722,7 +2474,7 @@
     }
 
     function updateState(partial) {
-      state = { ...state, ...partial };
+      state = { ...state, ...partial, lang: 'en' };
       saveState();
     }
 
@@ -1742,11 +2494,11 @@
     }
 
     /* =====================================================================
-       3. I18N LOCALIZATION ENGINE
+       3. I18N LOCALIZATION ENGINE (ENGLISH ONLY)
        ===================================================================== */
     function t(key, vars = {}) {
       const entry = I18N[key];
-      let res = (entry && entry[state.lang]) || (entry && entry.en) || key;
+      let res = (entry && entry.en) || (typeof entry === 'string' ? entry : key);
       for (const [v, val] of Object.entries(vars)) {
         res = res.replace(new RegExp(`\\{${v}\\}`, 'g'), val);
       }
@@ -1754,9 +2506,8 @@
     }
 
     function setLanguage(lang) {
-      updateState({ lang });
-      document.documentElement.lang = lang;
-      document.getElementById('lang-select').value = lang;
+      updateState({ lang: 'en' });
+      document.documentElement.lang = 'en';
       renderApp();
     }
 
@@ -1982,6 +2733,7 @@
       // Detect Condition Profiles
       const allText = rawText.toLowerCase();
       if (/copd|ppok|chronic obstructive|emphysema|bronchitis|respiratory/i.test(allText)) carePlan.conditionProfiles.push('copd');
+      if (/stemi|myocardial infarction|pci|post-mi|dapt/i.test(allText)) carePlan.conditionProfiles.push('post_mi');
       if (/heart failure|hf\b|lvef|cardiomyopathy/i.test(allText)) carePlan.conditionProfiles.push('heart_failure');
       if (/diabetes|t2dm|t1dm|hba1c|glucose|metformin/i.test(allText)) carePlan.conditionProfiles.push('diabetes');
       if (/ckd|kidney|egfr|creatinine|nephropathy/i.test(allText)) carePlan.conditionProfiles.push('ckd');
@@ -2122,10 +2874,48 @@
           action: "Atorvastatin 40mg ON for plaque stabilization and LDL-C reduction >50%. Monitor liver function tests and CPK if myalgia develops.",
           badge: "AHA/ACC Secondary Prevention"
         }
+      },
+      stemi: {
+        simple: {
+          title: "Heart Attack Treated with Stent (STEMI s/p Primary PCI)",
+          icon: "🫀",
+          plain: "An emergency procedure opened a blocked blood vessel in your heart with a small mesh tube (stent) after a heart attack.",
+          action: "Never miss a dose of your blood-thinning pills (Aspirin & Ticagrelor), strictly avoid lifting >5kg for 2 weeks, and call 911 immediately if chest tightness returns.",
+          badge: "Post-PCI Stent Protection"
+        },
+        standard: {
+          title: "Acute Inferior STEMI s/p Primary PCI to Right Coronary Artery",
+          icon: "🔬",
+          plain: "ICD-10 I21.19. Acute transmural inferior ST-elevation myocardial infarction status-post successful emergency drug-eluting stent (DES) revascularization to proximal/mid RCA.",
+          action: "Dual Antiplatelet Therapy (DAPT: Aspirin 100mg + Ticagrelor 90mg BD) mandatory for 12 months minimum to prevent catastrophic stent thrombosis. High-intensity statin (Atorvastatin 80mg ON), ACEi (Ramipril), and beta-blocker (Bisoprolol). Follow-up Cardiac Rehab clinic in 14 days.",
+          badge: "AHA/ESC STEMI Guideline GDMT"
+        }
       }
     };
 
     const MED_CLINICAL_DETAILS = {
+      ticagrelor: {
+        category: "Stent Protector (Potent Antiplatelet)",
+        icon: "🫀",
+        simplePurpose: "Blocks blood platelets from sticking to your new heart stent, preventing dangerous blood clots and recurrent heart attacks.",
+        simpleInstructions: "Take 1 tablet every morning and 1 tablet every night. Never skip a dose without your cardiologist's advice.",
+        simpleWatch: "Unexplained bruising, pink urine, bleeding gums, or mild shortness of breath.",
+        standardClass: "Direct-Acting P2Y12 Platelet Inhibitor (Antiplatelet)",
+        standardMoa: "Reversibly binds to platelet P2Y12 adenosine diphosphate (ADP) receptors, preventing signal transduction and platelet aggregation without requiring hepatic bioactivation.",
+        standardHemodynamics: "Mandatory component of Dual Antiplatelet Therapy (DAPT) for 12 months post-primary PCI for STEMI (PLATO trial demonstrated significant reduction in cardiovascular death and stent thrombosis vs clopidogrel).",
+        standardMonitoring: "Surveillance for minor/major bleeding, transient dyspnea (adenosine reuptake inhibition), and co-administration with ASA."
+      },
+      ramipril: {
+        category: "Blood Pressure & Heart Remodeling Protector (ACEi)",
+        icon: "🩸",
+        simplePurpose: "Relaxes stiff blood vessels and lowers blood pressure to protect your heart muscle from straining after a heart attack.",
+        simpleInstructions: "Take once daily in the morning with water.",
+        simpleWatch: "Dizziness when standing, dry hacking cough, or facial/lip swelling.",
+        standardClass: "Angiotensin-Converting Enzyme (ACE) Inhibitor",
+        standardMoa: "Prodrug hydrolyzed to ramiprilat, potently inhibiting ACE to prevent conversion of angiotensin I to angiotensin II, decreasing systemic vascular resistance and aldosterone secretion.",
+        standardHemodynamics: "Prevents pathological adverse left ventricular remodeling and reduces post-infarction heart failure hospitalization (AIRE trial).",
+        standardMonitoring: "Renal panel (serum creatinine & eGFR) and potassium surveillance 1-2 weeks post-initiation."
+      },
       furosemide: {
         category: "Water Pill (Loop Diuretic)",
         icon: "💧",
@@ -2330,6 +3120,7 @@
       const lower = dxName.toLowerCase();
       let key = 'heart_failure';
       if (/fracture|hip|hemiarthroplasty|surgery|post-op/i.test(lower)) key = 'post_surgery';
+      else if (/stemi|myocardial infarction|heart attack|pci|coronary|angina/i.test(lower)) key = 'stemi';
       else if (/osteo|bone|joint/i.test(lower)) key = 'osteopenia';
       else if (/copd|ppok|chronic obstructive|bronchitis|emphysema|respiratory/i.test(lower)) key = 'copd';
       else if (/diabetes|t2dm|t1dm|glucose/i.test(lower)) key = 'diabetes';
@@ -2347,10 +3138,10 @@
       const clean = (med.name || '').toLowerCase().trim();
       const matched = DRUGS.find(d => d.generic === clean || (d.brands && d.brands.includes(clean)));
       const gen = matched ? matched.generic : clean;
-      const det = MED_CLINICAL_DETAILS[gen] || {
+      const det = MED_CLINICAL_DETAILS[gen] ? { ...MED_CLINICAL_DETAILS[gen] } : {
         category: "Prescribed Discharge Medication",
         icon: "💊",
-        simplePurpose: getLocalizedMedPurpose(med, lang, 'simple'),
+        simplePurpose: getLocalizedMedPurpose(med, 'en', 'simple'),
         simpleInstructions: med.foodNote || "Take with a full glass of water as directed.",
         simpleWatch: (matched && matched.watch) ? matched.watch.join(', ') : "Dizziness, rash, or unusual symptoms.",
         standardClass: matched && matched.class ? matched.class.replace(/_/g, ' ').toUpperCase() : "PHARMACOTHERAPY",
@@ -2395,25 +3186,14 @@
       }
     }
 
-    /* Helper: Resolve localized plain-language or standard purpose */
+    /* Helper: Resolve plain-language or standard purpose */
     function getLocalizedMedPurpose(med, lang, readingLevel) {
       if (!med) return '';
-      const matched = DRUGS.find(d => d.generic.toLowerCase() === med.name.toLowerCase() || (d.brands && d.brands.includes(med.name.toLowerCase())));
-      const l = (lang || state.lang || 'en').toLowerCase();
-      let text = '';
-      if (l === 'ms') {
-        text = (matched && matched.purposeMs) || med.purposeMs || med.purposeEn || med.purpose;
-      } else if (l === 'zh') {
-        text = (matched && matched.purposeZh) || med.purposeZh || med.purposeEn || med.purpose;
-      } else if (l === 'ta') {
-        text = (matched && matched.purposeTa) || med.purposeTa || med.purposeEn || med.purpose;
-      } else {
-        text = (matched && matched.purposeEn) || med.purposeEn || med.purpose || 'prescribed discharge medication';
-      }
-
-      const activeLevel = readingLevel || state.readingLevel || 'simple';
       const clean = (med.name || '').toLowerCase();
+      const matched = DRUGS.find(d => d.generic.toLowerCase() === clean || (d.brands && d.brands.includes(clean)));
+      const activeLevel = readingLevel || state.readingLevel || 'simple';
       const det = MED_CLINICAL_DETAILS[clean];
+      const text = (matched && matched.purposeEn) || (matched && matched.purpose) || 'prescribed discharge medication';
 
       if (activeLevel === 'standard') {
         if (det && det.standardClass) {
@@ -2426,6 +3206,9 @@
       } else {
         if (det && det.simplePurpose) {
           return `${det.icon} ${det.simplePurpose}`;
+        }
+        if (matched) {
+          return `💊 ${text}`;
         }
       }
       return text;
@@ -2655,6 +3438,23 @@
         }
       }
 
+      if (profiles.includes('post_mi')) {
+        if (todayCheckin.chestPain) {
+          if (todayCheckin.radiatingPain || todayCheckin.diaphoresis || todayCheckin.severeDyspnea) {
+            factors.push({ label: 'Recurrent ischemic chest pain radiating with diaphoresis (Possible Stent Thrombosis / Re-infarction)', points: 6, redFlag: true });
+            totalPoints += 6;
+            isEmergencyRed = true;
+          } else {
+            factors.push({ label: 'Exertional chest tightness / angina recurrence', points: 3 });
+            totalPoints += 3;
+          }
+        }
+        if (todayCheckin.bruising || todayCheckin.hematuria) {
+          factors.push({ label: 'Unexplained bruising or bleeding (Dual Antiplatelet monitoring)', points: 2 });
+          totalPoints += 2;
+        }
+      }
+
       // Shared Modifiers
       if (todayCheckin.missedCriticalDoses && todayCheckin.missedCriticalDoses > 0) {
         factors.push({ label: `Missed critical medication dose in past 48h`, points: todayCheckin.missedCriticalDoses * 1 });
@@ -2755,6 +3555,69 @@
           orthopnoea: true,
           legSwelling: true,
           dizziness: false,
+          missedCriticalDoses: 1,
+          expectedLevel: 'red'
+        }
+      ],
+      vance: [
+        {
+          day: 0,
+          label: "Day 0 (Discharge)",
+          desc: "Discharged following primary PCI to RCA. Dual antiplatelet therapy (Aspirin 100mg + Ticagrelor 90mg BD) started. Stable baseline.",
+          weight: 82.0,
+          temperature: 36.6,
+          systolicBp: 122,
+          diastolicBp: 74,
+          chestPain: false,
+          sobExertion: false,
+          dizziness: false,
+          bruising: false,
+          missedCriticalDoses: 0,
+          expectedLevel: 'green'
+        },
+        {
+          day: 1,
+          label: "Day 1 (Cardiac Rest)",
+          desc: "Taking Ticagrelor and Aspirin on schedule. Resting at home with spouse Claire. Sternal region comfortable, no recurrent angina.",
+          weight: 82.1,
+          temperature: 36.7,
+          systolicBp: 120,
+          diastolicBp: 72,
+          chestPain: false,
+          sobExertion: false,
+          dizziness: false,
+          bruising: false,
+          missedCriticalDoses: 0,
+          expectedLevel: 'green'
+        },
+        {
+          day: 2,
+          label: "Day 2 (Exertional Tightness Warning)",
+          desc: "Reports mild substernal tightness after climbing porch steps. Slight postural dizziness following morning Ramipril. BP 110/68.",
+          weight: 82.0,
+          temperature: 36.8,
+          systolicBp: 110,
+          diastolicBp: 68,
+          chestPain: true,
+          sobExertion: true,
+          dizziness: true,
+          bruising: false,
+          missedCriticalDoses: 0,
+          expectedLevel: 'amber'
+        },
+        {
+          day: 3,
+          label: "Day 3 (Recurrent Ischemic Angina Alert)",
+          desc: "Substernal chest pressure radiating to left jaw at rest with diaphoresis. Stent thrombosis / recurrent myocardial ischemia warning. Urgent 911 activation required!",
+          weight: 82.2,
+          temperature: 37.0,
+          systolicBp: 148,
+          diastolicBp: 92,
+          chestPain: true,
+          radiatingPain: true,
+          diaphoresis: true,
+          severeDyspnea: true,
+          dizziness: true,
           missedCriticalDoses: 1,
           expectedLevel: 'red'
         }
@@ -2983,16 +3846,21 @@
         if (d <= currentDay && d < script.length) {
           const c = script[d];
           let val = 15;
+          let pointStatus = c.expectedLevel;
           if (metricKey === 'weight') val = c.weight || 68.0;
           else if (metricKey === 'glucose') val = c.glucose || 6.5;
           else if (metricKey === 'temp') val = c.temperature || 36.6;
           else {
-            // score
-            if (c.expectedLevel === 'red') val = 85;
-            else if (c.expectedLevel === 'amber') val = 45;
-            else val = 15;
+            // score: compute clinical recovery score dynamically from rules engine
+            const histD = script.slice(0, d + 1);
+            const checkinD = (d === currentDay) ? getCurrentDayCheckin() : (state.customCheckins[d] || script[d]);
+            const currentPersona = PERSONAS[activePersonaId];
+            const parsedPlan = parseDischarge(currentPersona.dischargeText);
+            const recoveryD = evaluateRecoveryScore(parsedPlan.conditionProfiles, histD, checkinD);
+            val = recoveryD.score100;
+            pointStatus = recoveryD.level;
           }
-          return { day: d, val: val, status: c.expectedLevel, isCurrent: d === currentDay };
+          return { day: d, val: val, status: pointStatus, isCurrent: d === currentDay };
         } else {
           // Future projection
           return { day: d, val: null, status: 'projected' };
@@ -3340,7 +4208,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         <div id="today-schedule-card" class="card" style="margin-bottom: 24px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
             <div>
-              <h3 class="card-title" style="margin: 0; font-size: 1.15rem;">${t('today_tasks')} · Prescribed Schedule</h3>
+              <h3 class="card-title" style="margin: 0; font-size: 1.15rem;">${t('today_tasks')}</h3>
               <p style="font-size: 0.85rem; color: var(--text-muted); margin: 2px 0 0 0;">Check off each dose as you take it. Medication adherence is computed directly into your clinician brief.</p>
             </div>
             <span class="badge badge-neutral">${parsedPlan.medications.length} Prescribed Meds</span>
@@ -3406,18 +4274,18 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
             <h3 class="card-title" style="margin: 0;">14-Day Recovery Trend</h3>
             <div style="display: flex; gap: 8px;">
-              <button class="btn btn-secondary btn-sm trend-filter-btn active" data-metric="score">Risk Score</button>
-              <button class="btn btn-secondary btn-sm trend-filter-btn" data-metric="weight">Weight (kg)</button>
-              <button class="btn btn-secondary btn-sm trend-filter-btn" data-metric="glucose">Glucose</button>
+              <button class="btn btn-secondary btn-sm trend-filter-btn active" data-metric="score">${t('tab_risk_score')}</button>
+              <button class="btn btn-secondary btn-sm trend-filter-btn" data-metric="weight">${t('tab_weight')}</button>
+              <button class="btn btn-secondary btn-sm trend-filter-btn" data-metric="glucose">${t('tab_glucose')}</button>
             </div>
           </div>
           <div id="trend-chart-slot">
             ${renderSvgTrendChart('score')}
           </div>
           <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">
-            <span>● Green: On Track (0-29)</span>
-            <span>● Amber: Clinic Review (30-59)</span>
-            <span>● Red: Emergency (60-100)</span>
+            <span>● ${t('zone_green')}</span>
+            <span>● ${t('zone_amber')}</span>
+            <span>● ${t('zone_red')}</span>
           </div>
         </div>
       `;
@@ -3433,8 +4301,8 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       return `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
           <div>
-            <h1 style="font-size: 1.8rem;">Decoded Care Plan</h1>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Structured plain-language instructions extracted with source-span traceability.</p>
+            <h1 style="font-size: 1.8rem;">${t('plan_title')}</h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">${t('plan_subtitle')}</p>
           </div>
           <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
             <div style="display: flex; align-items: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 3px;">
@@ -3486,7 +4354,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           <div class="card" style="border-left: 6px solid var(--status-red); background: var(--status-red-bg);">
             <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: var(--status-red);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
-              <h3 style="margin: 0; font-size: 1.15rem;">Medication Guardian Alerts (${interactionAlerts.length})</h3>
+              <h3 style="margin: 0; font-size: 1.15rem;">${t('med_guardian_title')} (${interactionAlerts.length})</h3>
             </div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
               ${interactionAlerts.map(alt => `
@@ -3497,8 +4365,8 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
                     </span>
                     <span class="badge ${alt.severity === 'avoid' ? 'badge-red' : 'badge-amber'}">${alt.severity.toUpperCase()}</span>
                   </div>
-                  <p style="font-size: 0.9rem; margin-bottom: 6px; color: var(--text-main);"><strong>Clinical Hazard:</strong> ${escapeHtml(alt.why)}</p>
-                  <p style="font-size: 0.88rem; color: var(--text-muted);"><strong>Action Required:</strong> ${escapeHtml(alt.advice)}</p>
+                  <p style="font-size: 0.9rem; margin-bottom: 6px; color: var(--text-main);"><strong>${t('clinical_hazard')}</strong> ${escapeHtml(alt.why)}</p>
+                  <p style="font-size: 0.88rem; color: var(--text-muted);"><strong>${t('action_required')}</strong> ${escapeHtml(alt.advice)}</p>
                 </div>
               `).join('')}
             </div>
@@ -3510,16 +4378,16 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           <!-- Left Column: Source Summary & Live Sandbox -->
           <div class="card" style="position: sticky; top: 80px;">
             <div class="card-title" style="margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-              <span style="font-size: 1.12rem;">Hospital Discharge Document</span>
+              <span style="font-size: 1.12rem;">${t('hospital_doc_title')}</span>
               <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
                 <button type="button" id="edit-note-btn" class="btn btn-secondary btn-sm" style="font-size: 0.78rem; padding: 4px 10px;" title="Live-edit or paste arbitrary clinical notes">
-                  ✏️ Edit / Paste Custom Note
+                  ✏️ ${t('edit_custom_note')}
                 </button>
                 <button type="button" id="reparse-note-btn" class="btn btn-primary btn-sm" style="font-size: 0.78rem; padding: 4px 10px; display: none;" title="Execute Clinical NLP on edited note">
-                  ⚡ Re-Parse Live
+                  ⚡ ${t('reparse_doc')}
                 </button>
                 <button type="button" id="reset-note-btn" class="btn btn-secondary btn-sm" style="font-size: 0.78rem; padding: 4px 9px; display: none; color: var(--status-amber);" title="Reset to original hospital document">
-                  ↺ Reset Original
+                  ↺ ${t('reset_doc')}
                 </button>
               </div>
             </div>
@@ -3552,8 +4420,8 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
             <!-- Diagnoses -->
             <div class="card">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <h3 class="card-title" style="margin: 0;">${state.readingLevel === 'simple' ? 'Medical Conditions (Plain Language)' : 'ICD-10 Diagnostic Evaluation & Pathophysiology'}</h3>
-                <span class="badge ${state.readingLevel === 'simple' ? 'badge-green' : 'badge-neutral'}">${state.readingLevel === 'simple' ? 'Patient Decoded' : 'Clinical Classification'}</span>
+                <h3 class="card-title" style="margin: 0;">${state.readingLevel === 'simple' ? t('conditions_simple_title') : t('conditions_standard_title')}</h3>
+                <span class="badge ${state.readingLevel === 'simple' ? 'badge-green' : 'badge-neutral'}">${state.readingLevel === 'simple' ? t('patient_decoded') : t('clinical_classification')}</span>
               </div>
               <div style="display: flex; flex-direction: column; gap: 10px;">
                 ${parsedPlan.diagnoses.map(dx => {
@@ -3569,10 +4437,10 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
                       </div>
                       <p style="font-size: 0.88rem; color: var(--text-main); margin-bottom: 6px; line-height: 1.45;">${escapeHtml(dxDetails.plain)}</p>
                       <div style="font-size: 0.82rem; color: var(--text-muted); background: var(--bg-subtle); padding: 8px 10px; border-radius: 6px;">
-                        <strong style="color: var(--primary);">Daily Self-Care:</strong> ${escapeHtml(dxDetails.action)}
+                        <strong style="color: var(--primary);">${t('daily_self_care')}</strong> ${escapeHtml(dxDetails.action)}
                       </div>
                       <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 6px;">
-                        Source: <em>"${escapeHtml(dx.name)}"</em>
+                        ${t('source_ref')}: <em>"${escapeHtml(dx.name)}"</em>
                       </div>
                     </div>
                   ` : `
@@ -3586,7 +4454,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
                       </div>
                       <p style="font-size: 0.86rem; color: var(--text-main); margin-bottom: 6px; line-height: 1.45;"><strong>Diagnostic Assessment:</strong> ${escapeHtml(dxDetails.plain)}</p>
                       <div style="font-size: 0.82rem; color: #334155; background: #f0fdfa; border: 1px solid #ccfbf1; padding: 8px 10px; border-radius: 6px; line-height: 1.4;">
-                        <strong style="color: #0f766e;">Clinical Protocol & Targets:</strong> ${escapeHtml(dxDetails.action)}
+                        <strong style="color: #0f766e;">${t('clinical_protocol_targets')}</strong> ${escapeHtml(dxDetails.action)}
                       </div>
                       <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 6px;">
                         Source Text Ref: <code>${escapeHtml(dx.name)}</code>
@@ -3600,8 +4468,8 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
             <!-- Active Prescribed Medications -->
             <div class="card">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <h3 class="card-title" style="margin: 0;">${state.readingLevel === 'simple' ? 'Prescribed Medicines (Everyday Guide)' : 'Pharmacotherapy & GDMT Regimen'} (${combinedMeds.length})</h3>
-                <span class="badge ${state.readingLevel === 'simple' ? 'badge-green' : 'badge-neutral'}">${state.readingLevel === 'simple' ? 'Everyday Actions' : 'Pharmacology & MoA'}</span>
+                <h3 class="card-title" style="margin: 0;">${state.readingLevel === 'simple' ? t('meds_simple_title') : t('meds_standard_title')} (${combinedMeds.length})</h3>
+                <span class="badge ${state.readingLevel === 'simple' ? 'badge-green' : 'badge-neutral'}">${state.readingLevel === 'simple' ? t('everyday_actions') : t('pharmacology_moa')}</span>
               </div>
               <div style="display: flex; flex-direction: column; gap: 12px;">
                 ${combinedMeds.map(med => {
@@ -3619,13 +4487,13 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
                         <span class="badge ${med.status === 'new' ? 'badge-amber' : 'badge-neutral'}">${escapeHtml(med.status.toUpperCase())}</span>
                       </div>
                       <p style="font-size: 0.9rem; margin-bottom: 6px; color: var(--text-main); line-height: 1.4;">
-                        <strong>What it does:</strong> ${escapeHtml(details.simplePurpose)}
+                        <strong>${t('what_it_does')}</strong> ${escapeHtml(details.simplePurpose)}
                       </p>
                       <div style="background: var(--bg-subtle); padding: 8px 12px; border-radius: 6px; font-size: 0.84rem; margin-bottom: 6px;">
-                        <strong>How to take:</strong> ${escapeHtml(details.simpleInstructions)}
+                        <strong>${t('how_to_take')}</strong> ${escapeHtml(details.simpleInstructions)}
                       </div>
                       <div style="font-size: 0.82rem; color: #b45309; display: flex; align-items: center; gap: 6px;">
-                        <span>⚠️</span> <span><strong>Watch for:</strong> ${escapeHtml(details.simpleWatch)}</span>
+                        <span>⚠️</span> <span><strong>${t('watch_for')}</strong> ${escapeHtml(details.simpleWatch)}</span>
                       </div>
                     </div>
                   ` : `
@@ -3655,10 +4523,10 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
             <!-- Stopped Medications -->
             ${parsedPlan.stoppedMedications.length > 0 ? `
               <div class="card" style="border-left: 4px solid var(--status-red);">
-                <h3 class="card-title" style="color: var(--status-red);">STOPPED / DISCONTINUED MEDICATIONS</h3>
-                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 10px;">Do NOT resume these medicines after discharge:</p>
+                <h3 class="card-title" style="color: var(--status-red);">${t('stopped_meds_title')}</h3>
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 10px;">${t('stopped_meds_sub')}</p>
                 ${parsedPlan.stoppedMedications.map(sm => `
-                  <div style="padding: 10px; background: var(--bg-subtle); border-radius: var(--radius-sm); margin-bottom: 6px;">
+                  <div class="span-trace-card" data-span="${sm.sourceSpan ? sm.sourceSpan.join(',') : '0,0'}" style="padding: 10px; background: var(--bg-subtle); border-radius: var(--radius-sm); margin-bottom: 6px; cursor: pointer;">
                     <strong style="text-decoration: line-through;">${escapeHtml(sm.name.toUpperCase())}</strong>
                     <span style="font-size: 0.85rem; color: var(--status-red); margin-left: 8px;">(Stopped due to clinical conflict)</span>
                   </div>
@@ -3711,13 +4579,14 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       const isDiabetes = profiles.includes('diabetes');
       const isHf = profiles.includes('heart_failure');
       const isCopd = profiles.includes('copd');
+      const isPostMi = profiles.includes('post_mi');
 
       return `
         <div class="card" style="max-width: 640px; margin: 0 auto;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <div>
               <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Recovery Check-in</span>
-              <h1 style="font-size: 1.6rem; margin: 0;">Daily Health Report</h1>
+              <h1 style="font-size: 1.6rem; margin: 0;">${t('checkin_title')}</h1>
               <p style="font-size: 0.88rem; color: var(--text-muted); margin: 4px 0 0 0;">Personalized for: <strong>${escapeHtml(activePersona.name)}</strong> (${profiles.map(p => p.replace(/_/g, ' ')).join(', ')})</p>
             </div>
             <span class="badge badge-green">Day ${state.demoDay}</span>
@@ -3810,11 +4679,11 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                   <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
                     <input type="checkbox" id="ci-orthopnoea" ${currentCheckin.orthopnoea ? 'checked' : ''} style="margin-right: 8px;">
-                    Breathless lying flat
+                    ${t('symp_orthopnoea')}
                   </label>
                   <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
                     <input type="checkbox" id="ci-leg-swelling" ${currentCheckin.legSwelling ? 'checked' : ''} style="margin-right: 8px;">
-                    Swollen ankles / legs
+                    ${t('symp_leg_swelling')}
                   </label>
                   <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
                     <input type="checkbox" id="ci-sob-exertion" ${currentCheckin.sobExertion ? 'checked' : ''} style="margin-right: 8px;">
@@ -3863,6 +4732,31 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
                   <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
                     <input type="checkbox" id="ci-severe-dyspnea" ${currentCheckin.severeDyspnea ? 'checked' : ''} style="margin-right: 8px;">
                     Struggling to speak full sentence
+                  </label>
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- Post-MI / STEMI Symptoms -->
+            ${isPostMi ? `
+              <div style="background: var(--bg-subtle); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 20px;">
+                <h4 style="margin: 0 0 10px 0; font-size: 0.95rem; color: var(--primary);">Cardiac & Ischemia Monitoring (Post-MI DAPT)</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                  <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
+                    <input type="checkbox" id="ci-chest-pain" ${currentCheckin.chestPain ? 'checked' : ''} style="margin-right: 8px;">
+                    Chest tightness / angina
+                  </label>
+                  <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
+                    <input type="checkbox" id="ci-radiating-pain" ${currentCheckin.radiatingPain ? 'checked' : ''} style="margin-right: 8px;">
+                    Pain radiating to jaw / arm
+                  </label>
+                  <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
+                    <input type="checkbox" id="ci-diaphoresis" ${currentCheckin.diaphoresis ? 'checked' : ''} style="margin-right: 8px;">
+                    Cold sweats / diaphoresis
+                  </label>
+                  <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
+                    <input type="checkbox" id="ci-bruising" ${currentCheckin.bruising ? 'checked' : ''} style="margin-right: 8px;">
+                    Unexplained bruising (DAPT)
                   </label>
                 </div>
               </div>
@@ -4012,6 +4906,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       const isSurgery = parsedPlan.conditionProfiles.includes('post_surgery');
       const isDiabetes = parsedPlan.conditionProfiles.includes('diabetes');
       const isCopd = parsedPlan.conditionProfiles.includes('copd');
+      const isPostMi = parsedPlan.conditionProfiles.includes('post_mi');
 
       let clinicalConcern = 'Stable post-discharge trajectory. No acute decompensation detected.';
       let recText = '1. Continue current discharge medication schedule. 2. Proceed with scheduled clinic follow-up appointments.';
@@ -4026,6 +4921,9 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         } else if (isCopd) {
           clinicalConcern = 'Critical acute COPD exacerbation with respiratory decompensation (SpO2 < 88%, severe dyspnea, or purulent sputum flare).';
           recText = '1. Urgent clinical evaluation at Emergency / SOPD. 2. Arterial blood gas (ABG) to assess acute hypercapnic respiratory acidosis. 3. Immediate controlled oxygen therapy (titrated to SpO2 88-92%), frequent short-acting bronchodilator nebulizers (salbutamol/ipratropium), and systemic corticosteroid escalation.';
+        } else if (isPostMi) {
+          clinicalConcern = 'Recurrent cardiac ischemia or stent thrombosis warning (radiating chest pain, diaphoresis, or severe dyspnea under DAPT).';
+          recText = '1. Immediate 911 / Emergency Department cardiac evaluation for repeat 12-lead ECG and high-sensitivity Troponin. 2. Verify adherence to dual antiplatelet therapy (Aspirin + Ticagrelor). 3. Immediate bedside echocardiogram and cardiology consult.';
         } else {
           clinicalConcern = 'Symptoms indicate acute decompensation / fluid congestion requiring urgent diuretic titration or clinic review.';
           recText = '1. Immediate clinical evaluation at Heart Failure / Acute Care Clinic. 2. Urgent serum electrolytes (U&E) and renal profile check. 3. Consider adjustment of oral loop diuretic dose.';
@@ -4040,6 +4938,9 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         } else if (isCopd) {
           clinicalConcern = 'Early bronchial airway exacerbation warning (SpO2 89-91%, purulent sputum change, or increased wheezing).';
           recText = '1. Same-day telephone triage review by respiratory clinic nurse coordinator. 2. Reinforce correct inhaler technique (Symbicort Turbuhaler / Spiriva Respimat). 3. Step up reliever inhaler usage (Ventolin 2 puffs QDS PRN) and monitor sputum purulence.';
+        } else if (isPostMi) {
+          clinicalConcern = 'Mild exertional chest tightness or subacute hemodynamic fluctuation following recent primary PCI.';
+          recText = '1. Same-day telephone triage review by cardiac rehabilitation nurse. 2. Verify resting heart rate and blood pressure target. 3. Screen for antiplatelet bleeding signs or exertional angina.';
         } else {
           clinicalConcern = 'Mild-to-moderate fluid accumulation or subacute physiological drift.';
           recText = '1. Phone triage review by heart failure nurse coordinator today. 2. Reinforce strict fluid restriction (1.5L/day) and low sodium intake. 3. Monitor standing vs sitting BP.';
@@ -4825,6 +5726,12 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         }
       });
 
+      // Synchronize top bar persona selector with state
+      const personaSelectEl = document.getElementById('persona-select');
+      if (personaSelectEl && personaSelectEl.value !== state.personaId) {
+        personaSelectEl.value = state.personaId;
+      }
+
       // Route: Caregiver Cryptographic Pass Summary (Read-Only)
       if (cleanHash.startsWith('pass/') || cleanHash === 'pass') {
         const token = cleanHash.replace(/^pass\/?/, '');
@@ -5025,7 +5932,20 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           const pKey = btn.dataset.preset;
           const preset = CLINICAL_PRESETS[pKey];
           if (preset) {
-            PERSONAS[state.personaId].dischargeText = preset.text;
+            const presetToPersona = {
+              stemi: 'vance',
+              copd: 'ahmad',
+              hf: 'robert',
+              ortho: 'tan',
+              diabetic: 'priya'
+            };
+            const targetPersonaId = presetToPersona[pKey] || preset.personaId || state.personaId;
+            if (PERSONAS[targetPersonaId]) {
+              PERSONAS[targetPersonaId].dischargeText = preset.text;
+              updateState({ personaId: targetPersonaId, demoDay: 0, extraMeds: [], dosesTaken: {} });
+            } else {
+              PERSONAS[state.personaId].dischargeText = preset.text;
+            }
             showToast(`Loaded scenario: ${preset.label} (${preset.name})`, preset.icon || '⚡');
             renderApp();
           }
@@ -5095,6 +6015,11 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           const purulentSputum = document.getElementById('ci-purulent-sputum') ? document.getElementById('ci-purulent-sputum').checked : false;
           const severeDyspnea = document.getElementById('ci-severe-dyspnea') ? document.getElementById('ci-severe-dyspnea').checked : false;
 
+          const chestPain = document.getElementById('ci-chest-pain') ? document.getElementById('ci-chest-pain').checked : false;
+          const radiatingPain = document.getElementById('ci-radiating-pain') ? document.getElementById('ci-radiating-pain').checked : false;
+          const diaphoresis = document.getElementById('ci-diaphoresis') ? document.getElementById('ci-diaphoresis').checked : false;
+          const bruising = document.getElementById('ci-bruising') ? document.getElementById('ci-bruising').checked : false;
+
           const newCheckins = {
             ...state.customCheckins,
             [state.demoDay]: {
@@ -5116,7 +6041,11 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
               spo2,
               wheezing,
               purulentSputum,
-              severeDyspnea
+              severeDyspnea,
+              chestPain,
+              radiatingPain,
+              diaphoresis,
+              bruising
             }
           };
 
@@ -5506,6 +6435,9 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       });
 
       document.getElementById('tm-reset-btn').addEventListener('click', () => {
+        if (ORIGINAL_DISCHARGE_TEXTS[state.personaId]) {
+          PERSONAS[state.personaId].dischargeText = ORIGINAL_DISCHARGE_TEXTS[state.personaId];
+        }
         updateState({ demoDay: 0, customCheckins: {}, extraMeds: [], notifiedCaregiver: false });
         updateTmDisplay();
         showToast('Reset timeline to Day 0 Baseline.', '🔄');
@@ -5598,24 +6530,22 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         renderApp();
       });
 
-      // Persona & Language Dropdowns
+      // Persona Dropdown
       const personaSelect = document.getElementById('persona-select');
-      personaSelect.value = state.personaId;
-      personaSelect.addEventListener('change', (e) => {
-        const pId = e.target.value;
-        const chosen = PERSONAS[pId];
-        updateState({ personaId: pId, lang: chosen.language, demoDay: 0, extraMeds: [], dosesTaken: {} });
-        document.documentElement.lang = chosen.language;
-        document.getElementById('lang-select').value = chosen.language;
-        showToast(`Switched persona to ${chosen.name}`, '👤');
-        renderApp();
-      });
-
-      const langSelect = document.getElementById('lang-select');
-      langSelect.value = state.lang;
-      langSelect.addEventListener('change', (e) => {
-        setLanguage(e.target.value);
-      });
+      if (personaSelect) {
+        personaSelect.value = state.personaId;
+        personaSelect.addEventListener('change', (e) => {
+          const pId = e.target.value;
+          const chosen = PERSONAS[pId];
+          if (ORIGINAL_DISCHARGE_TEXTS[pId]) {
+            PERSONAS[pId].dischargeText = ORIGINAL_DISCHARGE_TEXTS[pId];
+          }
+          updateState({ personaId: pId, lang: 'en', demoDay: 0, extraMeds: [], dosesTaken: {} });
+          document.documentElement.lang = 'en';
+          showToast(`Switched persona to ${chosen.name}`, '👤');
+          renderApp();
+        });
+      }
 
       // Theme toggle
       const themeBtn = document.getElementById('theme-toggle');
