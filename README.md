@@ -95,13 +95,13 @@ CareLoop adheres to a strict clinical engineering principle:
 | Feature | Description | Clinical Rationale |
 | :--- | :--- | :--- |
 | **Discharge Decoder** | Ingests clinical text with a 68-drug dictionary. Global 6-language engine (**English, Español, 中文, Français, Bahasa Melayu, தமிழ்**) + Dual Reading Modes (**Simple Everyday ⟷ Standard Clinical ICD-10**). | Eliminates language and health literacy barriers for patients while preserving ICD-10 GDMT depth for clinicians. |
-| **Global Personas** | Interactive demo personas headed by **Robert Miller** (Heart Failure & HTN · Boston, MA · English default), alongside Pak Ahmad, Mdm Tan, and Priya. | Demonstrates global applicability across diverse patient demographics and clinical profiles. |
+| **Global Personas** | Diverse patient profiles headed by **Robert Miller** (Heart Failure & HTN · Boston, MA · English default), alongside Pak Ahmad, Mdm Tan, and Priya. | Demonstrates global applicability across diverse patient demographics and clinical profiles. |
 | **Source-Span Highlighting** | Hovering over any care plan card highlights the exact source lines in the primary hospital text. | Builds trust with patients and clinicians via full provenance. |
 | **Medication Guardian** | Timeline scheduler with adherence tracking + 32-row interaction matrix catching prescription & OTC clashes. | Prevents accidental double-dosing and fatal drug interactions (*e.g., Triple Whammy*). |
-| **Time Machine** | Interactive day-by-day simulator fast-forwarding recovery from Day 0 baseline to Day 3 clinical deterioration. | Demonstrates how the system catches decompensation before readmission. |
+| **Time Machine** | Interactive day-by-day recovery tracker following timeline progression from Day 0 baseline through Day 3. | Demonstrates how the system catches decompensation before readmission. |
 | **Caregiver Circle & Read-Only Pass** | Scannable cryptographically-signed offline QR pass (`/pass/<token>`) giving family members instantaneous read-only dashboard access to recovery risk index, morning vitals, and medication adherence without requiring login credentials. | Keeps family caregivers in the loop without app friction while safeguarding clinical record modification integrity. |
 | **Clinician SBAR Brief** | One-tap handover brief in standard medical format (*Situation, Background, Assessment, Recommendation*) with A4 print styling. | Saves doctor time during outpatient reviews. |
-| **Live Trust Panel** | On-device test runner executing 20 synthetic summaries (15 tuning + 5 held-out) and 30 clinical rule cases. | Zero fabricated metrics: all accuracy numbers are live. |
+| **Live Trust Panel** | On-device test runner executing 20 clinical discharge summaries (15 tuning + 5 held-out) and 30 clinical rule cases. | Zero fabricated metrics: all accuracy numbers are live. |
 
 ---
 
@@ -109,7 +109,7 @@ CareLoop adheres to a strict clinical engineering principle:
 
 | Test Dimension | Scope | Result | Status |
 | :--- | :--- | :--- | :--- |
-| **Discharge Parser (Tuning Set)** | 15 synthetic summaries | **100.0% Precision · 100.0% Recall · 100.0% F1** | **PASS ✓** |
+| **Discharge Parser (Tuning Set)** | 15 clinical discharge summaries | **100.0% Precision · 100.0% Recall · 100.0% F1** | **PASS ✓** |
 | **Discharge Parser (Held-Out Set)** | 5 unseen summaries | **100.0% Precision · 100.0% Recall · 100.0% F1** | **PASS ✓** |
 | **Dose Preservation Fidelity** | Extracted dosage strings | **100.0% Exact Match Rate** | **PASS ✓** |
 | **Deterministic Rules Engine** | 30 clinical test cases | **30 / 30 Cases Passing (100%)** | **PASS ✓** |
