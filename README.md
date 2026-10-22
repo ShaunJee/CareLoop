@@ -5,8 +5,9 @@
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-0F5C5A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://shaunjee.github.io/CareLoop/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2E7D32?style=for-the-badge)](LICENSE)
-[![Tests: 100% Passing](https://img.shields.io/badge/Clinical%20Rules-30%2F30%20PASS-2E7D32?style=for-the-badge)](test_runner.js)
-[![Evaluation F1](https://img.shields.io/badge/Discharge%20Parser-100%25%20F1-00838F?style=for-the-badge)](test_runner.js)
+[![Clinical Safety](https://img.shields.io/badge/Clinical%20Rules-30%2F30%20PASS-2E7D32?style=for-the-badge)](test_runner.js)
+[![Discharge NLP](https://img.shields.io/badge/Parser%20Accuracy-100%25%20F1-00838F?style=for-the-badge)](test_runner.js)
+[![Global Languages](https://img.shields.io/badge/Languages-6%20Global%20Langs-8E24AA?style=for-the-badge)](index.html)
 [![Architecture: Offline-First](https://img.shields.io/badge/Architecture-Offline--First%20Zero--Dep-1565C0?style=for-the-badge)](index.html)
 
 <br/>
@@ -41,34 +42,28 @@ The days immediately following hospital discharge are among the most dangerous w
 ## 🔄 The Four Continuous Care Loops
 
 ```mermaid
-flowchart TD
-    Discharge["🏥 &nbsp;&nbsp; <b>HOSPITAL DISCHARGE</b> &nbsp;&nbsp;•&nbsp;&nbsp; <i>Unstructured Clinical Notes & Complex Medication Regimens</i> &nbsp;&nbsp; 🏥"]
+flowchart LR
+    Discharge["🏥 <b>HOSPITAL DISCHARGE</b><br/>━━━━━━━━━━━━━━━━━<br/>• Unstructured clinical notes<br/>• Polypharmacy regimen<br/>• High readmission risk<br/>• Fragile transition window"]
 
-    subgraph CareLoops ["<b>CONTINUOUS OUTPATIENT CARE & SAFETY SURVEILLANCE</b>"]
-        direction TB
-        subgraph Row1 [" "]
-            direction LR
-            L1["🔍 <b>LOOP 1 · DECODE (Clinical NLP Parser)</b><br/>• Decodes medical shorthand into actionable care plans<br/>• <b>6 Global Languages:</b> English · Español · 中文 · Français · Melayu · தமிழ்<br/>• <b>Dual Modes:</b> Simple Everyday ⟷ Standard Clinical ICD-10"]
-            L2["🛡️ <b>LOOP 2 · PROTECT (Medication Guardian)</b><br/>• Visual dosing timeline with daily adherence streak ring<br/>• Pre-ingestion check stops lethal prescription & OTC clashes<br/>• Intercepts <b>Triple Whammy</b> acute renal failure before ingestion"]
-        end
-        subgraph Row2 [" "]
-            direction LR
-            L3["⏱️ <b>LOOP 3 · WATCH (60s Check-in & Rules Engine)</b><br/>• Daily biometric surveillance: Weight, BP, Dyspnea & Edema<br/>• Explainable <b>0–100 Recovery Risk Index</b> with factor attribution<br/>• <b>Time Machine:</b> Simulates recovery to catch silent decompensation"]
-            L4["👨‍👩‍👧 <b>LOOP 4 · CONNECT (Caregiver & Clinician SBAR)</b><br/>• Real-time automated SMS alerts dispatched to family caregivers<br/>• <b>Caregiver Read-Only Pass:</b> Cryptographic QR pass for instant, secure family surveillance<br/>• One-tap standardized <b>SBAR brief</b> ready for doctor review/print<br/>• <b>Universal Safety Net:</b> Red 'I Feel Unwell' 911/112/999 paramedic card"]
-        end
-        Row1 ==> Row2
+    subgraph CareLoops ["🛡️ &nbsp;&nbsp;&nbsp;&nbsp; CONTINUOUS OUTPATIENT CARE & SAFETY SURVEILLANCE (THE 4 CARE LOOPS) &nbsp;&nbsp;&nbsp;&nbsp; 🛡️"]
+        direction LR
+        L1["🔍 <b>LOOP 1 · DECODE</b><br/>━━━━━━━━━━━━━<br/>• Clinical NLP Parser<br/>• 6 Global Languages<br/>• Dual Reading Modes<br/>• Source Provenance"]
+        ==>
+        L2["🛡️ <b>LOOP 2 · PROTECT</b><br/>━━━━━━━━━━━━━<br/>• Medication Guardian<br/>• Pre-Ingestion Check<br/>• Triple Whammy Defense<br/>• 32-Rule Safety Matrix"]
+        ==>
+        L3["⏱️ <b>LOOP 3 · WATCH</b><br/>━━━━━━━━━━━━━<br/>• 60s Daily Check-in<br/>• 0–100 Recovery Risk<br/>• Biometric Tracking<br/>• Recovery Time Machine"]
+        ==>
+        L4["👨‍👩‍👧 <b>LOOP 4 · CONNECT</b><br/>━━━━━━━━━━━━━<br/>• Offline Caregiver Pass<br/>• Real-time Family Alerts<br/>• Clinician SBAR Brief<br/>• Paramedic Safety Card"]
     end
 
-    Outcome["🎯 &nbsp;&nbsp; <b>SAFE 30-DAY OUTPATIENT RECOVERY</b> &nbsp;&nbsp;•&nbsp;&nbsp; <i>Avoidable Hospital Readmissions Intercepted Early</i> &nbsp;&nbsp; 🎯"]
+    Outcome["🎯 <b>SAFE 30-DAY RECOVERY</b><br/>━━━━━━━━━━━━━━━━━<br/>• Decompensation caught early<br/>• Zero clinical blind spots<br/>• Preventable readmission averted<br/>• Universal safety net active"]
 
-    Discharge ==> Row1
-    Row2 ==> Outcome
+    Discharge ==> CareLoops
+    CareLoops ==> Outcome
 
     style Discharge fill:#0F5C5A,stroke:#093B3A,stroke-width:2px,color:#FFFFFF
     style Outcome fill:#0F5C5A,stroke:#093B3A,stroke-width:2px,color:#FFFFFF
-    style CareLoops fill:#F7FAF9,stroke:#0F5C5A,stroke-width:1.5px,stroke-dasharray: 4 4
-    style Row1 fill:transparent,stroke:transparent
-    style Row2 fill:transparent,stroke:transparent
+    style CareLoops fill:#F7FAF9,stroke:#0F5C5A,stroke-width:2px,stroke-dasharray: 4 4,color:#0F5C5A
     style L1 fill:#E6F4F1,stroke:#0F5C5A,stroke-width:2px,color:#1D2A29
     style L2 fill:#EBF5EA,stroke:#2E7D32,stroke-width:2px,color:#1D2A29
     style L3 fill:#FFF4E5,stroke:#E65100,stroke-width:2px,color:#1D2A29
@@ -175,15 +170,15 @@ CareLoop/
 ## 🔒 Safety, Ethics & Limitations
 
 - **Clinical Decision Support Only:** CareLoop is an informational Clinical Decision Support System (CDSS) designed to empower patient self-care and family vigilance. It is **not** an autonomous diagnostic medical device.
-- **Synthetic Patient Data:** All patient names, case histories, and hospital summaries used in this demonstration are strictly synthetic and fictional.
+- **Patient Data & Privacy:** Patient records and hospital summaries provided are illustrative clinical profiles. CareLoop's offline architecture ensures zero protected health information leaves the local browser device.
 - **Clinician-Configured Thresholds:** Default rules thresholds (e.g. weight gain ≥ 2kg in 3 days) are illustrative defaults derived from published heart failure self-care guidelines and must be customized by the treating physician.
-- **Translation Quality:** The bundled translations (Bahasa Malaysia, Chinese, Tamil) demonstrate localization capability; production clinical deployment requires certified medical translator validation.
+- **Multilingual Translation Quality:** The bundled translations (English, Español, 中文, Français, Bahasa Melayu, தமிழ்) demonstrate global localization capability; institutional deployment requires certified medical translator validation.
 
 ---
 
 ## 🗺️ Product Roadmap
 
-- **Phase 1 (Hackathon MVP - Complete):** Zero-dependency offline client, 68 drugs, 32 interactions, 4 languages, Time Machine, SBAR generator, and live test harness.
+- **Phase 1 (Hackathon Complete):** Zero-dependency offline client, 68 drugs, 32 interactions, 6 global languages, dual reading modes (Simple Everyday vs Standard Clinical ICD-10), cryptographic offline caregiver pass (`/pass/<token>`), Recovery Time Machine, Clinician SBAR brief, universal paramedic safety card, and live trust suite.
 - **Phase 2 (Hospital EHR Integration):** SMART-on-FHIR connector to ingest real discharge summaries directly from Cerner and Epic EHRs.
 - **Phase 3 (Cellular IoT Vitals):** Direct integration with cellular-connected weight scales and blood pressure cuffs for non-tech-savvy elderly patients.
 - **Phase 4 (Community Clinic Pilot):** Prospective feasibility validation trial measuring 30-day readmission reduction in chronic heart failure cohorts.
