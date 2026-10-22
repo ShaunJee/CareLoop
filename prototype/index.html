@@ -709,7 +709,75 @@
     textarea:focus, input:focus { border-color: var(--primary); }
     .source-box { background: var(--bg-subtle); border-radius: 16px; }
     .sbar-block { border-left-width: 3px; border-radius: 2px; }
-    .med-row, [style*="padding: 12px 14px"][style*="border-radius"] { border-radius: 16px !important; transition: background .3s, border-color .3s; }
+    .next-dose-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      border-left: 6px solid var(--primary);
+      transition: all 0.3s ease;
+    }
+    .next-dose-card .next-dose-content {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      min-width: 0;
+    }
+    .next-dose-card .next-dose-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .next-dose-card .next-dose-text p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 2px 0 0 0;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+    .next-dose-card .med-take-btn, #today-taken-btn {
+      flex-shrink: 0 !important;
+      white-space: nowrap !important;
+      min-width: 140px;
+      text-align: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    .med-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px !important;
+      border-radius: 16px !important;
+      transition: background 0.3s, border-color 0.3s;
+      gap: 16px;
+    }
+    .med-row .med-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+      min-width: 0;
+    }
+    .med-row .med-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .med-row .med-text p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin: 2px 0 0 0;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+    .med-row .med-take-btn {
+      flex-shrink: 0 !important;
+      white-space: nowrap !important;
+      min-width: 140px;
+      text-align: center;
+      justify-content: center;
+    }
     .med-take-btn.btn-secondary svg { animation: tickPop .45s var(--ease); }
 
     /* ---- Hero: the memorable moment ---- */
@@ -891,9 +959,8 @@
       .hero h1 { font-size: 2rem !important; }
       .hero-ring { width: 128px; height: 128px; }
       .hero-score b { font-size: 2.5rem; }
-      .hero-msg { font-size: .95rem; }
-      .med-row { flex-direction: column; align-items: stretch !important; gap: 12px; }
-      .med-row .med-take-btn, #today-taken-btn { width: 100%; }
+      .next-dose-card, .med-row { flex-direction: column; align-items: stretch !important; gap: 12px; }
+      .next-dose-card .med-take-btn, .med-row .med-take-btn, #today-taken-btn, #today-undo-doses-btn { width: 100% !important; min-width: 0 !important; }
       div:has(> .trend-filter-btn) { width: 100%; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
       .trend-filter-btn { flex: none; }
 
@@ -3079,40 +3146,40 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 
         <!-- Next Dose Action Card / All Completed Banner -->
         ${nextUntakenDose ? `
-          <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; border-left: 6px solid var(--primary); transition: all 0.3s ease;">
-            <div style="display: flex; align-items: center; gap: 16px;">
+          <div class="card next-dose-card">
+            <div class="next-dose-content">
               <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(12,107,104,0.18);">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
               </div>
-              <div>
+              <div class="next-dose-text">
                 <div style="display: flex; align-items: center; gap: 8px;">
                   <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--primary);">${t('next_dose')} · ${nextUntakenDose.time}</span>
                   <span class="badge badge-neutral" style="font-size: 0.72rem;">Dose ${takenDosesCount + 1} of ${totalDosesCount}</span>
                 </div>
                 <h3 style="font-size: 1.25rem; margin: 2px 0;">${escapeHtml(nextUntakenDose.med.name.toUpperCase())} ${escapeHtml(nextUntakenDose.med.dose)}</h3>
-                <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">${escapeHtml(getLocalizedMedPurpose(nextUntakenDose.med, state.lang, state.readingLevel))} · ${escapeHtml(nextUntakenDose.med.foodNote || 'with water')}</p>
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.45; word-break: break-word;">${escapeHtml(getLocalizedMedPurpose(nextUntakenDose.med, state.lang, state.readingLevel))} · ${escapeHtml(nextUntakenDose.med.foodNote || 'with water')}</p>
               </div>
             </div>
-            <button id="today-taken-btn" class="btn btn-primary med-take-btn" data-key="${nextUntakenDose.doseKey}" style="box-shadow: var(--shadow-md);">
+            <button id="today-taken-btn" class="btn btn-primary med-take-btn" data-key="${nextUntakenDose.doseKey}">
               ${t('mark_taken')}
             </button>
           </div>
         ` : `
-          <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; background: var(--status-green-bg); border: 1px solid var(--status-green-border); border-left: 6px solid var(--status-green);">
-            <div style="display: flex; align-items: center; gap: 16px;">
+          <div class="card next-dose-card" style="background: var(--status-green-bg); border: 1px solid var(--status-green-border); border-left: 6px solid var(--status-green);">
+            <div class="next-dose-content">
               <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: var(--status-green); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; box-shadow: 0 4px 12px rgba(34,197,94,0.35);">
                 ✓
               </div>
-              <div>
+              <div class="next-dose-text">
                 <div style="display: flex; align-items: center; gap: 8px;">
                   <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--status-green);">${t('all_doses_taken')}</span>
                   <span class="badge badge-green" style="font-size: 0.75rem;">${totalDosesCount} / ${totalDosesCount} Completed</span>
                 </div>
                 <h3 style="font-size: 1.25rem; margin: 2px 0; color: var(--text-main);">Daily Schedule Completed</h3>
-                <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">${t('all_doses_msg', { n: totalDosesCount })}</p>
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.45; word-break: break-word;">${t('all_doses_msg', { n: totalDosesCount })}</p>
               </div>
             </div>
-            <button id="today-undo-doses-btn" class="btn btn-secondary btn-sm" style="font-size: 0.82rem;">
+            <button id="today-undo-doses-btn" class="btn btn-secondary btn-sm" style="flex-shrink: 0; white-space: nowrap; font-size: 0.82rem; min-width: 140px; text-align: center;">
               Review / Undo Doses
             </button>
           </div>
@@ -3136,20 +3203,20 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
               const purposeText = getLocalizedMedPurpose(med, state.lang, state.readingLevel);
 
               return `
-                <div class="med-row" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background: ${isTaken ? 'var(--status-green-bg)' : 'var(--bg-card)'}; border: 1px solid ${isTaken ? 'var(--status-green-border)' : 'var(--border)'}; border-radius: var(--radius-md); transition: all 0.2s ease; gap: 12px; flex-wrap: wrap;">
-                  <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="med-row" style="background: ${isTaken ? 'var(--status-green-bg)' : 'var(--bg-card)'}; border: 1px solid ${isTaken ? 'var(--status-green-border)' : 'var(--border)'};">
+                  <div class="med-info">
                     <span class="badge ${isTaken ? 'badge-green' : 'badge-neutral'}" style="font-size: 0.8rem; font-weight: 700; min-width: 58px; text-align: center;">${medTime}</span>
-                    <div>
+                    <div class="med-text">
                       <div style="display: flex; align-items: center; gap: 8px;">
                         <strong style="font-size: 0.98rem; color: var(--text-main); ${isTaken ? 'text-decoration: line-through; opacity: 0.8;' : ''}">${escapeHtml(med.name.toUpperCase())} ${escapeHtml(med.dose)}</strong>
                         <span style="font-size: 0.78rem; color: var(--text-muted);">(${escapeHtml(med.frequency)})</span>
                       </div>
-                      <p style="font-size: 0.84rem; color: var(--text-muted); margin: 2px 0 0 0;">
+                      <p style="font-size: 0.84rem; color: var(--text-muted); margin: 2px 0 0 0; line-height: 1.45; word-break: break-word;">
                         ${escapeHtml(purposeText)} · <em>${escapeHtml(med.foodNote || 'with water')}</em>
                       </p>
                     </div>
                   </div>
-                  <button class="btn btn-sm ${isTaken ? 'btn-secondary' : 'btn-primary'} med-take-btn" data-key="${doseKey}" style="white-space: nowrap;">
+                  <button class="btn btn-sm ${isTaken ? 'btn-secondary' : 'btn-primary'} med-take-btn" data-key="${doseKey}">
                     ${isTaken ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> ${t('dose_taken')}` : t('mark_taken')}
                   </button>
                 </div>
