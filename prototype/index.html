@@ -4625,6 +4625,20 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         });
       });
 
+      // Undo all doses taken today
+      const undoDosesBtn = document.getElementById('today-undo-doses-btn');
+      if (undoDosesBtn) {
+        undoDosesBtn.addEventListener('click', () => {
+          const cleaned = { ...state.dosesTaken };
+          Object.keys(cleaned).forEach(k => {
+            if (k.startsWith(`d${state.demoDay}|`)) delete cleaned[k];
+          });
+          updateState({ dosesTaken: cleaned });
+          showToast("Today's doses reset for review.", '↺');
+          renderApp();
+        });
+      }
+
       // Trend chart filter buttons
       document.querySelectorAll('.trend-filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
