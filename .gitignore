@@ -20,5 +20,6 @@ yarn-error.log*
 audit/
 hack_questions/
 scratch/
+helpers/
 tests/TEST_REPORT.md
 submission_deliverables/demo_script.md
