@@ -48,13 +48,13 @@ flowchart TD
         direction TB
         subgraph Row1 [" "]
             direction LR
-            L1["🔍 <b>LOOP 1 · DECODE (Clinical NLP Parser)</b><br/>• Transforms medical shorthand into plain-language care plans<br/>• 4 Languages: <b>English · Bahasa Malaysia · 中文 · தமிழ்</b><br/>• <b>100% Traceability:</b> Hover card to highlight exact source lines"]
+            L1["🔍 <b>LOOP 1 · DECODE (Clinical NLP Parser)</b><br/>• Decodes medical shorthand into actionable care plans<br/>• <b>6 Global Languages:</b> English · Español · 中文 · Français · Melayu · தமிழ்<br/>• <b>Dual Modes:</b> Simple Everyday ⟷ Standard Clinical ICD-10"]
             L2["🛡️ <b>LOOP 2 · PROTECT (Medication Guardian)</b><br/>• Visual dosing timeline with daily adherence streak ring<br/>• Pre-ingestion check stops lethal prescription & OTC clashes<br/>• Intercepts <b>Triple Whammy</b> acute renal failure before ingestion"]
         end
         subgraph Row2 [" "]
             direction LR
             L3["⏱️ <b>LOOP 3 · WATCH (60s Check-in & Rules Engine)</b><br/>• Daily biometric surveillance: Weight, BP, Dyspnea & Edema<br/>• Explainable <b>0–100 Recovery Risk Index</b> with factor attribution<br/>• <b>Time Machine:</b> Simulates recovery to catch silent decompensation"]
-            L4["👨‍👩‍👧 <b>LOOP 4 · CONNECT (Caregiver & Clinician SBAR)</b><br/>• Real-time automated SMS alerts dispatched to family caregivers<br/>• One-tap standardized <b>SBAR brief</b> ready for doctor review/print<br/>• <b>Universal Safety Net:</b> Red 'I Feel Unwell' 999/112 paramedic card"]
+            L4["👨‍👩‍👧 <b>LOOP 4 · CONNECT (Caregiver & Clinician SBAR)</b><br/>• Real-time automated SMS alerts dispatched to family caregivers<br/>• One-tap standardized <b>SBAR brief</b> ready for doctor review/print<br/>• <b>Universal Safety Net:</b> Red 'I Feel Unwell' 911/112/999 paramedic card"]
         end
         Row1 ==> Row2
     end
@@ -86,7 +86,7 @@ CareLoop adheres to a strict clinical engineering principle:
 > - **AI / NLP Layer:** Handles natural language parsing, medical abbreviation expansion, and multilingual translation.
 > - **Deterministic Rules Engine:** **100% of clinical safety decisions**, drug-drug interactions, emergency alerts, and risk levels are computed in auditable deterministic code.
 > - **Zero Hallucination Tolerance:** The AI layer can **NEVER** lower a risk score, suppress an emergency flag, or alter prescribed medication dosages.
-> - **Universal Safety Net:** A persistent red *"I Feel Unwell"* button is accessible from every screen, instantly displaying 999/112 emergency calling and an unmissable paramedic handover card listing active diagnoses and current drugs.
+> - **Universal Safety Net:** A persistent red *"I Feel Unwell"* button is accessible from every screen, instantly displaying 911 / 112 / 999 global emergency calling and an unmissable paramedic handover card listing active diagnoses and current drugs.
 
 ---
 
@@ -94,7 +94,8 @@ CareLoop adheres to a strict clinical engineering principle:
 
 | Feature | Description | Clinical Rationale |
 | :--- | :--- | :--- |
-| **Discharge Decoder** | Ingests clinical text with a 68-drug dictionary. Multi-lingual toggle (**English, Bahasa Malaysia, 中文, தமிழ்**). | Eliminates language and health literacy barriers. |
+| **Discharge Decoder** | Ingests clinical text with a 68-drug dictionary. Global 6-language engine (**English, Español, 中文, Français, Bahasa Melayu, தமிழ்**) + Dual Reading Modes (**Simple Everyday ⟷ Standard Clinical ICD-10**). | Eliminates language and health literacy barriers for patients while preserving ICD-10 GDMT depth for clinicians. |
+| **Global Personas** | Interactive demo personas headed by **Robert Miller** (Heart Failure & HTN · Boston, MA · English default), alongside Pak Ahmad, Mdm Tan, and Priya. | Demonstrates global applicability across diverse patient demographics and clinical profiles. |
 | **Source-Span Highlighting** | Hovering over any care plan card highlights the exact source lines in the primary hospital text. | Builds trust with patients and clinicians via full provenance. |
 | **Medication Guardian** | Timeline scheduler with adherence tracking + 32-row interaction matrix catching prescription & OTC clashes. | Prevents accidental double-dosing and fatal drug interactions (*e.g., Triple Whammy*). |
 | **Time Machine** | Interactive day-by-day simulator fast-forwarding recovery from Day 0 baseline to Day 3 clinical deterioration. | Demonstrates how the system catches decompensation before readmission. |

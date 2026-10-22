@@ -537,6 +537,34 @@
   <!-- Hidden Seed Data Islands -->
   <script id="data-personas" type="application/json">
   {
+    "robert": {
+      "id": "robert",
+      "name": "Robert Miller",
+      "age": 71,
+      "gender": "M",
+      "location": "Boston, MA, USA",
+      "language": "en",
+      "caregiver": "Sarah Miller (Daughter)",
+      "caregiverPhone": "+1 (617) 555-0142",
+      "clinicPhone": "+1 (617) 555-0199",
+      "conditionProfiles": ["heart_failure", "hypertension", "ckd"],
+      "baselineWeight": 78.5,
+      "dischargeText": "DISCHARGE SUMMARY\nName: Robert Miller   Age: 71M   Ward: Cardiac 4B   LOS: 5 days\nPrincipal Dx: Acute decompensated heart failure (HFrEF LVEF 35%), Essential Hypertension\nOther Dx: CKD stage 3a (eGFR 54), Hyperlipidemia\n\nMEDICATIONS ON DISCHARGE\n1. Furosemide 40mg OD mane - NEW\n2. Carvedilol 12.5mg BD with food - NEW\n3. Lisinopril 10mg OD - continue\n4. Spironolactone 25mg OD - NEW\n5. Atorvastatin 40mg ON - continue\n6. Aspirin 81mg OD after food - continue\nSTOPPED: Ibuprofen (avoid NSAIDs in heart failure and CKD)\n\nADVICE\nDaily weight every morning after passing urine. Fluid restriction 1.5L/day. Low sodium diet (<2g/day).\nReturn to ED immediately if SOB at rest, chest pain, fainting or weight gain >2kg in 3 days.\nCall HF clinic if increased leg swelling, orthopnoea, dizziness or reduced urine output.\n\nFOLLOW-UP\nHeart Failure Clinic 29/10/2026. Nephrology 12/11/2026. Renal panel bloods (BMP/eGFR) in 1 week.",
+      "groundTruth": {
+        "diagnoses": ["Acute decompensated heart failure (HFrEF LVEF 35%)", "Essential Hypertension", "CKD stage 3a (eGFR 54)", "Hyperlipidemia"],
+        "medications": [
+          {"name": "furosemide", "dose": "40mg", "freq": "OD", "status": "new"},
+          {"name": "carvedilol", "dose": "12.5mg", "freq": "BD", "status": "new"},
+          {"name": "lisinopril", "dose": "10mg", "freq": "OD", "status": "continued"},
+          {"name": "spironolactone", "dose": "25mg", "freq": "OD", "status": "new"},
+          {"name": "atorvastatin", "dose": "40mg", "freq": "ON", "status": "continued"},
+          {"name": "aspirin", "dose": "81mg", "freq": "OD", "status": "continued"}
+        ],
+        "stopped": ["ibuprofen"],
+        "appointments": 3,
+        "warningSigns": 7
+      }
+    },
     "ahmad": {
       "id": "ahmad",
       "name": "Ahmad bin Hassan",
@@ -762,27 +790,27 @@
   ]
   </script>
 
-  <script id="data-i18n" type="application/json">
+    <script id="data-i18n" type="application/json">
   {
-    "app_title": {"en": "CareLoop", "ms": "CareLoop", "zh": "CareLoop", "ta": "CareLoop"},
-    "tagline": {"en": "Safe Post-Discharge Recovery", "ms": "Pemulihan Selamat Selepas Discaj", "zh": "安全的出院康复监护", "ta": "பாதுகாப்பான மீட்பு பராமரிப்பு"},
-    "nav_today": {"en": "Today", "ms": "Hari Ini", "zh": "今日概况", "ta": "இன்று"},
-    "nav_plan": {"en": "Care Plan", "ms": "Pelan Rawatan", "zh": "康复方案", "ta": "சிகிச்சை திட்டம்"},
-    "nav_checkin": {"en": "Check-in", "ms": "Pemeriksaan", "zh": "每日打卡", "ta": "பரிசோதனை"},
-    "nav_circle": {"en": "Care Circle", "ms": "Keluarga", "zh": "亲友守护", "ta": "குடும்ப வட்டம்"},
-    "nav_clinician": {"en": "Clinician Brief", "ms": "Ringkasan Doktor", "zh": "临床简报", "ta": "மருத்துவ அறிக்கை"},
-    "nav_trust": {"en": "Trust & Safety", "ms": "Ketelusan & Keselamatan", "zh": "安全与可信度", "ta": "பாதுகாப்பு & நம்பிக்கை"},
-    "unwell_button": {"en": "I Feel Unwell", "ms": "Saya Rasa Tak Sihat", "zh": "我感觉不舒服", "ta": "உடல்நிலை சரியில்லை"},
-    "level_green": {"en": "On Track", "ms": "Dalam Kawalan", "zh": "恢复良好", "ta": "நலமாக உள்ளது"},
-    "level_amber": {"en": "Call Clinic Today", "ms": "Hubungi Klinik Hari Ini", "zh": "建议今日联系诊所", "ta": "இன்றே மருத்துவரை அழைக்கவும்"},
-    "level_red": {"en": "Get Help Now", "ms": "Dapatkan Bantuan Segera", "zh": "请立即寻求急救", "ta": "உடனடி உதவி தேவை"},
-    "next_dose": {"en": "Next Medication", "ms": "Ubat Seterusnya", "zh": "下一剂药物", "ta": "அடுத்த மருந்து"},
-    "mark_taken": {"en": "Mark as Taken", "ms": "Telah Diambil", "zh": "标记已服用", "ta": "எடுத்துக்கொண்டேன்"},
-    "dose_taken": {"en": "Taken", "ms": "Selesai", "zh": "已服用", "ta": "முடிந்தது"},
-    "today_tasks": {"en": "Today's Recovery Routine", "ms": "Rutin Pemulihan Hari Ini", "zh": "今日康复事项", "ta": "இன்றைய பணிகள்"},
-    "checkin_prompt": {"en": "60-Second Daily Check-in", "ms": "Pemeriksaan Harian 60-Saat", "zh": "60秒日常身体检查", "ta": "60 வினாடி பரிசோதனை"},
-    "reading_simple": {"en": "Simple (Everyday)", "ms": "Mudah (Harian)", "zh": "通俗易懂", "ta": "எளிமையான"},
-    "reading_standard": {"en": "Standard (Clinical)", "ms": "Standard (Klinikal)", "zh": "标准医学", "ta": "நிலையான"}
+    "app_title": {"en": "CareLoop", "es": "CareLoop", "zh": "CareLoop", "fr": "CareLoop", "ms": "CareLoop", "ta": "CareLoop"},
+    "tagline": {"en": "Safe Post-Discharge Recovery", "es": "Recuperación Post-Hospitalaria Segura", "zh": "安全的出院康复监护", "fr": "Rétablissement Post-Hospitalisation Sécurisé", "ms": "Pemulihan Selamat Selepas Discaj", "ta": "பாதுகாப்பான மீட்பு பராமரிப்பு"},
+    "nav_today": {"en": "Today", "es": "Hoy", "zh": "今日概况", "fr": "Aujourd'hui", "ms": "Hari Ini", "ta": "இன்று"},
+    "nav_plan": {"en": "Care Plan", "es": "Plan de Cuidados", "zh": "康复方案", "fr": "Plan de Soins", "ms": "Pelan Rawatan", "ta": "சிகிச்சை திட்டம்"},
+    "nav_checkin": {"en": "Check-in", "es": "Registro Diario", "zh": "每日打卡", "fr": "Bilan Quotidien", "ms": "Pemeriksaan", "ta": "பரிசோதனை"},
+    "nav_circle": {"en": "Care Circle", "es": "Círculo Familiar", "zh": "亲友守护", "fr": "Cercle de Proches", "ms": "Keluarga", "ta": "குடும்ப வட்டம்"},
+    "nav_clinician": {"en": "Clinician Brief", "es": "Informe Clínico", "zh": "临床简报", "fr": "Fiche Clinique", "ms": "Ringkasan Doktor", "ta": "மருத்துவ அறிக்கை"},
+    "nav_trust": {"en": "Trust & Safety", "es": "Seguridad y Confianza", "zh": "安全与可信度", "fr": "Sécurité & Transparence", "ms": "Ketelusan & Keselamatan", "ta": "பாதுகாப்பு & நம்பிக்கை"},
+    "unwell_button": {"en": "I Feel Unwell", "es": "No Me Siento Bien", "zh": "我感觉不舒服", "fr": "Je Ne Me Sens Pas Bien", "ms": "Saya Rasa Tak Sihat", "ta": "உடல்நிலை சரியில்லை"},
+    "level_green": {"en": "On Track", "es": "En Buen Camino", "zh": "恢复良好", "fr": "En Bonne Voie", "ms": "Dalam Kawalan", "ta": "நலமாக உள்ளது"},
+    "level_amber": {"en": "Call Clinic Today", "es": "Llamar a la Clínica Hoy", "zh": "建议今日联系诊所", "fr": "Appeler la Clinique Aujourd'hui", "ms": "Hubungi Klinik Hari Ini", "ta": "இன்றே மருத்துவரை அழைக்கவும்"},
+    "level_red": {"en": "Get Help Now", "es": "Obtener Ayuda Urgente", "zh": "请立即寻求急救", "fr": "Urgence Médicale Immédiate", "ms": "Dapatkan Bantuan Segera", "ta": "உடனடி உதவி தேவை"},
+    "next_dose": {"en": "Next Medication", "es": "Próximo Medicamento", "zh": "下一剂药物", "fr": "Prochain Médicament", "ms": "Ubat Seterusnya", "ta": "அடுத்த மருந்து"},
+    "mark_taken": {"en": "Mark as Taken", "es": "Marcar como Tomado", "zh": "标记已服用", "fr": "Marquer comme Pris", "ms": "Telah Diambil", "ta": "எடுத்துக்கொண்டேன்"},
+    "dose_taken": {"en": "Taken", "es": "Tomado", "zh": "已服用", "fr": "Pris", "ms": "Selesai", "ta": "முடிந்தது"},
+    "today_tasks": {"en": "Today's Recovery Routine", "es": "Rutina de Recuperación", "zh": "今日康复事项", "fr": "Programme du Jour", "ms": "Rutin Pemulihan Hari Ini", "ta": "இன்றைய பணிகள்"},
+    "checkin_prompt": {"en": "60-Second Daily Check-in", "es": "Chequeo Diario de 60 Segundos", "zh": "60秒日常身体检查", "fr": "Bilan de 60 Secondes", "ms": "Pemeriksaan Harian 60-Saat", "ta": "60 வினாடி பரிசோதனை"},
+    "reading_simple": {"en": "Simple (Everyday)", "es": "Sencillo (Cotidiano)", "zh": "通俗易懂 (患者语言)", "fr": "Simple (Quotidien)", "ms": "Mudah (Harian)", "ta": "எளிமையான"},
+    "reading_standard": {"en": "Standard (Clinical)", "es": "Estándar (Clínico)", "zh": "标准医学 (专业术语)", "fr": "Standard (Clinique)", "ms": "Standard (Klinikal)", "ta": "நிலையான"}
   }
   </script>
 
@@ -800,6 +828,7 @@
       <div class="header-actions">
         <!-- Persona Switcher -->
         <select id="persona-select" class="select-pill" aria-label="Select Demo Patient">
+          <option value="robert">Robert Miller (Heart Failure · English)</option>
           <option value="ahmad">Pak Ahmad (Heart Failure · BM)</option>
           <option value="tan">Mdm Tan (Hip Surgery · 中文)</option>
           <option value="priya">Priya (Diabetes & CKD · தமிழ்)</option>
@@ -807,10 +836,12 @@
 
         <!-- Language Selector -->
         <select id="lang-select" class="select-pill" aria-label="Select Interface Language">
-          <option value="en">English</option>
-          <option value="ms">Bahasa Malaysia</option>
-          <option value="zh">中文</option>
-          <option value="ta">தமிழ்</option>
+          <option value="en">English (US / Global)</option>
+          <option value="es">Español (Spanish)</option>
+          <option value="zh">中文 (Chinese)</option>
+          <option value="fr">Français (French)</option>
+          <option value="ms">Bahasa Melayu</option>
+          <option value="ta">தமிழ் (Tamil)</option>
         </select>
 
         <!-- Dark / Light Theme Toggle -->
@@ -909,9 +940,9 @@
         If you or your family member is experiencing severe symptoms, do not wait for a clinic callback. Call medical emergency services immediately.
       </p>
 
-      <a href="tel:999" class="btn btn-danger" style="font-size: 1.25rem; padding: 16px 28px; width: 100%; margin-bottom: 16px; justify-content: center; box-shadow: 0 4px 14px rgba(200,55,45,0.4);">
+      <a href="tel:911" class="btn btn-danger" style="font-size: 1.25rem; padding: 16px 28px; width: 100%; margin-bottom: 16px; justify-content: center; box-shadow: 0 4px 14px rgba(200,55,45,0.4);">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Call 999 / 112 (Ambulance)
+        Call Emergency (911 / 112 / 999)
       </a>
 
       <!-- Information Paramedic Card -->
@@ -1044,7 +1075,7 @@
     const STORAGE_KEY = 'careloop_state_v2';
 
     const defaultState = {
-      personaId: 'ahmad',
+      personaId: 'robert',
       lang: 'en',
       readingLevel: 'simple',
       theme: 'light',
@@ -1064,7 +1095,12 @@
     function loadState() {
       try {
         const raw = localStorage.getItem(STORAGE_KEY);
-        if (raw) return { ...defaultState, ...JSON.parse(raw) };
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.personaId && PERSONAS[parsed.personaId]) {
+            return { ...defaultState, ...parsed };
+          }
+        }
       } catch (e) {
         console.warn('Could not read localStorage:', e);
       }
@@ -1352,10 +1388,342 @@
       return carePlan;
     }
 
+    /* =====================================================================
+       4B. CLINICAL TRANSLATION LEXICON & READING LEVEL ENGINE
+       ===================================================================== */
+    const CLINICAL_LEXICON = {
+      heart_failure: {
+        simple: {
+          title: "Weakened Heart Pump (Heart Failure)",
+          icon: "❤️",
+          plain: "Your heart muscle is having difficulty pumping enough blood to meet your body's daily needs (pumping efficiency is 35%).",
+          action: "Weigh yourself every morning, take your water pills on time, and limit extra fluids so water doesn't build up in your lungs.",
+          badge: "6th-Grade Patient Language"
+        },
+        standard: {
+          title: "Acute Decompensated Heart Failure (HFrEF · NYHA Class III)",
+          icon: "🔬",
+          plain: "ICD-10 I50.21. Left ventricular systolic dysfunction with LVEF 35%. Precipitated by medication non-compliance and acute volume overload.",
+          action: "Guideline-Directed Medical Therapy (GDMT): Beta-blocker, ACEi/ARNI, MRA, SGLT2i. Loop diuretic titration to dry euvolemic weight. Serial eGFR and K+ surveillance.",
+          badge: "ICD-10 / GDMT Specialist Criteria"
+        }
+      },
+      hypertension: {
+        simple: {
+          title: "High Blood Pressure (Hypertension)",
+          icon: "🩸",
+          plain: "Blood presses too hard against the inside of your blood vessels, making your heart work overtime.",
+          action: "Take your blood pressure medicines every day, cut back on table salt, and keep a log of morning blood pressure readings.",
+          badge: "Everyday Self-Care"
+        },
+        standard: {
+          title: "Essential Hypertension (Stage 2)",
+          icon: "🩺",
+          plain: "ICD-10 I10. Persistent systemic vascular resistance exceeding guideline targets (>130/80 mmHg).",
+          action: "Target BP <130/80 mmHg. Combination ACEi + diuretic therapy to decrease afterload and reduce long-term cardiovascular and renal morbidity.",
+          badge: "AHA/ACC Stage 2 Criteria"
+        }
+      },
+      ckd: {
+        simple: {
+          title: "Kidney Strain (Chronic Kidney Disease Stage 3a)",
+          icon: "💧",
+          plain: "Your kidneys filter waste and fluids at about half their normal speed (filtering speed eGFR is 52-54).",
+          action: "Strictly avoid NSAID painkillers (like ibuprofen, naproxen, or Voltaren) because they harm kidneys. Drink steady water as recommended.",
+          badge: "Renal Protection Advice"
+        },
+        standard: {
+          title: "Chronic Kidney Disease Stage 3a (eGFR 45–59 mL/min/1.73m²)",
+          icon: "🧪",
+          plain: "ICD-10 N18.31. Moderate reduction in glomerular filtration rate. eGFR 52-54 mL/min/1.73m² with impaired drug clearance capacity.",
+          action: "Renal dosing adjustments required (metformin dose reduction, avoid nephrotoxic NSAIDs). Regular monitoring of serum creatinine, BUN, and hyperkalemia risk.",
+          badge: "KDIGO Guideline Criteria"
+        }
+      },
+      diabetes: {
+        simple: {
+          title: "Type 2 Diabetes (High Blood Sugar)",
+          icon: "🍬",
+          plain: "Your body has trouble turning sugar from food into energy, leading to high blood sugar levels (recent 3-month sugar average HbA1c is 8.4%).",
+          action: "Take diabetes pills with meals, test your blood sugar, and keep glucose candies or fruit juice handy in case of low blood sugar shakiness.",
+          badge: "Everyday Diabetes Care"
+        },
+        standard: {
+          title: "Type 2 Diabetes Mellitus with Poor Glycemic Control",
+          icon: "📊",
+          plain: "ICD-10 E11.65. Baseline HbA1c 8.4% (target <7.0%). Elevated risk for microvascular (retinopathy, nephropathy) and macrovascular complications.",
+          action: "Metformin renal dose titration (500mg BD for eGFR 52). Dual therapy with sulfonylurea (gliclazide) or SGLT2i. Fasting glucose target 4.4-7.0 mmol/L (80-130 mg/dL).",
+          badge: "ADA Standards of Care"
+        }
+      },
+      post_surgery: {
+        simple: {
+          title: "Repaired Broken Hip (Right Hip Partial Replacement)",
+          icon: "🦴",
+          plain: "The top of your thigh bone was repaired with a new metal ball joint after a fracture.",
+          action: "Never bend your hip past 90 degrees, always use your walker, take blood-thinner shots for 14 days, and keep your dressing clean and dry.",
+          badge: "Post-Surgical Safe Healing"
+        },
+        standard: {
+          title: "Right Femoral Neck Fracture s/p Right Hip Hemiarthroplasty",
+          icon: "🏥",
+          plain: "ICD-10 S72.001A. Traumatic femoral neck fracture status-post bipolar modular hemiarthroplasty.",
+          action: "Post-op DVT/PE thromboprophylaxis with LMWH (enoxaparin 40mg SC) for 14 days. Strict posterior hip dislocation precautions (no flexion >90°, adduction, or internal rotation). Staple removal Day 12.",
+          badge: "Orthopaedic Surgical Protocol"
+        }
+      },
+      osteopenia: {
+        simple: {
+          title: "Mild Bone Thinning & Joint Wear (Osteopenia & Arthritis)",
+          icon: "🛡️",
+          plain: "Your bones are slightly more fragile than average and hip joints have age-related wear.",
+          action: "Take your daily calcium and vitamin D pills to keep bones strong and prevent future falls.",
+          badge: "Bone Health"
+        },
+        standard: {
+          title: "Osteopenia & Osteoarthritis (M85.80, M19.90)",
+          icon: "🔬",
+          plain: "ICD-10 M85.80. T-score -1.0 to -2.5. Secondary osteoarthritis with articular cartilage depletion.",
+          action: "Calcium carbonate 500mg BD + Colecalciferol 1000iu OD. Fall risk assessment and physical rehabilitation protocol.",
+          badge: "Rheumatology / Geriatric Criteria"
+        }
+      },
+      hyperlipidemia: {
+        simple: {
+          title: "High Cholesterol",
+          icon: "🩺",
+          plain: "Fatty substances in your blood can build up along artery walls over time.",
+          action: "Take your statin pill every night before sleep and choose heart-healthy foods low in saturated fats.",
+          badge: "Heart & Artery Protection"
+        },
+        standard: {
+          title: "Hyperlipidemia / Dyslipidemia (ICD-10 E78.5)",
+          icon: "🧪",
+          plain: "ICD-10 E78.5. Atherogenic lipid profile requiring high-intensity statin therapy for secondary cardiovascular risk reduction.",
+          action: "Atorvastatin 40mg ON for plaque stabilization and LDL-C reduction >50%. Monitor liver function tests and CPK if myalgia develops.",
+          badge: "AHA/ACC Secondary Prevention"
+        }
+      }
+    };
+
+    const MED_CLINICAL_DETAILS = {
+      furosemide: {
+        category: "Water Pill (Loop Diuretic)",
+        icon: "💧",
+        simplePurpose: "Flushes extra fluid out of your body into urine so you can breathe easily and keep swelling down.",
+        simpleInstructions: "Take 1 pill each morning with water. You will need to use the bathroom more often during the first few hours.",
+        simpleWatch: "Dizziness when standing up, muscle cramps, or extreme dry mouth.",
+        standardClass: "Loop Diuretic (High Ceiling)",
+        standardMoa: "Inhibits luminal Na+/K+/2Cl- cotransporter in the thick ascending limb of the loop of Henle, promoting prompt natriuresis and diuresis.",
+        standardHemodynamics: "Decreases intravascular blood volume, reduces left ventricular end-diastolic filling pressure (preload), and mitigates pulmonary capillary wedge pressure.",
+        standardMonitoring: "Mandatory surveillance of serum creatinine, BUN, K+, Na+, and orthostatic vitals."
+      },
+      carvedilol: {
+        category: "Heart Protector (Beta-Blocker)",
+        icon: "❤️",
+        simplePurpose: "Slows down your heart rate and helps your heart pump with less strain, protecting your heart muscle.",
+        simpleInstructions: "Take with food (breakfast and dinner) to prevent feeling lightheaded.",
+        simpleWatch: "Slow pulse, dizziness when getting up, cold hands or feet.",
+        standardClass: "Non-Selective Beta-Blocker / Alpha-1 Blocker",
+        standardMoa: "Blocks beta-1, beta-2, and alpha-1 adrenergic receptors, attenuating sympathetic overdrive and lowering systemic vascular resistance.",
+        standardHemodynamics: "Reduces afterload and chronotropy; proven 4-pillar GDMT agent for HFrEF mortality and hospitalization reduction.",
+        standardMonitoring: "Serial resting heart rate (target 55-65 bpm), blood pressure, and signs of peripheral hypoperfusion."
+      },
+      bisoprolol: {
+        category: "Heart Protector (Cardioselective Beta-Blocker)",
+        icon: "❤️",
+        simplePurpose: "Keeps your heart beating at a calm, steady rate and strengthens heart muscle over time.",
+        simpleInstructions: "Take once daily in the morning at the same time.",
+        simpleWatch: "Very slow pulse (<50 bpm), unusual tiredness, or dizziness.",
+        standardClass: "Cardioselective Beta-1 Adrenergic Antagonist",
+        standardMoa: "Competitively inhibits cardiac beta-1 receptors, decreasing myocardial oxygen demand and blunting neurohormonal activation.",
+        standardHemodynamics: "Increases left ventricular ejection fraction over long-term GDMT therapy; prevents malignant ventricular arrhythmias.",
+        standardMonitoring: "ECG rhythm surveillance, resting heart rate, and blood pressure."
+      },
+      lisinopril: {
+        category: "Blood Vessel Relaxer (ACE Inhibitor)",
+        icon: "🛡️",
+        simplePurpose: "Relaxes and widens your blood vessels, bringing high blood pressure down and protecting your kidneys.",
+        simpleInstructions: "Take once daily in the morning with or without food.",
+        simpleWatch: "Dry tickly cough, lightheadedness, or swelling of lips or face.",
+        standardClass: "Angiotensin-Converting Enzyme (ACE) Inhibitor",
+        standardMoa: "Prevents conversion of angiotensin I to angiotensin II, decreasing arterial vasoconstriction and aldosterone secretion.",
+        standardHemodynamics: "Reduces systemic arterial afterload, halts maladaptive left ventricular remodeling, and preserves glomerular filtration.",
+        standardMonitoring: "Serum creatinine (allowable acute increase up to 30%), BUN, and serum potassium (hyperkalemia risk)."
+      },
+      perindopril: {
+        category: "Blood Vessel Relaxer (Long-Acting ACE Inhibitor)",
+        icon: "🛡️",
+        simplePurpose: "Relaxes blood vessel walls so blood flows more smoothly, reducing strain on your heart and kidneys.",
+        simpleInstructions: "Take in the morning before food with a glass of water.",
+        simpleWatch: "Persistent dry cough, dizziness on standing, or facial swelling.",
+        standardClass: "Long-Acting ACE Inhibitor (Prodrug)",
+        standardMoa: "Bioactivated to perindoprilat, suppressing plasma angiotensin II and augmenting circulating bradykinin levels.",
+        standardHemodynamics: "Cardioprotective and renoprotective GDMT foundation reducing left ventricular afterload and arterial stiffness.",
+        standardMonitoring: "Electrolytes (serum K+), serum creatinine, and baseline BP."
+      },
+      spironolactone: {
+        category: "Fluid Guard & Heart Helper (MRA)",
+        icon: "🌊",
+        simplePurpose: "Blocks hormones that cause fluid retention and stops stiff scar tissue from forming in your heart.",
+        simpleInstructions: "Take in the morning with breakfast. Avoid potassium salt substitutes (like 'NoSalt' or 'LoSalt').",
+        simpleWatch: "Breast tenderness, high potassium symptoms (muscle weakness, tingling).",
+        standardClass: "Mineralocorticoid Receptor Antagonist (MRA)",
+        standardMoa: "Competitively antagonizes aldosterone receptors in distal convoluted tubule and myocardium, blocking sodium reabsorption and myocardial fibrosis.",
+        standardHemodynamics: "Essential 4-pillar GDMT agent providing proven 30% reduction in all-cause mortality in NYHA III-IV HFrEF.",
+        standardMonitoring: "Strict monitoring of serum potassium (target 4.0-5.0 mEq/L) and renal function at 1, 4, 8, and 12 weeks."
+      },
+      atorvastatin: {
+        category: "Artery Shield (Cholesterol Statin)",
+        icon: "🩺",
+        simplePurpose: "Lowers bad cholesterol (LDL) and keeps your arteries smooth and free of dangerous blockages.",
+        simpleInstructions: "Take once daily at bedtime with water.",
+        simpleWatch: "Unexplained muscle soreness or aches, dark tea-colored urine.",
+        standardClass: "HMG-CoA Reductase Inhibitor (High-Intensity Statin)",
+        standardMoa: "Competitively inhibits 3-hydroxy-3-methylglutaryl-coenzyme A reductase, upregulating hepatic LDL receptors and promoting LDL clearance.",
+        standardHemodynamics: "Pleiotropic effects: plaque stabilization, endothelial nitric oxide synthesis enhancement, and systemic anti-inflammatory action.",
+        standardMonitoring: "Baseline hepatic transaminases (ALT/AST) and creatine phosphokinase (CPK) if myalgia is reported."
+      },
+      aspirin: {
+        category: "Blood Clot Preventer (Antiplatelet)",
+        icon: "🩸",
+        simplePurpose: "Keeps blood cells from sticking together, preventing dangerous blood clots that can cause heart attacks.",
+        simpleInstructions: "Take once daily with or right after food to protect your stomach.",
+        simpleWatch: "Easy bruising, bleeding gums, black tarry stools, or stomach pain.",
+        standardClass: "Cyclooxygenase-1 (COX-1) Inhibitor / Antiplatelet",
+        standardMoa: "Irreversibly acetylates platelet cyclooxygenase-1, inhibiting thromboxane A2 synthesis for the lifespan of the platelet (7-10 days).",
+        standardHemodynamics: "Secondary prevention against coronary thrombosis, thromboembolism, and acute vascular occlusive events.",
+        standardMonitoring: "Gastrointestinal bleeding signs, hemoglobin/hematocrit, and co-administration with gastroprotective PPI if indicated."
+      },
+      metformin: {
+        category: "Blood Sugar Balancer",
+        icon: "🍬",
+        simplePurpose: "Helps your body use its own insulin better to keep daily blood sugar levels in a safe range.",
+        simpleInstructions: "Take with meals to avoid stomach upset.",
+        simpleWatch: "Nausea, diarrhea, metallic taste, or fatigue.",
+        standardClass: "Biguanide Antihyperglycemic Agent",
+        standardMoa: "Activates AMP-activated protein kinase (AMPK), reducing hepatic gluconeogenesis and improving peripheral insulin sensitivity.",
+        standardHemodynamics: "First-line glycemic therapy; requires renal dosage reduction (500mg BD for eGFR 45-59) to prevent lactic acidosis.",
+        standardMonitoring: "Annual renal function (eGFR), serum creatinine, and vitamin B12 levels."
+      },
+      gliclazide: {
+        category: "Insulin Releaser",
+        icon: "🍬",
+        simplePurpose: "Prompts your pancreas to release natural insulin when you eat to lower blood sugar.",
+        simpleInstructions: "Take before breakfast. Never skip meals after taking this medicine.",
+        simpleWatch: "Signs of low sugar: sweating, shaking, hunger, dizziness, or confusion.",
+        standardClass: "Second-Generation Sulfonylurea",
+        standardMoa: "Selectively binds to SUR1 receptors on pancreatic beta-cell membranes, stimulating postprandial insulin exocytosis.",
+        standardHemodynamics: "Potent glycemic reduction; carried risk of hypoglycemia requiring patient education and rapid-acting carbohydrates.",
+        standardMonitoring: "Capillary blood glucose, HbA1c, and hypoglycemia frequency."
+      },
+      enoxaparin: {
+        category: "Blood Thinner Shot (Post-Surgery)",
+        icon: "💉",
+        simplePurpose: "Prevents dangerous blood clots in your leg veins or lungs while you recover from hip surgery.",
+        simpleInstructions: "Inject under the skin of your stomach once daily at the same time.",
+        simpleWatch: "Unusual bruising, bleeding around injection site, or calf swelling.",
+        standardClass: "Low Molecular Weight Heparin (LMWH)",
+        standardMoa: "Potentiates antithrombin III, selectively inactivating coagulation Factor Xa with minimal effect on thrombin (IIa).",
+        standardHemodynamics: "Postoperative venous thromboembolism (VTE/DVT/PE) prophylaxis following major orthopedic lower extremity surgery.",
+        standardMonitoring: "Platelet count surveillance (monitor for Heparin-Induced Thrombocytopenia), wound site bleeding, hemoglobin."
+      },
+      paracetamol: {
+        category: "Safe Pain Reliever",
+        icon: "🩹",
+        simplePurpose: "Relieves mild-to-moderate pain and reduces fever without irritating your stomach or kidneys.",
+        simpleInstructions: "Take every 6 hours as needed for pain. Do not take more than 4,000mg in 24 hours.",
+        simpleWatch: "Do not combine with other cold or flu medicines that contain acetaminophen.",
+        standardClass: "Analgesic & Antipyretic (Non-Opioid)",
+        standardMoa: "Inhibits central prostaglandin synthesis via central COX peroxidase sites and modulates descending serotonergic inhibitory pathways.",
+        standardHemodynamics: "Preferred first-line multimodal baseline analgesia; avoids nephrotoxicity and platelet inhibition of NSAIDs.",
+        standardMonitoring: "Hepatic function surveillance in prolonged high-dose usage (>4g/24h ceiling)."
+      },
+      tramadol: {
+        category: "Moderate Pain Reliever",
+        icon: "💊",
+        simplePurpose: "Relieves stronger post-surgical pain when regular pain relievers aren't enough.",
+        simpleInstructions: "Take only when pain is severe. Can cause drowsiness, so do not drive.",
+        simpleWatch: "Drowsiness, constipation, nausea, or dizziness.",
+        standardClass: "Centrally Acting Synthetic Opioid Agonist / SNRI",
+        standardMoa: "Dual mechanism: weak mu-opioid receptor agonism combined with norepinephrine and serotonin reuptake inhibition.",
+        standardHemodynamics: "Step 2 WHO analgesic ladder for breakthrough postoperative pain. Caution: reduces seizure threshold; serotonin syndrome risk.",
+        standardMonitoring: "Respiratory rate, sedation score, bowel function, and potential drug-drug interactions with serotonergic agents."
+      }
+    };
+
+    function resolveDiagnosisCard(dxName, readingLevel, lang) {
+      const lower = dxName.toLowerCase();
+      let key = 'heart_failure';
+      if (/fracture|hip|hemiarthroplasty|surgery|post-op/i.test(lower)) key = 'post_surgery';
+      else if (/osteo|bone|joint/i.test(lower)) key = 'osteopenia';
+      else if (/diabetes|t2dm|t1dm|glucose/i.test(lower)) key = 'diabetes';
+      else if (/ckd|kidney|egfr|nephropathy/i.test(lower)) key = 'ckd';
+      else if (/hypertension|htn|blood pressure/i.test(lower)) key = 'hypertension';
+      else if (/lipid|cholesterol|dyslipidemia/i.test(lower)) key = 'hyperlipidemia';
+      else if (/heart failure|hf\b|lvef|decompensated/i.test(lower)) key = 'heart_failure';
+
+      const entry = CLINICAL_LEXICON[key] || CLINICAL_LEXICON.heart_failure;
+      const level = readingLevel || state.readingLevel || 'simple';
+      return { raw: dxName, ...entry[level] };
+    }
+
+    function getMedicationCardDetails(med, readingLevel, lang) {
+      const clean = (med.name || '').toLowerCase().trim();
+      const matched = DRUGS.find(d => d.generic === clean || (d.brands && d.brands.includes(clean)));
+      const gen = matched ? matched.generic : clean;
+      const det = MED_CLINICAL_DETAILS[gen] || {
+        category: "Prescribed Discharge Medication",
+        icon: "💊",
+        simplePurpose: getLocalizedMedPurpose(med, lang, 'simple'),
+        simpleInstructions: med.foodNote || "Take with a full glass of water as directed.",
+        simpleWatch: (matched && matched.watch) ? matched.watch.join(', ') : "Dizziness, rash, or unusual symptoms.",
+        standardClass: matched && matched.class ? matched.class.replace(/_/g, ' ').toUpperCase() : "PHARMACOTHERAPY",
+        standardMoa: "Pharmacological agent prescribed for post-discharge chronic disease management.",
+        standardHemodynamics: "Clinical maintenance therapy according to guideline recommendations.",
+        standardMonitoring: "Clinical tolerability and routine ambulatory organ profile surveillance."
+      };
+      return det;
+    }
+
+    function getWarningSignDetails(ws, readingLevel, lang) {
+      const signText = ws.sign || '';
+      const isEmergency = ws.level === 'emergency';
+      if (readingLevel === 'simple') {
+        if (isEmergency) {
+          return {
+            badge: "🚨 EMERGENCY: CALL 911 / 112 / 999 IMMEDIATELY",
+            title: "Go to the Nearest Emergency Room or Call an Ambulance Right Away if:",
+            instructions: signText.replace(/Return to ED if|Return to ED immediately if|Go to Emergency if/i, '').trim()
+          };
+        } else {
+          return {
+            badge: "📞 SAME-DAY ACTION: CALL CLINIC TODAY",
+            title: "Contact Your Doctor's Office or Clinic Today if:",
+            instructions: signText.replace(/Call HF clinic if|Call ortho clinic if|Contact diabetes educator if/i, '').trim()
+          };
+        }
+      } else {
+        if (isEmergency) {
+          return {
+            badge: "🔴 TIER 1 CLINICAL ESCALATION: RESUSCITATION & ED TRANSFER",
+            title: "Emergent Decompensation & Resuscitation Criteria (Immediate Evaluation):",
+            instructions: `Clinical presentation meeting urgent acute hospital admission thresholds: ${signText}. Transfer via EMS for IV decongestion/stabilization.`
+          };
+        } else {
+          return {
+            badge: "🟡 TIER 2 CLINICAL ESCALATION: SUBACUTE AMBULATORY REVIEW",
+            title: "Subacute Ambulatory Review & GDMT Titration Criteria:",
+            instructions: `Outpatient decompensation indicators: ${signText}. Requires clinician contact within 24 hours for medication adjustment and renal profile surveillance.`
+          };
+        }
+      }
+    }
+
     /* Helper: Resolve localized plain-language or standard purpose */
     function getLocalizedMedPurpose(med, lang, readingLevel) {
       if (!med) return '';
-      const matched = DRUGS.find(d => d.generic.toLowerCase() === med.name.toLowerCase() || d.brands.includes(med.name.toLowerCase()));
+      const matched = DRUGS.find(d => d.generic.toLowerCase() === med.name.toLowerCase() || (d.brands && d.brands.includes(med.name.toLowerCase())));
       const l = (lang || state.lang || 'en').toLowerCase();
       let text = '';
       if (l === 'ms') {
@@ -1369,9 +1737,21 @@
       }
 
       const activeLevel = readingLevel || state.readingLevel || 'simple';
-      if (activeLevel === 'standard' && matched && matched.class) {
-        const classFmt = matched.class.replace(/_/g, ' ').toUpperCase();
-        return `[${classFmt}] ${text}`;
+      const clean = (med.name || '').toLowerCase();
+      const det = MED_CLINICAL_DETAILS[clean];
+
+      if (activeLevel === 'standard') {
+        if (det && det.standardClass) {
+          return `[${det.standardClass.toUpperCase()}] ${det.standardMoa}`;
+        }
+        if (matched && matched.class) {
+          const classFmt = matched.class.replace(/_/g, ' ').toUpperCase();
+          return `[${classFmt}] ${text}`;
+        }
+      } else {
+        if (det && det.simplePurpose) {
+          return `${det.icon} ${det.simplePurpose}`;
+        }
       }
       return text;
     }
@@ -1602,6 +1982,72 @@
        7. SCRIPTED TIME MACHINE SCENARIOS
        ===================================================================== */
     const TIMELINE_SCRIPTS = {
+      robert: [
+        {
+          day: 0,
+          label: "Day 0 (Discharge)",
+          desc: "Discharged from Boston Medical Center. Reconciled 6 discharge medications. Baseline weight 78.5kg. Resting comfortably.",
+          weight: 78.5,
+          temperature: 36.6,
+          systolicBp: 126,
+          diastolicBp: 78,
+          glucose: 5.6,
+          sobExertion: false,
+          orthopnoea: false,
+          legSwelling: false,
+          dizziness: false,
+          missedCriticalDoses: 0,
+          expectedLevel: 'green'
+        },
+        {
+          day: 1,
+          label: "Day 1 (Recovery Routine)",
+          desc: "Morning furosemide and carvedilol taken with breakfast. Daughter Sarah assisting with low-sodium meal plan. Weight 78.7kg.",
+          weight: 78.7,
+          temperature: 36.7,
+          systolicBp: 124,
+          diastolicBp: 76,
+          glucose: 5.8,
+          sobExertion: false,
+          orthopnoea: false,
+          legSwelling: false,
+          dizziness: false,
+          missedCriticalDoses: 0,
+          expectedLevel: 'green'
+        },
+        {
+          day: 2,
+          label: "Day 2 (Fluid Creep Warning)",
+          desc: "Reports mild shortness of breath walking to the mailbox. Weight +1.2kg (79.7kg). Ankle sock indentation noted.",
+          weight: 79.7,
+          temperature: 36.8,
+          systolicBp: 134,
+          diastolicBp: 84,
+          glucose: 6.2,
+          sobExertion: true,
+          orthopnoea: false,
+          legSwelling: true,
+          dizziness: false,
+          missedCriticalDoses: 0,
+          expectedLevel: 'amber'
+        },
+        {
+          day: 3,
+          label: "Day 3 (Clinical Decompensation Alert)",
+          desc: "Weight reaches 80.9kg (+2.4kg in 3 days). Woke up gasping at 2 AM needing 3 pillows (orthopnea). Bilateral pedal edema.",
+          weight: 80.9,
+          temperature: 36.8,
+          systolicBp: 142,
+          diastolicBp: 90,
+          glucose: 6.4,
+          sobExertion: true,
+          orthopnoea: true,
+          legSwelling: true,
+          dizziness: false,
+          missedCriticalDoses: 1,
+          expectedLevel: 'red'
+        }
+      ],
       ahmad: [
         {
           day: 0,
@@ -2112,17 +2558,17 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       const interactionAlerts = checkInteractions(combinedMeds);
 
       return `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
           <div>
             <h1 style="font-size: 1.8rem;">Decoded Care Plan</h1>
             <p style="color: var(--text-muted); font-size: 0.95rem;">Structured plain-language instructions extracted with source-span traceability.</p>
           </div>
           <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-            <div style="display: flex; align-items: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 2px;">
-              <button id="reading-simple-btn" class="btn btn-sm ${state.readingLevel === 'simple' ? 'btn-primary' : 'btn-secondary'}" style="border-radius: var(--radius-pill); font-size: 0.8rem; padding: 4px 12px; border: none;">
+            <div style="display: flex; align-items: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 3px;">
+              <button id="reading-simple-btn" class="btn btn-sm ${state.readingLevel === 'simple' ? 'btn-primary' : 'btn-secondary'}" style="border-radius: var(--radius-pill); font-size: 0.82rem; padding: 6px 14px; border: none; font-weight: 600;">
                 ${t('reading_simple')}
               </button>
-              <button id="reading-standard-btn" class="btn btn-sm ${state.readingLevel === 'standard' ? 'btn-primary' : 'btn-secondary'}" style="border-radius: var(--radius-pill); font-size: 0.8rem; padding: 4px 12px; border: none;">
+              <button id="reading-standard-btn" class="btn btn-sm ${state.readingLevel === 'standard' ? 'btn-primary' : 'btn-secondary'}" style="border-radius: var(--radius-pill); font-size: 0.82rem; padding: 6px 14px; border: none; font-weight: 600;">
                 ${t('reading_standard')}
               </button>
             </div>
@@ -2132,6 +2578,35 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
             </button>
           </div>
         </div>
+
+        <!-- Reading Mode Context Banner -->
+        ${state.readingLevel === 'simple' ? `
+          <div style="background: var(--status-green-bg); border: 1px solid var(--status-green-border); border-left: 5px solid var(--status-green); border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span style="font-size: 1.8rem;">📖</span>
+              <div>
+                <div style="font-weight: 700; color: var(--status-green); font-size: 1rem;">Reading Mode: Simple (Everyday Patient Language)</div>
+                <div style="font-size: 0.88rem; color: var(--text-main); margin-top: 2px;">
+                  Hospital discharge instructions decoded into plain 6th-grade language, actionable everyday routines, and clear self-care guidance for patients and families.
+                </div>
+              </div>
+            </div>
+            <span class="badge badge-green" style="font-size: 0.8rem; padding: 6px 12px;">Active · Patient & Family View</span>
+          </div>
+        ` : `
+          <div style="background: rgba(14, 116, 144, 0.08); border: 1px solid rgba(14, 116, 144, 0.3); border-left: 5px solid #0891b2; border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span style="font-size: 1.8rem;">🔬</span>
+              <div>
+                <div style="font-weight: 700; color: #0891b2; font-size: 1rem;">Reading Mode: Standard (Clinical Pharmacology & ICD Diagnostics)</div>
+                <div style="font-size: 0.88rem; color: var(--text-main); margin-top: 2px;">
+                  Comprehensive clinical view displaying formal ICD-10 diagnostic nomenclature, pharmacological drug classes, cellular mechanisms of action, GDMT targets, and laboratory surveillance biomarkers.
+                </div>
+              </div>
+            </div>
+            <span class="badge badge-neutral" style="background: #0891b2; color: #ffffff; font-size: 0.8rem; padding: 6px 12px;">Active · Clinician & Specialist View</span>
+          </div>
+        `}
 
         <!-- Drug Interaction Guardian Panel -->
         ${interactionAlerts.length > 0 ? `
@@ -2170,37 +2645,102 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           <div>
             <!-- Diagnoses -->
             <div class="card">
-              <h3 class="card-title">Medical Conditions</h3>
-              <div style="display: flex; flex-direction: column; gap: 8px;">
-                ${parsedPlan.diagnoses.map(dx => `
-                  <div class="span-trace-card" data-span="${dx.sourceSpan.join(',')}" style="padding: 10px 14px; background: var(--bg-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border); cursor: pointer;">
-                    <strong>${escapeHtml(dx.name)}</strong>
-                  </div>
-                `).join('')}
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <h3 class="card-title" style="margin: 0;">${state.readingLevel === 'simple' ? 'Medical Conditions (Plain Language)' : 'ICD-10 Diagnostic Evaluation & Pathophysiology'}</h3>
+                <span class="badge ${state.readingLevel === 'simple' ? 'badge-green' : 'badge-neutral'}">${state.readingLevel === 'simple' ? 'Patient Decoded' : 'Clinical Classification'}</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                ${parsedPlan.diagnoses.map(dx => {
+                  const dxDetails = resolveDiagnosisCard(dx.name, state.readingLevel, state.lang);
+                  return state.readingLevel === 'simple' ? `
+                    <div class="span-trace-card" data-span="${dx.sourceSpan.join(',')}" style="padding: 14px; background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm); cursor: pointer;">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                          <span style="font-size: 1.25rem;">${dxDetails.icon}</span>
+                          <strong style="font-size: 1rem; color: var(--primary);">${escapeHtml(dxDetails.title)}</strong>
+                        </div>
+                        <span class="badge badge-green" style="font-size: 0.72rem;">${escapeHtml(dxDetails.badge)}</span>
+                      </div>
+                      <p style="font-size: 0.88rem; color: var(--text-main); margin-bottom: 6px; line-height: 1.45;">${escapeHtml(dxDetails.plain)}</p>
+                      <div style="font-size: 0.82rem; color: var(--text-muted); background: var(--bg-subtle); padding: 8px 10px; border-radius: 6px;">
+                        <strong style="color: var(--primary);">Daily Self-Care:</strong> ${escapeHtml(dxDetails.action)}
+                      </div>
+                      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 6px;">
+                        Source: <em>"${escapeHtml(dx.name)}"</em>
+                      </div>
+                    </div>
+                  ` : `
+                    <div class="span-trace-card" data-span="${dx.sourceSpan.join(',')}" style="padding: 14px; background: rgba(14, 116, 144, 0.04); border-radius: var(--radius-md); border: 1px solid rgba(14, 116, 144, 0.25); box-shadow: var(--shadow-sm); cursor: pointer;">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                          <span style="font-size: 1.25rem;">${dxDetails.icon}</span>
+                          <strong style="font-size: 0.98rem; color: #0891b2; font-family: monospace;">${escapeHtml(dxDetails.title)}</strong>
+                        </div>
+                        <span class="badge badge-neutral" style="background: #0891b2; color: #fff; font-size: 0.72rem;">${escapeHtml(dxDetails.badge)}</span>
+                      </div>
+                      <p style="font-size: 0.86rem; color: var(--text-main); margin-bottom: 6px; line-height: 1.45;"><strong>Diagnostic Assessment:</strong> ${escapeHtml(dxDetails.plain)}</p>
+                      <div style="font-size: 0.82rem; color: #334155; background: #f0fdfa; border: 1px solid #ccfbf1; padding: 8px 10px; border-radius: 6px; line-height: 1.4;">
+                        <strong style="color: #0f766e;">Clinical Protocol & Targets:</strong> ${escapeHtml(dxDetails.action)}
+                      </div>
+                      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 6px;">
+                        Source Text Ref: <code>${escapeHtml(dx.name)}</code>
+                      </div>
+                    </div>
+                  `;
+                }).join('')}
               </div>
             </div>
 
             <!-- Active Prescribed Medications -->
             <div class="card">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <h3 class="card-title" style="margin: 0;">Prescribed Medicines (${combinedMeds.length})</h3>
-                <span class="badge badge-neutral">Dose-Verified</span>
+                <h3 class="card-title" style="margin: 0;">${state.readingLevel === 'simple' ? 'Prescribed Medicines (Everyday Guide)' : 'Pharmacotherapy & GDMT Regimen'} (${combinedMeds.length})</h3>
+                <span class="badge ${state.readingLevel === 'simple' ? 'badge-green' : 'badge-neutral'}">${state.readingLevel === 'simple' ? 'Everyday Actions' : 'Pharmacology & MoA'}</span>
               </div>
               <div style="display: flex; flex-direction: column; gap: 12px;">
                 ${combinedMeds.map(med => {
-                  const localizedPurpose = getLocalizedMedPurpose(med, state.lang, state.readingLevel);
-                  return `
-                  <div class="span-trace-card" data-span="${med.sourceSpan ? med.sourceSpan.join(',') : '0,0'}" style="padding: 14px; background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm); cursor: pointer;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
-                      <div>
-                        <h4 style="font-size: 1.05rem; margin: 0; color: var(--primary);">${escapeHtml(med.name.toUpperCase())} ${escapeHtml(med.dose)}</h4>
-                        <span style="font-size: 0.8rem; color: var(--text-muted);">${escapeHtml(med.frequency)} (${med.times ? med.times.join(', ') : 'Daily'})</span>
+                  const details = getMedicationCardDetails(med, state.readingLevel, state.lang);
+                  return state.readingLevel === 'simple' ? `
+                    <div class="span-trace-card" data-span="${med.sourceSpan ? med.sourceSpan.join(',') : '0,0'}" style="padding: 14px; background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm); cursor: pointer;">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                        <div>
+                          <div style="display: flex; align-items: center; gap: 6px;">
+                            <span style="font-size: 1.2rem;">${details.icon}</span>
+                            <h4 style="font-size: 1.05rem; margin: 0; color: var(--primary);">${escapeHtml(med.name.toUpperCase())} ${escapeHtml(med.dose)}</h4>
+                          </div>
+                          <span style="font-size: 0.8rem; color: var(--text-muted);">${escapeHtml(med.frequency)} (${med.times ? med.times.join(', ') : 'Daily'}) · ${escapeHtml(details.category)}</span>
+                        </div>
+                        <span class="badge ${med.status === 'new' ? 'badge-amber' : 'badge-neutral'}">${escapeHtml(med.status.toUpperCase())}</span>
                       </div>
-                      <span class="badge ${med.status === 'new' ? 'badge-amber' : 'badge-neutral'}">${escapeHtml(med.status.toUpperCase())}</span>
+                      <p style="font-size: 0.9rem; margin-bottom: 6px; color: var(--text-main); line-height: 1.4;">
+                        <strong>What it does:</strong> ${escapeHtml(details.simplePurpose)}
+                      </p>
+                      <div style="background: var(--bg-subtle); padding: 8px 12px; border-radius: 6px; font-size: 0.84rem; margin-bottom: 6px;">
+                        <strong>How to take:</strong> ${escapeHtml(details.simpleInstructions)}
+                      </div>
+                      <div style="font-size: 0.82rem; color: #b45309; display: flex; align-items: center; gap: 6px;">
+                        <span>⚠️</span> <span><strong>Watch for:</strong> ${escapeHtml(details.simpleWatch)}</span>
+                      </div>
                     </div>
-                    <p style="font-size: 0.88rem; margin-bottom: 4px; color: var(--text-main);"><strong>Purpose:</strong> ${escapeHtml(localizedPurpose)}</p>
-                    <p style="font-size: 0.82rem; color: var(--text-muted);"><strong>Instructions:</strong> ${escapeHtml(med.foodNote || 'Take with water')}</p>
-                  </div>
+                  ` : `
+                    <div class="span-trace-card" data-span="${med.sourceSpan ? med.sourceSpan.join(',') : '0,0'}" style="padding: 14px; background: rgba(14, 116, 144, 0.04); border-radius: var(--radius-md); border: 1px solid rgba(14, 116, 144, 0.25); box-shadow: var(--shadow-sm); cursor: pointer;">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                        <div>
+                          <h4 style="font-size: 1.02rem; margin: 0; color: #0891b2; font-family: monospace;">${escapeHtml(med.name.toUpperCase())} ${escapeHtml(med.dose)} (${escapeHtml(med.frequency)})</h4>
+                          <span class="badge" style="background: #0891b2; color: #fff; font-size: 0.72rem; margin-top: 4px; display: inline-block;">${escapeHtml(details.standardClass)}</span>
+                        </div>
+                        <span class="badge ${med.status === 'new' ? 'badge-amber' : 'badge-neutral'}">${escapeHtml(med.status.toUpperCase())}</span>
+                      </div>
+                      <p style="font-size: 0.85rem; margin-bottom: 5px; color: var(--text-main); line-height: 1.4;">
+                        <strong>Mechanism of Action (MoA):</strong> ${escapeHtml(details.standardMoa)}
+                      </p>
+                      <p style="font-size: 0.83rem; margin-bottom: 5px; color: #334155; line-height: 1.4;">
+                        <strong>Hemodynamic / Target Effect:</strong> ${escapeHtml(details.standardHemodynamics)}
+                      </p>
+                      <div style="font-size: 0.8rem; color: #0f766e; background: #f0fdfa; border: 1px solid #ccfbf1; padding: 6px 10px; border-radius: 6px;">
+                        <strong>Clinical Surveillance:</strong> ${escapeHtml(details.standardMonitoring)}
+                      </div>
+                    </div>
                   `;
                 }).join('')}
               </div>
@@ -2222,14 +2762,31 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 
             <!-- Warning Signs & Red Flags -->
             <div class="card">
-              <h3 class="card-title">Warning Signs & Emergency Advice</h3>
-              <div style="display: flex; flex-direction: column; gap: 8px;">
-                ${parsedPlan.warningSigns.map(ws => `
-                  <div style="padding: 10px 14px; border-radius: var(--radius-sm); background: ${ws.level === 'emergency' ? 'var(--status-red-bg)' : 'var(--status-amber-bg)'}; border: 1px solid ${ws.level === 'emergency' ? 'var(--status-red-border)' : 'var(--status-amber-border)'};">
-                    <span class="badge ${ws.level === 'emergency' ? 'badge-red' : 'badge-amber'}" style="margin-bottom: 4px;">${ws.level === 'emergency' ? 'EMERGENCY: GO TO ED' : 'CALL CLINIC'}</span>
-                    <p style="font-size: 0.9rem; margin: 0; color: var(--text-main);">${escapeHtml(ws.sign)}</p>
-                  </div>
-                `).join('')}
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <h3 class="card-title" style="margin: 0;">${state.readingLevel === 'simple' ? 'Warning Signs & When to Get Help' : 'Clinical Triage & Escalation Protocol'}</h3>
+                <span class="badge ${state.readingLevel === 'simple' ? 'badge-amber' : 'badge-neutral'}">${state.readingLevel === 'simple' ? 'Patient Action Rules' : 'Clinical Criteria'}</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                ${parsedPlan.warningSigns.map(ws => {
+                  const wsDetails = getWarningSignDetails(ws, state.readingLevel, state.lang);
+                  return state.readingLevel === 'simple' ? `
+                    <div style="padding: 12px 14px; border-radius: var(--radius-md); background: ${ws.level === 'emergency' ? 'var(--status-red-bg)' : 'var(--status-amber-bg)'}; border: 1px solid ${ws.level === 'emergency' ? 'var(--status-red-border)' : 'var(--status-amber-border)'};">
+                      <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                        <span class="badge ${ws.level === 'emergency' ? 'badge-red' : 'badge-amber'}">${escapeHtml(wsDetails.badge)}</span>
+                      </div>
+                      <p style="font-size: 0.92rem; margin: 0 0 4px 0; color: var(--text-main); font-weight: 600;">${escapeHtml(wsDetails.title)}</p>
+                      <p style="font-size: 0.85rem; margin: 0; color: var(--text-muted); line-height: 1.4;">${escapeHtml(wsDetails.instructions)}</p>
+                    </div>
+                  ` : `
+                    <div style="padding: 12px 14px; border-radius: var(--radius-md); background: ${ws.level === 'emergency' ? 'var(--status-red-bg)' : 'rgba(14, 116, 144, 0.05)'}; border: 1px solid ${ws.level === 'emergency' ? 'var(--status-red-border)' : 'rgba(14, 116, 144, 0.3)'};">
+                      <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                        <span class="badge ${ws.level === 'emergency' ? 'badge-red' : 'badge-neutral'}" style="${ws.level !== 'emergency' ? 'background: #0891b2; color: #fff;' : ''}">${escapeHtml(wsDetails.badge)}</span>
+                      </div>
+                      <p style="font-size: 0.88rem; margin: 0 0 4px 0; color: var(--text-main); font-weight: 600; font-family: monospace;">${escapeHtml(wsDetails.title)}</p>
+                      <p style="font-size: 0.82rem; margin: 0; color: #334155; line-height: 1.4;">${escapeHtml(wsDetails.instructions)}</p>
+                    </div>
+                  `;
+                }).join('')}
               </div>
             </div>
           </div>
@@ -2823,6 +3380,14 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
     function renderApp() {
       const hash = window.location.hash.replace(/^#\//, '') || 'today';
       const mainEl = document.getElementById('main-view');
+
+      // Dynamically translate all [data-i18n] tags
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const k = el.getAttribute('data-i18n');
+        if (k && I18N[k]) {
+          el.textContent = t(k);
+        }
+      });
 
       // Update Nav highlighting
       document.querySelectorAll('#nav-rail .nav-item, #bottom-tabs .tab-btn').forEach(el => {
