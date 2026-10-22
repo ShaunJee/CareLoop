@@ -2328,7 +2328,11 @@
       
       // Min and max bounds for SVG scaling
       let minVal = 0, maxVal = 100;
-      if (metricKey === 'weight') { minVal = 64; maxVal = 74; }
+      if (metricKey === 'weight') {
+        const baseW = (PERSONAS[activePersonaId] && PERSONAS[activePersonaId].baselineWeight) || (script[0] && script[0].weight) || 68.0;
+        minVal = Math.floor(baseW - 4);
+        maxVal = Math.ceil(baseW + 6);
+      }
       else if (metricKey === 'glucose') { minVal = 3.0; maxVal = 18.0; }
       else if (metricKey === 'temp') { minVal = 36.0; maxVal = 39.5; }
 
