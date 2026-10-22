@@ -15,3 +15,11 @@ yarn-error.log*
 *.swp
 *.swo
 *.tmp
+
+# Internal working notes, audit drafts & scratch tools (kept locally only)
+audit/
+hack_questions/
+scratch/
+tests/TEST_REPORT.md
+submission_deliverables/demo_script.md
+submission_deliverables/onepager.html
