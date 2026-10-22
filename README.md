@@ -42,22 +42,33 @@ The days immediately following hospital discharge are among the most dangerous w
 
 ```mermaid
 flowchart TD
-    Discharge["🏥 <b>HOSPITAL DISCHARGE</b><br/><i>Unstructured Discharge Notes & Complex Medication Regimens</i>"]
+    Discharge["🏥 &nbsp;&nbsp; <b>HOSPITAL DISCHARGE</b> &nbsp;&nbsp;•&nbsp;&nbsp; <i>Unstructured Clinical Notes & Complex Medication Regimens</i> &nbsp;&nbsp; 🏥"]
 
-    L1["🔍 <b>LOOP 1 · DECODE (Clinical NLP Parser)</b><br/>• Transforms medical shorthand into plain-language care plans<br/>• 4 Languages: <b>English · Bahasa Malaysia · 中文 · தமிழ்</b><br/>• <b>100% Traceability:</b> Hover any card to highlight exact source lines"]
+    subgraph CareLoops ["<b>CONTINUOUS OUTPATIENT CARE & SAFETY SURVEILLANCE</b>"]
+        direction TB
+        subgraph Row1 [" "]
+            direction LR
+            L1["🔍 <b>LOOP 1 · DECODE (Clinical NLP Parser)</b><br/>• Transforms medical shorthand into plain-language care plans<br/>• 4 Languages: <b>English · Bahasa Malaysia · 中文 · தமிழ்</b><br/>• <b>100% Traceability:</b> Hover card to highlight exact source lines"]
+            L2["🛡️ <b>LOOP 2 · PROTECT (Medication Guardian)</b><br/>• Visual dosing timeline with daily adherence streak ring<br/>• Pre-ingestion check stops lethal prescription & OTC clashes<br/>• Intercepts <b>Triple Whammy</b> acute renal failure before ingestion"]
+        end
+        subgraph Row2 [" "]
+            direction LR
+            L3["⏱️ <b>LOOP 3 · WATCH (60s Check-in & Rules Engine)</b><br/>• Daily biometric surveillance: Weight, BP, Dyspnea & Edema<br/>• Explainable <b>0–100 Recovery Risk Index</b> with factor attribution<br/>• <b>Time Machine:</b> Simulates recovery to catch silent decompensation"]
+            L4["👨‍👩‍👧 <b>LOOP 4 · CONNECT (Caregiver & Clinician SBAR)</b><br/>• Real-time automated SMS alerts dispatched to family caregivers<br/>• One-tap standardized <b>SBAR brief</b> ready for doctor review/print<br/>• <b>Universal Safety Net:</b> Red 'I Feel Unwell' 999/112 paramedic card"]
+        end
+        Row1 ==> Row2
+    end
 
-    L2["🛡️ <b>LOOP 2 · PROTECT (Medication Guardian)</b><br/>• Daily dosing timeline with visual adherence ring<br/>• Pre-ingestion OTC conflict checker intercepts lethal clashes<br/>• Stops <b>Triple Whammy</b> acute kidney failure before pills are swallowed"]
+    Outcome["🎯 &nbsp;&nbsp; <b>SAFE 30-DAY OUTPATIENT RECOVERY</b> &nbsp;&nbsp;•&nbsp;&nbsp; <i>Avoidable Hospital Readmissions Intercepted Early</i> &nbsp;&nbsp; 🎯"]
 
-    L3["⏱️ <b>LOOP 3 · WATCH (60s Daily Check-in & Rules Engine)</b><br/>• Daily condition-tailored tracking: Weight, BP, Dyspnea & Edema<br/>• Explainable <b>0–100 Recovery Risk Score</b> with factor attribution<br/>• <b>Time Machine:</b> Simulates recovery to catch deterioration before readmission"]
-
-    L4["👨‍👩‍👧 <b>LOOP 4 · CONNECT (Caregiver Circle & Clinician SBAR)</b><br/>• Real-time SMS alerts dispatched to designated family caregivers<br/>• One-tap standardized <b>SBAR brief</b> ready for doctor review/print<br/>• <b>Universal Safety Net:</b> Red 'I Feel Unwell' button for instant 999/112 paramedic handover"]
-
-    Discharge --> L1
-    L1 --> L2
-    L2 --> L3
-    L3 --> L4
+    Discharge ==> Row1
+    Row2 ==> Outcome
 
     style Discharge fill:#0F5C5A,stroke:#093B3A,stroke-width:2px,color:#FFFFFF
+    style Outcome fill:#0F5C5A,stroke:#093B3A,stroke-width:2px,color:#FFFFFF
+    style CareLoops fill:#F7FAF9,stroke:#0F5C5A,stroke-width:1.5px,stroke-dasharray: 4 4
+    style Row1 fill:transparent,stroke:transparent
+    style Row2 fill:transparent,stroke:transparent
     style L1 fill:#E6F4F1,stroke:#0F5C5A,stroke-width:2px,color:#1D2A29
     style L2 fill:#EBF5EA,stroke:#2E7D32,stroke-width:2px,color:#1D2A29
     style L3 fill:#FFF4E5,stroke:#E65100,stroke-width:2px,color:#1D2A29
