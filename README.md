@@ -78,9 +78,9 @@ CareLoop adheres to a strict clinical engineering principle:
 
 > [!IMPORTANT]
 > **The AI Layer Understands & Explains · The Rules Engine Decides**  
-> - **AI / NLP Layer:** Handles natural language parsing, medical abbreviation expansion, and multilingual translation.
-> - **Deterministic Rules Engine:** **100% of clinical safety decisions**, drug-drug interactions, emergency alerts, and risk levels are computed in auditable deterministic code.
-> - **Zero Hallucination Tolerance:** The AI layer can **NEVER** lower a risk score, suppress an emergency flag, or alter prescribed medication dosages.
+> - **Symbolic Clinical NLP (Symbolic AI):** Handles natural language parsing, medical abbreviation expansion, and multilingual translation with 100% verbatim source-span traceability.
+> - **Deterministic Clinical Rules Engine:** **100% of clinical safety decisions**, drug-drug interactions, emergency alerts, and risk levels are computed in auditable deterministic code (aligned with FDA SaMD Class II guidelines and clinical expert systems like Stanford MYCIN and Epic CDS).
+> - **Pluggable BYOK Live LLM Layer:** Supports client-side Bring-Your-Own-Key connection to OpenAI (`gpt-4o-mini`), Google AI Studio (`gemini-1.5-flash`), Groq (`llama-3.3`), or local Ollama (`llama3`). A strict safety firewall isolates generative models to language tasks—an LLM can **NEVER** lower a risk score, suppress an emergency flag, or alter prescribed medication dosages.
 > - **Universal Safety Net:** A persistent red *"I Feel Unwell"* button is accessible from every screen, instantly displaying 911 / 112 / 999 global emergency calling and an unmissable paramedic handover card listing active diagnoses and current drugs.
 
 ---
@@ -90,13 +90,16 @@ CareLoop adheres to a strict clinical engineering principle:
 | Feature | Description | Clinical Rationale |
 | :--- | :--- | :--- |
 | **Discharge Decoder** | Ingests clinical text with a 68-drug dictionary. Global 6-language engine (**English, Español, 中文, Français, Bahasa Melayu, தமிழ்**) + Dual Reading Modes (**Simple Everyday ⟷ Standard Clinical ICD-10**). | Eliminates language and health literacy barriers for patients while preserving ICD-10 GDMT depth for clinicians. |
+| **Live Note Sandbox & Re-Parse** | `✏️ Edit / Paste Custom Note` and `⚡ Re-Parse Live` buttons allow clinicians and judges to type or paste arbitrary medical notes and watch the care plan, schedule, and safety alerts extract in real time. | Proves that the clinical NLP parser dynamically processes unstructured medical text on the fly rather than using static mockups. |
+| **Quick Clinical Scenarios** | 1-tap preset buttons above the discharge summary loading diverse acute/chronic profiles: **Post-MI (DAPT)**, **Severe COPD**, **HFrEF & CKD**, **Ortho VTE**, and **Brittle Diabetes**. | Demonstrates broad cross-specialty clinical utility (cardiology, pulmonology, endocrinology, orthopedic surgery). |
 | **Global Personas** | Diverse patient profiles headed by **Robert Miller** (Heart Failure & HTN · Boston, MA · English default), alongside Pak Ahmad, Mdm Tan, and Priya. | Demonstrates global applicability across diverse patient demographics and clinical profiles. |
-| **Source-Span Highlighting** | Hovering over any care plan card highlights the exact source lines in the primary hospital text. | Builds trust with patients and clinicians via full provenance. |
+| **Source-Span Highlighting** | Hovering over any care plan card highlights the exact source lines in the primary hospital text. | Builds trust with patients and clinicians via full byte-level provenance. |
 | **Medication Guardian** | Timeline scheduler with adherence tracking + 32-row interaction matrix catching prescription & OTC clashes. | Prevents accidental double-dosing and fatal drug interactions (*e.g., Triple Whammy*). |
 | **Time Machine** | Interactive day-by-day recovery tracker following timeline progression from Day 0 baseline through Day 3. | Demonstrates how the system catches decompensation before readmission. |
+| **Pluggable BYOK Live LLM** | Optional client-side LLM panel in the Time Machine drawer for OpenAI, Google AI Studio, Groq, or local Ollama with live ping testing. | Accommodates hospital-hosted or cloud LLMs while keeping all safety-critical triage isolated in deterministic code. |
 | **Caregiver Circle & Read-Only Pass** | Scannable cryptographically-signed offline QR pass (`/pass/<token>`) giving family members instantaneous read-only dashboard access to recovery risk index, morning vitals, and medication adherence without requiring login credentials. | Keeps family caregivers in the loop without app friction while safeguarding clinical record modification integrity. |
 | **Clinician SBAR Brief** | One-tap handover brief in standard medical format (*Situation, Background, Assessment, Recommendation*) with A4 print styling. | Saves doctor time during outpatient reviews. |
-| **Live Trust Panel** | On-device test runner executing 20 clinical discharge summaries (15 tuning + 5 held-out) and 30 clinical rule cases. | Zero fabricated metrics: all accuracy numbers are live. |
+| **Live Trust & Evaluation Panel** | On-device test runner executing 20 clinical discharge summaries (15 tuning + 5 held-out) and 30 clinical rule cases with an animated verification modal. | Zero fabricated metrics: all accuracy numbers are live. |
 
 ---
 

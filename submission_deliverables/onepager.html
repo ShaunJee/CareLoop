@@ -338,9 +338,9 @@
           <div class="loop-item">
             <div class="loop-header">
               <span class="loop-badge">Loop 1 · DECODE</span>
-              <strong style="font-size: 7.5pt; color: #14232A;">Discharge NLP Parser</strong>
+              <strong style="font-size: 7.5pt; color: #14232A;">Discharge NLP Parser & Live Sandbox</strong>
             </div>
-            <div class="loop-desc">Extracts unstructured discharge summaries into plain language across 6 global languages (EN, ES, ZH, FR, MS, TA) with dual reading modes (Simple Everyday ⟷ Standard ICD-10) and source-span traceability.</div>
+            <div class="loop-desc">Extracts unstructured summaries across 6 languages with dual reading modes (Simple ⟷ Standard ICD-10), Live Note Sandbox re-parsing, 5 quick clinical presets, and verbatim source-span traceability.</div>
           </div>
 
           <div class="loop-item">
@@ -385,8 +385,8 @@
         <div class="arch-strip">
           <div style="font-weight: 700; font-size: 8.8pt; color: #0C6B68; margin-bottom: 2.5px;">Safety-First Hybrid Architecture</div>
           <div style="font-size: 7.5pt; color: #1D2A29; line-height: 1.33;">
-            <strong>AI / NLP Layer:</strong> Multilingual translation, medical term simplification, and dual-mode health literacy decoding.<br>
-            <strong>Deterministic Rules Engine:</strong> 100% of risk scoring, drug interaction checks, and emergency alerts run in auditable deterministic code. An AI can never lower risk or override a clinical safety guardrail.
+            <strong>Symbolic NLP & Pluggable BYOK LLM:</strong> Multilingual decoding with optional live BYOK layer (OpenAI, Gemini, Groq, Ollama) for text extraction.<br>
+            <strong>Deterministic Rules Engine:</strong> 100% of risk scoring, drug interaction checks, and emergency alerts run in auditable deterministic code (FDA SaMD Class II aligned).
           </div>
         </div>
 
@@ -407,10 +407,10 @@
         <div class="section-card card-differentiators">
           <div class="sec-title"><span class="sec-num">4</span> Key Technical Differentiators</div>
           <ul class="clean-list">
-            <li><strong>Zero-Dependency Client:</strong> Runs completely client-side in browser. Zero server dependency, zero API keys required, and zero protected health information (PHI) egress.</li>
+            <li><strong>Live Note Sandbox & Presets:</strong> Test clinical NLP live on arbitrary pasted notes or 5 quick presets (Post-MI DAPT, COPD, HFrEF, Ortho, Diabetes).</li>
+            <li><strong>Zero-Dependency & Zero Egress:</strong> Runs 100% client-side. Pluggable BYOK LLM layer strictly isolated by a deterministic safety firewall.</li>
             <li><strong>100% Provenance Traceability:</strong> Every care plan recommendation links to verbatim character spans in the original hospital discharge summary.</li>
-            <li><strong>Live Verification Engine:</strong> Features live streaming benchmark harness: 20 clinical discharge cases (100.0% F1) + 30 deterministic safety rule scenarios.</li>
-            <li><strong>Universal Safety Net:</strong> Instant 911 / 112 / 999 global dialer with high-contrast paramedic handover card readable in moving ambulances.</li>
+            <li><strong>Live Verification Engine:</strong> Live streaming benchmark harness: 20 clinical discharge cases (100.0% F1) + 30 deterministic safety rule scenarios.</li>
           </ul>
         </div>
 
@@ -418,7 +418,7 @@
         <div class="section-card card-roadmap">
           <div class="sec-title"><span class="sec-num">5</span> Pilot Roadmap & Clinical Impact</div>
           <p style="font-size: 7.4pt; color: #2C3E42; line-height: 1.33; margin-bottom: 3px;">
-            <strong>Phase 1 (Complete):</strong> Zero-dep app with 68 drugs, 30 interactions, 6 languages, dual reading modes, offline QR pass, Time Machine, and SBAR brief.
+            <strong>Phase 1 (Complete):</strong> Zero-dep app with 68 drugs, 30 interactions, 6 languages, live sandbox, clinical presets, BYOK LLM, QR pass, Time Machine, SBAR.
           </p>
           <p style="font-size: 7.4pt; color: #2C3E42; line-height: 1.33; margin-bottom: 3px;">
             <strong>Phase 2 (Hospital EHR Pilot):</strong> SMART-on-FHIR connector to ingest discharge summaries directly from Epic and Cerner EHR platforms.
