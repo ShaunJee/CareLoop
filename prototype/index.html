@@ -1047,24 +1047,22 @@
       "caregiver": "Aisyah (Daughter)",
       "caregiverPhone": "+60 12-345 6789",
       "clinicPhone": "+60 3-2615 5555",
-      "conditionProfiles": ["heart_failure", "diabetes", "ckd"],
+      "conditionProfiles": ["copd", "hypertension"],
       "baselineWeight": 68.0,
-      "dischargeText": "DISCHARGE SUMMARY\nName: Ahmad bin Hassan   Age: 72M   Ward: 5B   LOS: 6 days\nPrincipal Dx: Acute decompensated heart failure (LVEF 35%), precipitated by non-compliance\nOther Dx: T2DM (HbA1c 8.4%), HTN, CKD stage 3a (eGFR 52)\n\nMEDICATIONS ON DISCHARGE\n1. Furosemide 40mg OD mane - NEW\n2. Bisoprolol 2.5mg OD - NEW\n3. Perindopril 4mg OD - continue\n4. Spironolactone 25mg OD - NEW\n5. Metformin 500mg BD with meals - dose reduced (eGFR)\n6. Gliclazide 30mg OD before breakfast - continue\n7. Atorvastatin 40mg ON - continue\n8. Aspirin 75mg OD after food - continue\nSTOPPED: Diclofenac (avoid NSAIDs)\n\nADVICE\nDaily weight every morning after passing urine. Fluid restriction 1.5L/day. Low salt diet.\nReturn to ED if SOB at rest, chest pain, fainting or weight gain >2kg in 3 days.\nCall HF clinic if increased leg swelling, orthopnoea, dizziness or reduced urine output.\n\nFOLLOW-UP\nHF clinic 29/10/2026. Endocrine 12/11/2026. Bloods (U&E) in 1 week at klinik kesihatan.",
+      "dischargeText": "DISCHARGE SUMMARY\nName: Ahmad bin Hassan   Age: 72M   Ward: Respiratori 6A   LOS: 5 days\nPrincipal Dx: Acute Exacerbation of COPD (AECOPD - GOLD Stage 3 / Severe), Chronic Bronchitis\nOther Dx: Essential Hypertension, Ex-smoker (40 pack-years, quit 3 years ago)\n\nMEDICATIONS ON DISCHARGE\n1. Symbicort 160mcg 2 puffs BD - NEW\n2. Spiriva 2.5mcg 2 puffs OD mane - NEW\n3. Prednisolone 20mg OD mane for 5 days - NEW\n4. Ventolin 100mcg 2 puffs PRN for breathlessness - continue\n5. Amlodipine 5mg OD - continue\n6. Pantoprazole 40mg OD mane before food - continue\nSTOPPED: Propranolol (strictly avoid non-selective beta-blockers in COPD due to bronchospasm hazard)\n\nADVICE\nUse pulse oximeter twice daily. Safe target SpO2 is 88-92% for chronic carbon dioxide retention.\nPractice pursed-lip breathing when feeling breathless. Rinse mouth with water after using steroid inhaler.\nReturn to ED immediately if SpO2 drops below 88%, severe breathlessness at rest, blue lips, or confusion.\nCall chest clinic if cough worsens with dark green/yellow phlegm, increased wheezing, or fever >= 38.0C.\n\nFOLLOW-UP\nKlinik Pakar Dada HKL 28/10/2026. Pulmonary Rehabilitation Physiotherapy 04/11/2026. Sputum culture review in 1 week.",
       "groundTruth": {
-        "diagnoses": ["Acute decompensated heart failure", "T2DM", "HTN", "CKD stage 3a"],
+        "diagnoses": ["Acute Exacerbation of COPD (AECOPD - GOLD Stage 3 / Severe)", "Chronic Bronchitis", "Essential Hypertension", "Ex-smoker"],
         "medications": [
-          {"name": "furosemide", "dose": "40mg", "freq": "OD", "status": "new"},
-          {"name": "bisoprolol", "dose": "2.5mg", "freq": "OD", "status": "new"},
-          {"name": "perindopril", "dose": "4mg", "freq": "OD", "status": "continued"},
-          {"name": "spironolactone", "dose": "25mg", "freq": "OD", "status": "new"},
-          {"name": "metformin", "dose": "500mg", "freq": "BD", "status": "changed"},
-          {"name": "gliclazide", "dose": "30mg", "freq": "OD", "status": "continued"},
-          {"name": "atorvastatin", "dose": "40mg", "freq": "ON", "status": "continued"},
-          {"name": "aspirin", "dose": "75mg", "freq": "OD", "status": "continued"}
+          {"name": "budesonide", "dose": "160mcg", "freq": "BD", "status": "new"},
+          {"name": "tiotropium", "dose": "2.5mcg", "freq": "OD", "status": "new"},
+          {"name": "prednisolone", "dose": "20mg", "freq": "OD", "status": "new"},
+          {"name": "salbutamol", "dose": "100mcg", "freq": "PRN", "status": "continued"},
+          {"name": "amlodipine", "dose": "5mg", "freq": "OD", "status": "continued"},
+          {"name": "pantoprazole", "dose": "40mg", "freq": "OD", "status": "continued"}
         ],
-        "stopped": ["diclofenac"],
+        "stopped": ["propranolol"],
         "appointments": 3,
-        "warningSigns": 7
+        "warningSigns": 4
       }
     },
     "tan": {
@@ -1196,7 +1194,12 @@
     {"generic": "potassium chloride", "brands": ["span-k", "k-lyte"], "class": "supplement", "critical": true, "purposeEn": "replaces potassium mineral lost from diuretics", "purposeMs": "menggantikan mineral kalium yang hilang", "purposeZh": "补充体内流失的钾离子", "purposeTa": "பொட்டாசியம் சத்து மாத்திரை", "foodNote": "swallow whole with full glass of water after food", "typicalMaxDailyMg": 1600, "watch": ["stomach irritation", "nausea"]},
     {"generic": "calcium carbonate", "brands": ["caltrate"], "class": "supplement", "critical": false, "purposeEn": "strengthens bones and aids fracture healing", "purposeMs": "menguatkan tulang dan membantu pemulihan patah tulang", "purposeZh": "补钙健骨，促进骨折愈合", "purposeTa": "எலும்புகளை பலப்படுத்துகிறது", "foodNote": "take with meals for best absorption", "typicalMaxDailyMg": 2500, "watch": ["constipation"]},
     {"generic": "colecalciferol", "brands": ["vitamin d3", "cholecalciferol"], "class": "supplement", "critical": false, "purposeEn": "helps body absorb calcium for bone recovery", "purposeMs": "membantu penyerapan kalsium untuk pemulihan tulang", "purposeZh": "维生素D3，促进钙质吸收", "purposeTa": "வைட்டமின் டி3 எலும்பு வளர்ச்சிக்கு உதவுகிறது", "foodNote": "take with food", "typicalMaxDailyMg": 5000, "watch": ["excessive thirst"]},
-    {"generic": "iron polymaltose", "brands": ["maltofer"], "class": "supplement", "critical": false, "purposeEn": "treats post-surgical anemia and replenishes iron", "purposeMs": "merawat anemia dan menambah zat besi", "purposeZh": "补充铁质，治疗术后贫血", "purposeTa": "இரத்த சோகையை நீக்கும் இரும்புச்சத்து", "foodNote": "take during or immediately after meals", "typicalMaxDailyMg": 200, "watch": ["dark stools"]}
+    {"generic": "iron polymaltose", "brands": ["maltofer"], "class": "supplement", "critical": false, "purposeEn": "treats post-surgical anemia and replenishes iron", "purposeMs": "merawat anemia dan menambah zat besi", "purposeZh": "补充铁质，治疗术后贫血", "purposeTa": "இரத்த சோகையை நீக்கும் இரும்புச்சத்து", "foodNote": "take during or immediately after meals", "typicalMaxDailyMg": 200, "watch": ["dark stools"]},
+    {"generic": "budesonide", "brands": ["symbicort", "pulmicort", "budesonide-formoterol"], "class": "inhaled_corticosteroid_laba", "critical": true, "purposeEn": "dual preventer inhaler reducing lung airway swelling and opening breathing passages", "purposeMs": "inhaler pencegah dwitindakan mengurangkan bengkak dan membuka saluran pernafasan", "purposeZh": "双效吸入剂，减轻肺部气道水肿并持久扩张支气管", "purposeTa": "சுவாசப்பாதை வீக்கத்தைக் குறைக்கும் இன்ஹேலர்", "foodNote": "rinse mouth with water after use to prevent thrush", "typicalMaxDailyMg": 1.28, "watch": ["oral thrush", "tremors", "hoarseness"]},
+    {"generic": "tiotropium", "brands": ["spiriva", "respimat"], "class": "lama", "critical": true, "purposeEn": "long-acting bronchodilator relaxing muscles around airways for 24-hour breathing relief", "purposeMs": "pelebar saluran pernafasan bertindak 24 jam untuk melancarkan aliran udara", "purposeZh": "长效抗胆碱支气管舒张剂，全天持续保持气道通畅", "purposeTa": "24 மணி நேர சுவாசக் குழாய் தளர்வு மருந்து", "foodNote": "inhale once daily each morning at the same time", "typicalMaxDailyMg": 0.005, "watch": ["dry mouth", "urinary retention", "blurred vision"]},
+    {"generic": "salbutamol", "brands": ["ventolin", "albuterol"], "class": "saba", "critical": true, "purposeEn": "fast-acting rescue inhaler opening tight airways quickly during sudden shortness of breath", "purposeMs": "inhaler penyelamat bertindak pantas membuka saluran udara ketika sesak nafas mengejut", "purposeZh": "速效支气管舒张喷雾剂，急性气喘发作时迅速舒缓气道痉挛", "purposeTa": "திடீர் மூச்சுத்திணறலின் போது உடனடி நிவாரணம் அளிக்கும் இன்ஹேலர்", "foodNote": "use as needed for sudden breathlessness; wait 1 minute between puffs", "typicalMaxDailyMg": 0.8, "watch": ["shaky hands", "fast heartbeat", "palpitations"]},
+    {"generic": "prednisolone", "brands": ["deltacortril", "prelone"], "class": "oral_corticosteroid", "critical": true, "purposeEn": "short-course oral steroid calming severe bronchial inflammation during a flare-up", "purposeMs": "steroid oral jangka pendek meredakan radang saluran pernafasan semasa serangan akut", "purposeZh": "短疗程口服糖皮质激素，强效消除急性发作期的肺部支气管炎症", "purposeTa": "கடுமையான சுவாசப்பாதை அழற்சியை தணிக்கும் குறுகிய கால ஸ்டீராய்டு மாத்திரை", "foodNote": "take in morning after food to protect stomach", "typicalMaxDailyMg": 60, "watch": ["stomach irritation", "mood changes", "elevated blood sugar"]},
+    {"generic": "propranolol", "brands": ["inderal"], "class": "beta_blocker_nonselective", "critical": true, "purposeEn": "non-selective beta blocker for heart rate (strictly contraindicated in COPD and asthma)", "purposeMs": "penyekat beta bukan selektif (dilarang keras untuk pesakit asma dan PPOK/COPD)", "purposeZh": "非选择性β受体阻滞剂（哮喘及慢阻肺患者绝对禁用）", "purposeTa": "சுவாசக் கோளாறு உள்ளவர்கள் தவிர்க்க வேண்டிய மருந்து", "foodNote": "take before meals", "typicalMaxDailyMg": 320, "watch": ["severe bronchospasm", "wheezing", "bradycardia"]}
   ]
   </script>
 
@@ -1231,7 +1234,9 @@
     {"a": "gliclazide", "b": "ciprofloxacin", "severity": "caution", "why": "Ciprofloxacin enhances sulfonylurea effect, triggering severe sudden hypoglycemia.", "advice": "Test blood glucose frequently. Keep glucose tablets accessible."},
     {"a": "metformin", "b": "class:nsaid", "severity": "caution", "why": "NSAID-induced acute renal impairment leads to metformin accumulation and lactic acidosis.", "advice": "Maintain hydration and avoid regular NSAID intake."},
     {"a": "class:nsaid", "b": "class:nsaid", "severity": "avoid", "why": "Duplicate NSAID therapy multiplies gastrointestinal and kidney damage without extra pain relief.", "advice": "Do not take two anti-inflammatory drugs together."},
-    {"a": "class:ace_inhibitor", "b": "class:arb", "severity": "avoid", "why": "Dual renin-angiotensin blockade increases hypotension, hyperkalemia, and acute kidney failure.", "advice": "Combination not recommended in guideline-directed care."}
+    {"a": "class:ace_inhibitor", "b": "class:arb", "severity": "avoid", "why": "Dual renin-angiotensin blockade increases hypotension, hyperkalemia, and acute kidney failure.", "advice": "Combination not recommended in guideline-directed care."},
+    {"a": "propranolol", "b": "salbutamol", "severity": "avoid", "why": "Non-selective beta-blocker propranolol competitively blocks beta-2 receptors, antagonizing salbutamol rescue bronchodilation and precipitating fatal bronchospasm.", "advice": "STRICTLY CONTRAINDICATED in COPD/asthma. Use selective alternatives under pulmonology supervision."},
+    {"a": "prednisolone", "b": "class:nsaid", "severity": "avoid", "why": "Concurrent systemic corticosteroid and NSAID multiplies gastrointestinal mucosal injury, risking peptic perforation and hemorrhage.", "advice": "Avoid NSAIDs while taking oral prednisolone. Use paracetamol for safe pain relief."}
   ]
   </script>
 
@@ -1258,7 +1263,14 @@
     {"id": "post_calf_dvt", "profile": "post_surgery", "points": 4, "label": "Calf pain or asymmetric leg swelling (DVT risk)"},
     {"id": "post_uncontrolled_pain", "profile": "post_surgery", "points": 2, "label": "Severe pain (score >= 7) despite prescribed pain medicine"},
     {"id": "missed_critical", "profile": "universal", "points": 1, "label": "Missed a critical medication dose in past 48 hours"},
-    {"id": "unresolved_avoid", "profile": "universal", "points": 2, "label": "Unresolved 'AVOID' level drug interaction active"}
+    {"id": "unresolved_avoid", "profile": "universal", "points": 2, "label": "Unresolved 'AVOID' level drug interaction active"},
+    {"id": "copd_spo2_red", "profile": "copd", "points": 6, "redFlag": true, "label": "Severe hypoxia: oxygen saturation (SpO2) dropped below 88%"},
+    {"id": "copd_spo2_amber", "profile": "copd", "points": 3, "label": "Oxygen saturation dropped to 89-91% (below target range)"},
+    {"id": "copd_sputum_purulent", "profile": "copd", "points": 3, "label": "Purulent sputum: cough producing dark yellow or green phlegm"},
+    {"id": "copd_severe_dyspnea", "profile": "copd", "points": 3, "label": "Severe breathlessness at rest or unable to finish full sentences"},
+    {"id": "copd_wheezing", "profile": "copd", "points": 2, "label": "Audible chest wheezing or acute bronchial airway tightness"},
+    {"id": "copd_reliever_overuse", "profile": "copd", "points": 2, "label": "Frequent rescue inhaler reliance (>4 puffs of salbutamol today)"},
+    {"id": "copd_fever", "profile": "copd", "points": 3, "label": "Respiratory infection fever: body temperature 38.0°C or higher"}
   ]
   </script>
 
@@ -1312,7 +1324,7 @@
         <!-- Persona Switcher -->
         <select id="persona-select" class="select-pill" aria-label="Select Patient Profile">
           <option value="robert">Robert Miller (Heart Failure · English)</option>
-          <option value="ahmad">Pak Ahmad (Heart Failure · BM)</option>
+          <option value="ahmad">Pak Ahmad (COPD / PPOK · BM)</option>
           <option value="tan">Mdm Tan (Hip Surgery · 中文)</option>
           <option value="priya">Priya (Diabetes & CKD · தமிழ்)</option>
         </select>
@@ -1431,10 +1443,10 @@
       <!-- Information Paramedic Card -->
       <div style="background: var(--bg-subtle); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px; text-align: left; margin-bottom: 20px;">
         <h4 style="font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">Read to the Paramedic:</h4>
-        <p style="margin-bottom: 6px;"><strong>Patient:</strong> <span id="em-patient-name">Ahmad bin Hassan</span>, 72M</p>
-        <p style="margin-bottom: 6px;"><strong>Location:</strong> <span id="em-patient-loc">Kuala Lumpur</span></p>
-        <p style="margin-bottom: 6px;"><strong>Diagnoses:</strong> <span id="em-patient-dx">Heart Failure, T2DM, CKD</span></p>
-        <p style="font-size: 0.88rem; color: var(--text-muted);"><strong>Key Medicines:</strong> <span id="em-patient-meds">Furosemide, Bisoprolol, Perindopril, Spironolactone, Metformin</span></p>
+        <p style="margin-bottom: 6px;"><strong>Patient:</strong> <span id="em-patient-name">Robert Miller</span>, 71M</p>
+        <p style="margin-bottom: 6px;"><strong>Location:</strong> <span id="em-patient-loc">Boston, MA, USA</span></p>
+        <p style="margin-bottom: 6px;"><strong>Diagnoses:</strong> <span id="em-patient-dx">Acute decompensated heart failure (HFrEF LVEF 35%), Essential Hypertension</span></p>
+        <p style="font-size: 0.88rem; color: var(--text-muted);"><strong>Key Medicines:</strong> <span id="em-patient-meds">Furosemide, Carvedilol, Lisinopril, Spironolactone</span></p>
       </div>
 
       <button id="em-dismiss-btn" class="btn btn-secondary" style="width: 100%;">
@@ -1636,10 +1648,10 @@
       },
       copd: {
         id: 'copd',
-        label: 'Severe COPD',
+        label: 'Severe COPD / PPOK',
         icon: '🫁',
-        name: 'Arthur Pendelton',
-        text: `DISCHARGE SUMMARY\nName: Arthur Pendelton   Age: 68M   Ward: Pulmonology 6B   LOS: 5 days\nPrincipal Dx: Acute Exacerbation of Chronic Obstructive Pulmonary Disease (AECOPD)\nSecondary Dx: Chronic Cor Pulmonale, Type 2 Respiratory Failure\n\nDISCHARGE MEDICATIONS:\n1. Azithromycin 500mg daily (3-day course) - NEW\n2. Amoxicillin 500mg TDS (Infection prophylaxis) - NEW\n3. Omeprazole 20mg daily (Gastric protection) - CONTINUED\n4. Paracetamol 1000mg QDS PRN - CONTINUED\n5. Atorvastatin 20mg ON - CONTINUED\n\nFOLLOW-UP & ADVICE:\nFollow-up: Respiratory Specialist Clinic in 10 days with repeat spirometry and SpO2 check.\nWARNING SIGNS: Rapidly worsening breathlessness, cyanosis of lips or fingers, confusion, green purulent sputum.\nRESTRICTIONS: Strict adherence to home oxygen at prescribed rates.`
+        name: 'Ahmad bin Hassan',
+        text: ORIGINAL_DISCHARGE_TEXTS.ahmad
       },
       hf: {
         id: 'hf',
@@ -1969,6 +1981,7 @@
 
       // Detect Condition Profiles
       const allText = rawText.toLowerCase();
+      if (/copd|ppok|chronic obstructive|emphysema|bronchitis|respiratory/i.test(allText)) carePlan.conditionProfiles.push('copd');
       if (/heart failure|hf\b|lvef|cardiomyopathy/i.test(allText)) carePlan.conditionProfiles.push('heart_failure');
       if (/diabetes|t2dm|t1dm|hba1c|glucose|metformin/i.test(allText)) carePlan.conditionProfiles.push('diabetes');
       if (/ckd|kidney|egfr|creatinine|nephropathy/i.test(allText)) carePlan.conditionProfiles.push('ckd');
@@ -1982,6 +1995,22 @@
        4B. CLINICAL TRANSLATION LEXICON & READING LEVEL ENGINE
        ===================================================================== */
     const CLINICAL_LEXICON = {
+      copd: {
+        simple: {
+          title: "Chronic Lung Airway Narrowing (COPD / PPOK)",
+          icon: "🫁",
+          plain: "The breathing tubes in your lungs are swollen and narrowed, making it hard to move air in and out, especially when walking or doing chores.",
+          action: "Inhale your preventers every morning and evening, rinse your mouth with water after each steroid puff, keep your rescue Ventolin nearby, and use pursed-lip breathing when semput.",
+          badge: "6th-Grade Patient Language"
+        },
+        standard: {
+          title: "Acute Exacerbation of COPD (AECOPD · GOLD Stage 3 / Severe)",
+          icon: "🫁",
+          plain: "ICD-10 J44.1. Severe persistent airflow limitation (post-bronchodilator FEV1 30–49% predicted). Tracheobronchial inflammatory flare with ventilation-perfusion mismatch and dynamic air trapping.",
+          action: "Dual maintenance bronchodilation (LAMA tiotropium + LABA/ICS budesonide/formoterol). Short-course systemic corticosteroid taper (prednisolone). Short-acting beta2-agonist (salbutamol) PRN. Target SpO2 88–92% to avert hypercapnic respiratory drive suppression. Non-selective beta-blockers strictly contraindicated.",
+          badge: "GOLD 2026 Pulmonology Guideline"
+        }
+      },
       heart_failure: {
         simple: {
           title: "Weakened Heart Pump (Heart Failure)",
@@ -2239,6 +2268,61 @@
         standardMoa: "Dual mechanism: weak mu-opioid receptor agonism combined with norepinephrine and serotonin reuptake inhibition.",
         standardHemodynamics: "Step 2 WHO analgesic ladder for breakthrough postoperative pain. Caution: reduces seizure threshold; serotonin syndrome risk.",
         standardMonitoring: "Respiratory rate, sedation score, bowel function, and potential drug-drug interactions with serotonergic agents."
+      },
+      budesonide: {
+        category: "Dual Preventer Inhaler (ICS/LABA)",
+        icon: "🌬️",
+        simplePurpose: "Calms swelling inside the breathing tubes and keeps airways relaxed day and night.",
+        simpleInstructions: "Take 2 puffs every morning and 2 puffs every night. Always rinse your mouth with water and spit it out after use.",
+        simpleWatch: "White patches in mouth (thrush), hoarse voice, mild tremors.",
+        standardClass: "Inhaled Corticosteroid + Long-Acting Beta2-Agonist (ICS/LABA)",
+        standardMoa: "Budesonide suppresses airway mucosal inflammation via nuclear glucocorticoid receptors; Formoterol provides rapid and prolonged beta2-adrenergic bronchodilation.",
+        standardHemodynamics: "Significantly lowers annual exacerbation rate and blunts inflammatory eosinophilic airway infiltration.",
+        standardMonitoring: "Oropharyngeal inspection for candidiasis, pulse oximetry, and annual influenza/pneumococcal vaccination status."
+      },
+      tiotropium: {
+        category: "24-Hour Lung Opener Inhaler (LAMA)",
+        icon: "🫁",
+        simplePurpose: "Relaxes muscles around your airways for 24 hours so you can breathe freely without chest tightness.",
+        simpleInstructions: "Inhale 2 puffs once every morning using the Respimat inhaler. Breathe out fully before inhaling slowly and deeply.",
+        simpleWatch: "Dry mouth, hoarseness, difficulty passing urine.",
+        standardClass: "Long-Acting Muscarinic Antagonist (LAMA)",
+        standardMoa: "Competitively and reversibly antagonizes M3 muscarinic receptors on bronchial smooth muscle, inhibiting acetylcholine-mediated bronchoconstriction.",
+        standardHemodynamics: "Reduces air trapping and dynamic hyperinflation in severe COPD (GOLD 3); improves FEV1 and reduces exacerbation frequency.",
+        standardMonitoring: "Spirometry (FEV1/FVC), exacerbation rate, and anticholinergic side effects (urinary retention)."
+      },
+      salbutamol: {
+        category: "Emergency Rescue Inhaler (SABA)",
+        icon: "⚡",
+        simplePurpose: "Fast-acting rescue spray that opens tight airways within minutes when you suddenly feel semput or breathless.",
+        simpleInstructions: "Take 2 puffs when you feel sudden shortness of breath or wheezing. Wait 1 minute between puffs.",
+        simpleWatch: "Fast heartbeat or trembling hands (normal and usually fades within 20 minutes).",
+        standardClass: "Short-Acting Beta2-Adrenergic Agonist (SABA)",
+        standardMoa: "Selective stimulation of beta2-adrenergic receptors on bronchial smooth muscle, activating adenylate cyclase to cause rapid bronchodilation within 3-5 minutes.",
+        standardHemodynamics: "Acute reliever for breakthrough bronchospasm; excessive usage (>4 puffs/day) indicates loss of asthma/COPD control.",
+        standardMonitoring: "Reliever frequency log, resting heart rate, and hypokalemia risk with frequent nebulization."
+      },
+      prednisolone: {
+        category: "Oral Steroid Flare Taper",
+        icon: "💊",
+        simplePurpose: "Short 5-day pill course to calm severe swelling inside your lung airways after a flare-up.",
+        simpleInstructions: "Take in the morning with or after breakfast. Take with Pantoprazole to protect your stomach.",
+        simpleWatch: "Stomach discomfort, slight increase in blood pressure or blood sugar.",
+        standardClass: "Systemic Glucocorticoid",
+        standardMoa: "Broad-spectrum inhibition of pro-inflammatory cytokines, leukotrienes, and vascular permeability in hyperreactive airways.",
+        standardHemodynamics: "Accelerates recovery of FEV1 and oxygenation during AECOPD; 5-day course recommended by GOLD to minimize adrenal suppression.",
+        standardMonitoring: "Blood glucose, blood pressure, gastric tolerability."
+      },
+      propranolol: {
+        category: "Contraindicated Beta-Blocker",
+        icon: "🚫",
+        simplePurpose: "STOPPED: Dangerous for your lungs. Blocks your breathing passages and can cause severe wheezing.",
+        simpleInstructions: "Do not take this medicine. It was stopped because you have COPD.",
+        simpleWatch: "Severe shortness of breath, sudden tight chest, wheezing.",
+        standardClass: "Non-Selective Beta-Adrenergic Antagonist",
+        standardMoa: "Non-selectively blocks beta-1 and beta-2 adrenergic receptors, antagonizing endogenous and therapeutic bronchodilation.",
+        standardHemodynamics: "Contraindicated in asthma and COPD: triggers life-threatening bronchospasm and blunts SABA rescue response.",
+        standardMonitoring: "Confirm drug discontinuation and verify patient understanding of beta-blocker contraindication."
       }
     };
 
@@ -2247,6 +2331,7 @@
       let key = 'heart_failure';
       if (/fracture|hip|hemiarthroplasty|surgery|post-op/i.test(lower)) key = 'post_surgery';
       else if (/osteo|bone|joint/i.test(lower)) key = 'osteopenia';
+      else if (/copd|ppok|chronic obstructive|bronchitis|emphysema|respiratory/i.test(lower)) key = 'copd';
       else if (/diabetes|t2dm|t1dm|glucose/i.test(lower)) key = 'diabetes';
       else if (/ckd|kidney|egfr|nephropathy/i.test(lower)) key = 'ckd';
       else if (/hypertension|htn|blood pressure/i.test(lower)) key = 'hypertension';
@@ -2499,6 +2584,42 @@
         }
       }
 
+      if (profiles.includes('copd')) {
+        if (todayCheckin.spo2 != null) {
+          if (todayCheckin.spo2 < 88) {
+            factors.push({ label: `Severe Hypoxia: SpO2 dropped to ${todayCheckin.spo2}% (<88%)`, points: 6, redFlag: true });
+            totalPoints += 6;
+            isEmergencyRed = true;
+          } else if (todayCheckin.spo2 <= 91) {
+            factors.push({ label: `Hypoxemic drift: SpO2 dropped to ${todayCheckin.spo2}% (below target)`, points: 3 });
+            totalPoints += 3;
+          }
+        }
+        if (todayCheckin.purulentSputum) {
+          factors.push({ label: 'Purulent sputum: Cough producing dark green/yellow phlegm', points: 3 });
+          totalPoints += 3;
+        }
+        if (todayCheckin.severeDyspnea) {
+          factors.push({ label: 'Severe breathlessness at rest or unable to speak full sentences', points: 3 });
+          totalPoints += 3;
+        } else if (todayCheckin.sobExertion) {
+          factors.push({ label: 'Worsening breathlessness on minimal exertion', points: 2 });
+          totalPoints += 2;
+        }
+        if (todayCheckin.wheezing) {
+          factors.push({ label: 'Chest wheezing or acute bronchial airway tightness', points: 2 });
+          totalPoints += 2;
+        }
+        if (todayCheckin.relieverOveruse) {
+          factors.push({ label: 'Frequent rescue inhaler reliance (>4 puffs of salbutamol today)', points: 2 });
+          totalPoints += 2;
+        }
+        if (todayCheckin.temperature != null && todayCheckin.temperature >= 38.0) {
+          factors.push({ label: `Respiratory infection fever (${todayCheckin.temperature}°C >= 38.0°C)`, points: 3 });
+          totalPoints += 3;
+        }
+      }
+
       if (profiles.includes('diabetes')) {
         if (todayCheckin.glucose != null) {
           if (todayCheckin.glucose < 4.0) {
@@ -2642,64 +2763,68 @@
         {
           day: 0,
           label: "Day 0 (Discharge)",
-          desc: "Discharged from hospital. Medications reconciled. Baseline weight 68.0kg. Feeling stable.",
+          desc: "Discharged from Hospital Kuala Lumpur (HKL) Ward 6A. Inhaler technique verified with ward pharmacist. Baseline SpO2 95%, afebrile at 36.6°C. Resting comfortably at home with daughter Aisyah.",
           weight: 68.0,
+          spo2: 95,
           temperature: 36.6,
-          systolicBp: 124,
+          systolicBp: 126,
           diastolicBp: 78,
-          glucose: 6.4,
+          wheezing: false,
+          purulentSputum: false,
           sobExertion: false,
-          orthopnoea: false,
-          legSwelling: false,
-          dizziness: false,
+          severeDyspnea: false,
+          relieverOveruse: false,
           missedCriticalDoses: 0,
           expectedLevel: 'green'
         },
         {
           day: 1,
           label: "Day 1 (Home Routine)",
-          desc: "Recovering at home. Morning furosemide and bisoprolol taken on time. Weight 68.3kg.",
-          weight: 68.3,
+          desc: "Morning Symbicort and Spiriva taken on schedule. Aisyah reminded him to rinse mouth after steroid puff. Lungs clear, SpO2 steady at 95%, doing light walking in living room.",
+          weight: 68.1,
+          spo2: 95,
           temperature: 36.7,
-          systolicBp: 122,
+          systolicBp: 124,
           diastolicBp: 76,
-          glucose: 6.8,
+          wheezing: false,
+          purulentSputum: false,
           sobExertion: false,
-          orthopnoea: false,
-          legSwelling: false,
-          dizziness: false,
+          severeDyspnea: false,
+          relieverOveruse: false,
           missedCriticalDoses: 0,
           expectedLevel: 'green'
         },
         {
           day: 2,
-          label: "Day 2 (Mild Deterioration)",
-          desc: "Felt slightly breathless climbing stairs. Missed yesterday's evening dose. Weight creeps up to 68.9kg.",
-          weight: 68.9,
-          temperature: 36.8,
-          systolicBp: 130,
+          label: "Day 2 (Bronchial Warning)",
+          desc: "Increased coughing with yellowish phlegm. Mild wheezing noted after walking to veranda. SpO2 drifted down to 91%. Reliever inhaler used twice. Needs clinic review.",
+          weight: 68.3,
+          spo2: 91,
+          temperature: 37.3,
+          systolicBp: 132,
           diastolicBp: 82,
-          glucose: 7.2,
-          sobExertion: true,
-          orthopnoea: false,
-          legSwelling: false,
-          dizziness: false,
-          missedCriticalDoses: 1,
+          wheezing: true,
+          purulentSputum: false,
+          sobExertion: false,
+          severeDyspnea: false,
+          relieverOveruse: false,
+          missedCriticalDoses: 0,
           expectedLevel: 'amber'
         },
         {
           day: 3,
           label: "Day 3 (Clinical Red Alert)",
-          desc: "Weight up +2.4kg in 3 days (fluid overload). Cannot sleep flat without 3 pillows (orthopnoea). Leg edema evident.",
-          weight: 70.4,
-          temperature: 36.9,
-          systolicBp: 138,
-          diastolicBp: 88,
-          glucose: 7.5,
+          desc: "Severe Acute Exacerbation: SpO2 dropped critically to 86% (<88%). Producing thick dark green purulent sputum. Severe dyspnea at rest, speaking in broken gasping words. High fever 38.2°C. Immediate 999 EMS required!",
+          weight: 68.4,
+          spo2: 86,
+          temperature: 38.2,
+          systolicBp: 142,
+          diastolicBp: 90,
+          wheezing: true,
+          purulentSputum: true,
           sobExertion: true,
-          orthopnoea: true,
-          legSwelling: true,
-          dizziness: false,
+          severeDyspnea: true,
+          relieverOveruse: true,
           missedCriticalDoses: 1,
           expectedLevel: 'red'
         }
@@ -3585,6 +3710,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       const isSurgery = profiles.includes('post_surgery');
       const isDiabetes = profiles.includes('diabetes');
       const isHf = profiles.includes('heart_failure');
+      const isCopd = profiles.includes('copd');
 
       return `
         <div class="card" style="max-width: 640px; margin: 0 auto;">
@@ -3697,6 +3823,46 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
                   <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
                     <input type="checkbox" id="ci-dizziness" ${currentCheckin.dizziness ? 'checked' : ''} style="margin-right: 8px;">
                     Dizziness / lightheaded
+                  </label>
+                </div>
+              </div>
+            ` : ''}
+            
+            <!-- COPD / Respiratory Vitals & Symptoms -->
+            ${isCopd ? `
+              <div style="background: var(--bg-subtle); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 20px;">
+                <h4 style="margin: 0 0 10px 0; font-size: 0.95rem; color: var(--primary);">Respiratory & Oxygen Saturation (COPD / PPOK)</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                  <div>
+                    <label for="ci-spo2" style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 4px;">
+                      Oxygen SpO2 (%)
+                      <span style="font-size: 0.75rem; font-weight: 400; color: var(--text-muted);">(Target: 88–92%)</span>
+                    </label>
+                    <input type="number" id="ci-spo2" min="50" max="100" value="${currentCheckin.spo2 != null ? currentCheckin.spo2 : 95}" style="width: 100%; padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-size: 1rem; background: var(--bg-card);">
+                  </div>
+                  <div>
+                    <label for="ci-temperature" style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 4px;">Temperature (°C)</label>
+                    <input type="number" id="ci-temperature" step="0.1" value="${currentCheckin.temperature || 36.6}" style="width: 100%; padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-size: 1rem; background: var(--bg-card);">
+                  </div>
+                </div>
+
+                <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 6px;">Bronchial & Sputum Symptoms:</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                  <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
+                    <input type="checkbox" id="ci-wheezing" ${currentCheckin.wheezing ? 'checked' : ''} style="margin-right: 8px;">
+                    Chest wheezing / tightness
+                  </label>
+                  <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
+                    <input type="checkbox" id="ci-purulent-sputum" ${currentCheckin.purulentSputum ? 'checked' : ''} style="margin-right: 8px;">
+                    Yellow/green purulent phlegm
+                  </label>
+                  <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
+                    <input type="checkbox" id="ci-sob-exertion" ${currentCheckin.sobExertion ? 'checked' : ''} style="margin-right: 8px;">
+                    Breathless on short walk
+                  </label>
+                  <label class="btn btn-secondary btn-sm" style="justify-content: flex-start; cursor: pointer;">
+                    <input type="checkbox" id="ci-severe-dyspnea" ${currentCheckin.severeDyspnea ? 'checked' : ''} style="margin-right: 8px;">
+                    Struggling to speak full sentence
                   </label>
                 </div>
               </div>
@@ -3845,6 +4011,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 
       const isSurgery = parsedPlan.conditionProfiles.includes('post_surgery');
       const isDiabetes = parsedPlan.conditionProfiles.includes('diabetes');
+      const isCopd = parsedPlan.conditionProfiles.includes('copd');
 
       let clinicalConcern = 'Stable post-discharge trajectory. No acute decompensation detected.';
       let recText = '1. Continue current discharge medication schedule. 2. Proceed with scheduled clinic follow-up appointments.';
@@ -3856,6 +4023,9 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         } else if (isDiabetes) {
           clinicalConcern = 'Critical glycemic crisis (hypoglycemia < 4.0 mmol/L or profound hyperglycemia > 15.0 mmol/L) with impending neuroglycopenic or hyperosmolar decompensation.';
           recText = '1. Immediate clinical evaluation at Emergency / SOPD. 2. Stat capillary blood glucose, serum ketones, and venous blood gas. 3. Re-titrate insulin / oral hypoglycemic agents and review carbohydrate intake.';
+        } else if (isCopd) {
+          clinicalConcern = 'Critical acute COPD exacerbation with respiratory decompensation (SpO2 < 88%, severe dyspnea, or purulent sputum flare).';
+          recText = '1. Urgent clinical evaluation at Emergency / SOPD. 2. Arterial blood gas (ABG) to assess acute hypercapnic respiratory acidosis. 3. Immediate controlled oxygen therapy (titrated to SpO2 88-92%), frequent short-acting bronchodilator nebulizers (salbutamol/ipratropium), and systemic corticosteroid escalation.';
         } else {
           clinicalConcern = 'Symptoms indicate acute decompensation / fluid congestion requiring urgent diuretic titration or clinic review.';
           recText = '1. Immediate clinical evaluation at Heart Failure / Acute Care Clinic. 2. Urgent serum electrolytes (U&E) and renal profile check. 3. Consider adjustment of oral loop diuretic dose.';
@@ -3867,6 +4037,9 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         } else if (isDiabetes) {
           clinicalConcern = 'Mild-to-moderate glycemic drift (glucose > 11.0 mmol/L with polydipsia/polyuria) or single missed medication dose.';
           recText = '1. Contact diabetes educator / clinic today for insulin technique review. 2. Implement 4-point daily SMBG profile. 3. Review hydration and diet adherence.';
+        } else if (isCopd) {
+          clinicalConcern = 'Early bronchial airway exacerbation warning (SpO2 89-91%, purulent sputum change, or increased wheezing).';
+          recText = '1. Same-day telephone triage review by respiratory clinic nurse coordinator. 2. Reinforce correct inhaler technique (Symbicort Turbuhaler / Spiriva Respimat). 3. Step up reliever inhaler usage (Ventolin 2 puffs QDS PRN) and monitor sputum purulence.';
         } else {
           clinicalConcern = 'Mild-to-moderate fluid accumulation or subacute physiological drift.';
           recText = '1. Phone triage review by heart failure nurse coordinator today. 2. Reinforce strict fluid restriction (1.5L/day) and low sodium intake. 3. Monitor standing vs sitting BP.';
@@ -3948,6 +4121,12 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
                 <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">GLUCOSE</span>
                 <strong>${currentCheckin.glucose || '--'} mmol/L</strong>
               </div>
+              ${(isCopd || currentCheckin.spo2 != null) ? `
+                <div class="vital-tile">
+                  <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">PULSE OXIMETRY (SpO2)</span>
+                  <strong style="color: ${currentCheckin.spo2 < 88 ? 'var(--status-red)' : currentCheckin.spo2 <= 91 ? 'var(--status-amber)' : 'inherit'};">${currentCheckin.spo2 || '--'}%</strong>
+                </div>
+              ` : ''}
               <div class="vital-tile">
                 <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">MED ADHERENCE</span>
                 <strong>${escapeHtml(adherenceDisplay)}</strong>
@@ -4910,6 +5089,12 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           const thirst = document.getElementById('ci-thirst') ? document.getElementById('ci-thirst').checked : false;
           const frequentUrine = document.getElementById('ci-frequent-urine') ? document.getElementById('ci-frequent-urine').checked : false;
 
+          const spo2El = document.getElementById('ci-spo2');
+          const spo2 = spo2El ? parseInt(spo2El.value, 10) : 95;
+          const wheezing = document.getElementById('ci-wheezing') ? document.getElementById('ci-wheezing').checked : false;
+          const purulentSputum = document.getElementById('ci-purulent-sputum') ? document.getElementById('ci-purulent-sputum').checked : false;
+          const severeDyspnea = document.getElementById('ci-severe-dyspnea') ? document.getElementById('ci-severe-dyspnea').checked : false;
+
           const newCheckins = {
             ...state.customCheckins,
             [state.demoDay]: {
@@ -4927,7 +5112,11 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
               woundDischarge,
               calfPain,
               thirst,
-              frequentUrine
+              frequentUrine,
+              spo2,
+              wheezing,
+              purulentSputum,
+              severeDyspnea
             }
           };
 
@@ -5067,7 +5256,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
             }
 
             let caseLabel = '';
-            if (testCase.id === 1) caseLabel = 'Pak Ahmad (HF / T2DM / CKD)';
+            if (testCase.id === 1) caseLabel = 'Pak Ahmad (Severe COPD / PPOK & HTN)';
             else if (testCase.id === 2) caseLabel = 'Mdm Tan (Hip Hemiarthroplasty)';
             else if (testCase.id === 3) caseLabel = 'Priya (Diabetic Nephropathy)';
             else {
