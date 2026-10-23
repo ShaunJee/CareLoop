@@ -3,35 +3,23 @@
 # CareLoop 🩺
 ### Post-Discharge Recovery & Patient Safety Guardian
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-0F5C5A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://shaunjee.github.io/CareLoop/)
-[![Video Walkthrough](https://img.shields.io/badge/Video%20Demo-1080p%20(3m)-0F5C5A?style=for-the-badge&logo=playstation&logoColor=white)](CareLoop%20Demo.mp4)
-[![License: MIT](https://img.shields.io/badge/License-MIT-2E7D32?style=for-the-badge)](LICENSE)
-[![Clinical Safety](https://img.shields.io/badge/Clinical%20Rules-30%2F30%20PASS-2E7D32?style=for-the-badge)](test_runner.js)
-[![Discharge NLP](https://img.shields.io/badge/Parser%20Accuracy-100%25%20F1-00838F?style=for-the-badge)](test_runner.js)
-[![Reading Modes](https://img.shields.io/badge/Reading%20Modes-Dual%20Everyday%20%26%20Clinical-8E24AA?style=for-the-badge)](index.html)
-[![Architecture: Offline-First](https://img.shields.io/badge/Architecture-Offline--First%20Zero--Dep-1565C0?style=for-the-badge)](index.html)
+[![Live Interactive Demo](https://img.shields.io/badge/Live_App-Interactive_Demo-0F5C5A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://shaunjee.github.io/CareLoop/)
+[![3-Minute Video Demo](https://img.shields.io/badge/Video-3_Min_Demo-0C4B49?style=for-the-badge&logo=youtube&logoColor=white)](CareLoop%20Demo.mp4)
+[![100% Offline-First](https://img.shields.io/badge/Privacy-100%25_Air--Gapped-15605C?style=for-the-badge)](index.html)
+[![Clinical Safety Verified](https://img.shields.io/badge/Safety-Clinical_Verified-2E7D32?style=for-the-badge)](test_runner.js)
 
 <br/><br/>
 
-<div align="center">
-
-<!-- Clickable CareLoop Poster linked to Video Demo -->
-<a href="CareLoop%20Demo.mp4">
-  <img src="careloop_intro_poster.png" alt="CareLoop Video Demo — Post-Discharge Recovery & Safety Guardian" width="100%" style="max-width: 960px; border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.35);" />
-</a>
-
-<p align="center">
-  <a href="CareLoop%20Demo.mp4">▶️ <strong>Click poster or here to watch / download CareLoop Demo (1080p · 3m 00s MP4)</strong></a>
-</p>
-
-</div>
+[![CareLoop 3-Minute Video Demo — Post-Discharge Recovery & Safety Guardian](careloop_intro_poster.png)](CareLoop%20Demo.mp4)
 
 <br/>
 
 **DSH Hacks V2 Submission · Theme: AI x Healthcare**  
 *Turning confusing hospital discharges into safe, plain-language recovery plans.*
 
-[**🚀 Launch Interactive Demo**](https://shaunjee.github.io/CareLoop/) · [**🎬 Play Demo Video (`CareLoop Demo.mp4`)**](CareLoop%20Demo.mp4) · [**📄 Executive Summary (PDF)**](submission_deliverables/CareLoop_OnePager.pdf) · [**💻 Source Code (PDF)**](submission_deliverables/CareLoop_Source_Code.pdf)
+<br/>
+
+[**🚀 Launch Live Demo**](https://shaunjee.github.io/CareLoop/) &nbsp;&nbsp;|&nbsp;&nbsp; [**🎬 Watch 3-Min Video**](CareLoop%20Demo.mp4) &nbsp;&nbsp;|&nbsp;&nbsp; [**📄 Executive One-Pager (PDF)**](submission_deliverables/CareLoop_OnePager.pdf) &nbsp;&nbsp;|&nbsp;&nbsp; [**💻 Source Code (PDF)**](submission_deliverables/CareLoop_Source_Code.pdf)
 
 </div>
 
