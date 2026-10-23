@@ -15,17 +15,13 @@
 
 <div align="center">
 
-<!-- Embedded Video Player with CareLoop Poster -->
-<video src="https://github.com/ShaunJee/CareLoop/raw/main/CareLoop%20Demo.mp4" poster="careloop_intro_poster.png" controls="controls" width="100%" style="max-width: 960px; border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.35);">
-  <source src="CareLoop%20Demo.mp4" type="video/mp4">
-  <source src="https://github.com/ShaunJee/CareLoop/raw/main/CareLoop%20Demo.mp4" type="video/mp4">
-  <a href="CareLoop%20Demo.mp4">
-    <img src="careloop_intro_poster.png" alt="CareLoop Video Demo — Post-Discharge Recovery & Safety Guardian" width="100%" style="border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.35);" />
-  </a>
-</video>
+<!-- Clickable CareLoop Poster linked to Video Demo -->
+<a href="CareLoop%20Demo.mp4">
+  <img src="careloop_intro_poster.png" alt="CareLoop Video Demo — Post-Discharge Recovery & Safety Guardian" width="100%" style="max-width: 960px; border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.35);" />
+</a>
 
 <p align="center">
-  <a href="CareLoop%20Demo.mp4">▶️ <strong>Click here to play / download CareLoop Demo (1080p · 3m 00s MP4)</strong></a>
+  <a href="CareLoop%20Demo.mp4">▶️ <strong>Click poster or here to watch / download CareLoop Demo (1080p · 3m 00s MP4)</strong></a>
 </p>
 
 </div>
