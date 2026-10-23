@@ -30,27 +30,6 @@
 
 ---
 
-## 🎬 Official 3-Minute Video Walkthrough
-
-Watch the official 3-minute hackathon pitch and live end-to-end prototype walkthrough covering all 4 continuous care loops:
-
-<div align="center">
-
-https://github.com/ShaunJee/CareLoop/raw/main/CareLoop%20Demo.mp4
-
-</div>
-
-| Scene | Timestamp | Focus & Clinical Demonstration |
-| :--- | :--- | :--- |
-| **Scene 1** | `0:00 – 0:30` | **The Problem & Loop 1 (Decode):** Verbatim source-span NLP provenance from hospital discharge record. |
-| **Scene 2** | `0:30 – 1:15` | **Dual-Literacy & Live Note Editing:** Instant toggle between 6th-grade language & ICD-10 GDMT; <5ms live re-parsing. |
-| **Scene 3** | `1:15 – 1:40` | **Loop 2 (Protect):** Pre-ingestion 32-rule safety matrix intercepting a lethal "Triple Whammy" OTC interaction. |
-| **Scene 4** | `1:40 – 2:15` | **Loop 3 (Watch):** Recovery Time Machine catching silent multi-day fluid decompensation (100/100 Red Alert). |
-| **Scene 5** | `2:15 – 2:38` | **Loop 4 (Connect):** Cryptographic offline QR caregiver pass & single-page A4 Clinician SBAR brief. |
-| **Scene 6** | `2:38 – 3:00` | **Deterministic CDS & Safety Net:** 50/50 test benchmark harness with 100% F1 score & always-on Paramedic Card. |
-
----
-
 ## 🌟 Clinical Problem & Motivation
 
 The days immediately following hospital discharge are among the most dangerous windows in modern medicine:
