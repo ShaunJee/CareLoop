@@ -4,18 +4,38 @@
 ### Post-Discharge Recovery & Patient Safety Guardian
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-0F5C5A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://shaunjee.github.io/CareLoop/)
+[![Video Walkthrough](https://img.shields.io/badge/Video%20Demo-1080p%20(3m)-0F5C5A?style=for-the-badge&logo=playstation&logoColor=white)](CareLoop%20Demo.mp4)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2E7D32?style=for-the-badge)](LICENSE)
 [![Clinical Safety](https://img.shields.io/badge/Clinical%20Rules-30%2F30%20PASS-2E7D32?style=for-the-badge)](test_runner.js)
 [![Discharge NLP](https://img.shields.io/badge/Parser%20Accuracy-100%25%20F1-00838F?style=for-the-badge)](test_runner.js)
 [![Reading Modes](https://img.shields.io/badge/Reading%20Modes-Dual%20Everyday%20%26%20Clinical-8E24AA?style=for-the-badge)](index.html)
 [![Architecture: Offline-First](https://img.shields.io/badge/Architecture-Offline--First%20Zero--Dep-1565C0?style=for-the-badge)](index.html)
 
+<br/><br/>
+
+<div align="center">
+
+<!-- Embedded Video Player with CareLoop Poster -->
+<video src="https://github.com/ShaunJee/CareLoop/raw/main/CareLoop%20Demo.mp4" poster="careloop_intro_poster.png" controls="controls" width="100%" style="max-width: 960px; border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.35);">
+  <source src="CareLoop%20Demo.mp4" type="video/mp4">
+  <source src="https://github.com/ShaunJee/CareLoop/raw/main/CareLoop%20Demo.mp4" type="video/mp4">
+  <a href="CareLoop%20Demo.mp4">
+    <img src="careloop_intro_poster.png" alt="CareLoop Video Demo — Post-Discharge Recovery & Safety Guardian" width="100%" style="border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.35);" />
+  </a>
+</video>
+
+<p align="center">
+  <a href="CareLoop%20Demo.mp4">▶️ <strong>Click here to play / download CareLoop Demo (1080p · 3m 00s MP4)</strong></a>
+</p>
+
+</div>
+
 <br/>
 
 **DSH Hacks V2 Submission · Theme: AI x Healthcare**  
 *Turning confusing hospital discharges into safe, plain-language recovery plans.*
 
-[**🚀 Launch Interactive Demo**](https://shaunjee.github.io/CareLoop/) · [**📄 Executive Summary (PDF)**](submission_deliverables/CareLoop_OnePager.pdf) · [**💻 Source Code (PDF)**](submission_deliverables/CareLoop_Source_Code.pdf)
+[**🚀 Launch Interactive Demo**](https://shaunjee.github.io/CareLoop/) · [**🎬 Play Demo Video (`CareLoop Demo.mp4`)**](CareLoop%20Demo.mp4) · [**📄 Executive Summary (PDF)**](submission_deliverables/CareLoop_OnePager.pdf) · [**💻 Source Code (PDF)**](submission_deliverables/CareLoop_Source_Code.pdf)
 
 </div>
 
@@ -23,6 +43,27 @@
 
 > **The One-Line Pitch:**  
 > **CareLoop turns a confusing hospital discharge into a safe, plain-language recovery plan, and watches the first 30 days so a family and a doctor know before things go wrong.**
+
+---
+
+## 🎬 Official 3-Minute Video Walkthrough
+
+Watch the official 3-minute hackathon pitch and live end-to-end prototype walkthrough covering all 4 continuous care loops:
+
+<div align="center">
+
+https://github.com/ShaunJee/CareLoop/raw/main/CareLoop%20Demo.mp4
+
+</div>
+
+| Scene | Timestamp | Focus & Clinical Demonstration |
+| :--- | :--- | :--- |
+| **Scene 1** | `0:00 – 0:30` | **The Problem & Loop 1 (Decode):** Verbatim source-span NLP provenance from hospital discharge record. |
+| **Scene 2** | `0:30 – 1:15` | **Dual-Literacy & Live Note Editing:** Instant toggle between 6th-grade language & ICD-10 GDMT; <5ms live re-parsing. |
+| **Scene 3** | `1:15 – 1:40` | **Loop 2 (Protect):** Pre-ingestion 32-rule safety matrix intercepting a lethal "Triple Whammy" OTC interaction. |
+| **Scene 4** | `1:40 – 2:15` | **Loop 3 (Watch):** Recovery Time Machine catching silent multi-day fluid decompensation (100/100 Red Alert). |
+| **Scene 5** | `2:15 – 2:38` | **Loop 4 (Connect):** Cryptographic offline QR caregiver pass & single-page A4 Clinician SBAR brief. |
+| **Scene 6** | `2:38 – 3:00` | **Deterministic CDS & Safety Net:** 50/50 test benchmark harness with 100% F1 score & always-on Paramedic Card. |
 
 ---
 

@@ -24,3 +24,13 @@ helpers/
 tests/TEST_REPORT.md
 submission_deliverables/demo_script.md
 index_3.html
+
+# Voice recordings and local media
+voice_recs/
+voice recordings/
+*.ogg
+
+# Screen recordings and raw media takes
+screen_recs/
+screen recordings/
+
